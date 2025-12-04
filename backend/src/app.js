@@ -22,7 +22,11 @@ app.use((req, res, next) => {
 });
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://controlia.com", "https://controlia-software.vercel.app"],
+    origin: ["http://localhost:3000", 
+      "https://controlia.com", 
+      "https://controlia-software.vercel.app",
+      "https://controlia.app"
+    ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
