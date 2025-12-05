@@ -8,7 +8,7 @@ category: { type: String, required: true },
 price: { type: Number, required: true },
 cost: { type: Number, required: true },
 stock: { type: Number, required: true, default: 0 },
-barcode: { type: String, unique: true },
+barcode: { type: String },
 description: String,
 supplier: {
     type: mongoose.Schema.Types.ObjectId,
@@ -24,5 +24,5 @@ required: true,
 { timestamps: true }
 );
 
-
+productSchema.index({ user: 1, barcode: 1 }, { unique: true, partialFilterExpression: { barcode: { $type: "string" } } });
 export default mongoose.model("Product", productSchema);
