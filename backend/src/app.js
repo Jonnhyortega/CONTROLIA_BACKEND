@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
+import helmet from "helmet";
+import compression from "compression";
+import rateLimit from "express-rate-limit";
 import { notFound, errorHandler } from "./middleware/errorHandler.js";
 import userRoutes from "./routes/userRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
@@ -13,6 +16,12 @@ import userManagementRoutes from "./routes/userManagementRoutes.js";
 import customizationRoutes from "./routes/customizationRoutes.js"
 
 const app = express();
+
+// 🔐 Security headers
+app.use(helmet());
+
+// 📦 Compression
+app.use(compression());
 
 app.use((req, res, next) => {
   if (req.headers["content-type"]?.startsWith("multipart/form-data")) {
@@ -33,6 +42,16 @@ app.use(
   })
 );  
 app.use(morgan("dev"));
+
+// 🏥 Health check endpoint (sin autenticación)
+app.get("/api/health", (req, res) => {
+  res.json({ 
+    status: "ok", 
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    environment: process.env.NODE_ENV || "development"
+  });
+});
 
 // Rutas protegidas
 app.use("/api/users", userRoutes);

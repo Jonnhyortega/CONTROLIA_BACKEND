@@ -12,6 +12,10 @@ dotenv.config({ path: path.join(__dirname, "../.env") });
 // IMPORTS CORRECTOS
 import connectDB from "./config/db_temp.js";
 import app from "./app.js";
+import validateEnv from "./utils/validateEnv.js";
+
+// 🔐 Validar variables de entorno antes de iniciar
+validateEnv();
 
 // DEBUG
 // console.log("🌱 ENV DEBUG:", {

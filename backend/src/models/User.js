@@ -59,6 +59,12 @@ const userSchema = new mongoose.Schema(
   
 );
 
+// 📊 Índices para mejorar performance
+userSchema.index({ email: 1 }); // Búsqueda por email (login, registro)
+userSchema.index({ verificationCode: 1 }); // Verificación de códigos
+userSchema.index({ membershipTier: 1 }); // Filtrado por tipo de membresía
+userSchema.index({ isEmailVerified: 1 }); // Filtrado por verificación
+
 // 🔐 Encriptar contraseña antes de guardar
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
