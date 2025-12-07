@@ -85,13 +85,36 @@ export const registerUser = async (req, res) => {
     const userExists = await User.findOne({ email });
     if (userExists) return res.status(400).json({ message: "Usuario ya existe" });
 
-    const user = await User.create({ name, email, password, role });
+    // 🔐 Generar código de verificación de 6 dígitos
+    const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const verificationCodeExpires = new Date(Date.now() + 15 * 60 * 1000); // 15 minutos
+
+    const user = await User.create({ 
+      name, 
+      email, 
+      password, 
+      role,
+      verificationCode,
+      verificationCodeExpires,
+      isEmailVerified: false,
+    });
+
+    // 📧 Enviar email de verificación
+    try {
+      const { sendVerificationEmail } = await import("../utils/emailService.js");
+      await sendVerificationEmail(email, verificationCode, name);
+    } catch (emailError) {
+      console.error("❌ Error enviando email:", emailError);
+      // Eliminar usuario si no se pudo enviar el email
+      await User.findByIdAndDelete(user._id);
+      return res.status(500).json({ 
+        message: "Error al enviar el email de verificación. Por favor, intenta nuevamente." 
+      });
+    }
+
     res.status(201).json({
-      _id: user._id,
-      name: user.name,
+      message: "Usuario registrado. Por favor, verifica tu email con el código enviado.",
       email: user.email,
-      role: user.role,
-      token: generateToken(user._id),
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -105,11 +128,20 @@ export const authUser = async (req, res) => {
     const user = await User.findOne({ email });
 
     if (user && (await user.matchPassword(password))) {
+      // ✉️ Verificar si el email está verificado
+      if (!user.isEmailVerified) {
+        return res.status(403).json({ 
+          message: "Por favor, verifica tu email antes de iniciar sesión. Revisa tu bandeja de entrada.",
+          emailNotVerified: true,
+        });
+      }
+
       res.json({
         _id: user._id,
         name: user.name,
         email: user.email,
         role: user.role,
+        membershipTier: user.membershipTier,
         token: generateToken(user._id),
       });
     } else {
@@ -140,6 +172,8 @@ export const getUserProfile = async (req, res) => {
       name: user.name,
       email: user.email,
       role: user.role,
+      membershipTier: user.membershipTier,
+      isEmailVerified: user.isEmailVerified,
       // IMAGEN POR DEFECTO SI NO HAY LOGO
       logoUrl: customization?.logoUrl || "El usuario no cargo imagen",
     });
@@ -149,3 +183,96 @@ export const getUserProfile = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+// 📌 Verificar email con código
+export const verifyEmail = async (req, res) => {
+  try {
+    const { email, code } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "Usuario no encontrado" });
+    }
+
+    // Verificar si ya está verificado
+    if (user.isEmailVerified) {
+      return res.status(400).json({ message: "El email ya está verificado" });
+    }
+
+    // Verificar código
+    if (user.verificationCode !== code) {
+      return res.status(400).json({ message: "Código de verificación inválido" });
+    }
+
+    // Verificar expiración
+    if (new Date() > user.verificationCodeExpires) {
+      return res.status(400).json({ 
+        message: "El código ha expirado. Solicita uno nuevo.",
+        codeExpired: true,
+      });
+    }
+
+    // ✅ Activar cuenta
+    user.isEmailVerified = true;
+    user.active = true;  // Activar usuario después de verificar email
+    user.verificationCode = null;
+    user.verificationCodeExpires = null;
+    await user.save();
+
+    // Retornar token para auto-login
+    res.json({
+      message: "Email verificado correctamente",
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+      membershipTier: user.membershipTier,
+      token: generateToken(user._id),
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// 📌 Reenviar código de verificación
+export const resendVerificationCode = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "Usuario no encontrado" });
+    }
+
+    // Verificar si ya está verificado
+    if (user.isEmailVerified) {
+      return res.status(400).json({ message: "El email ya está verificado" });
+    }
+
+    // 🔐 Generar nuevo código
+    const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const verificationCodeExpires = new Date(Date.now() + 15 * 60 * 1000); // 15 minutos
+
+    user.verificationCode = verificationCode;
+    user.verificationCodeExpires = verificationCodeExpires;
+    await user.save();
+
+    // 📧 Reenviar email
+    try {
+      const { sendVerificationEmail } = await import("../utils/emailService.js");
+      await sendVerificationEmail(email, verificationCode, user.name);
+    } catch (emailError) {
+      console.error("❌ Error enviando email:", emailError);
+      return res.status(500).json({ 
+        message: "Error al enviar el email. Por favor, intenta nuevamente." 
+      });
+    }
+
+    res.json({
+      message: "Código de verificación reenviado. Revisa tu email.",
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+

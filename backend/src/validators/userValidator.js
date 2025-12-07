@@ -28,9 +28,20 @@ export const googleSchema = z.object({
   id_token: z.string().min(10, "id_token inválido"),
 });
 
+export const verifyEmailSchema = z.object({
+  email: z.string().email("Email inválido"),
+  code: z.string().length(6, "El código debe tener 6 dígitos"),
+});
+
+export const resendVerificationSchema = z.object({
+  email: z.string().email("Email inválido"),
+});
+
 export default {
   registerSchema,
   loginSchema,
   updateUserSchema,
   changePasswordSchema,
+  verifyEmailSchema,
+  resendVerificationSchema,
 };

@@ -25,8 +25,35 @@ const userSchema = new mongoose.Schema(
     },
     active: { 
       type: Boolean, 
-      default: true 
-    }
+      default: false
+    },
+    // 🎯 SaaS Membership System
+    membershipTier: {
+      type: String,
+      enum: ["basic", "medium", "pro"],
+      default: "basic",
+    },
+    membershipStartDate: {
+      type: Date,
+      default: Date.now,
+    },
+    membershipEndDate: {
+      type: Date,
+      default: null,
+    },
+    // ✉️ Email Verification
+    isEmailVerified: {
+      type: Boolean,
+      default: false,
+    },
+    verificationCode: {
+      type: String,
+      default: null,
+    },
+    verificationCodeExpires: {
+      type: Date,
+      default: null,
+    },
   },
   { timestamps: true },
   
