@@ -267,7 +267,7 @@ export const updateDailyCashByDate = async (req, res) => {
 
     // Rango UTC correcto para ese día local
     const localDate = new Date(`${date}T00:00:00-03:00`);
-    const { start, end } = getLocalDayRangeUTC_(localDate);
+    const { start, end } = getLocalDayRangeUTC(localDate);
 
     const updated = await DailyCash.findOneAndUpdate(
       {
