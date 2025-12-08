@@ -180,8 +180,7 @@ export const getUserProfile = async (req, res) => {
       membershipStartDate: user.membershipStartDate,
       trialDaysRemaining: user.calculateTrialDaysRemaining(),
       isEmailVerified: user.isEmailVerified,
-      // IMAGEN POR DEFECTO SI NO HAY LOGO
-      logoUrl: customization?.logoUrl || "El usuario no cargo imagen",
+      logoUrl: customization?.logoUrl || null,
     });
 
   } catch (error) {
