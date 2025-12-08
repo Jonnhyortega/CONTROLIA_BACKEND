@@ -1,6 +1,7 @@
 import DailyCash from "../models/DailyCash.js";
 import Sale from "../models/Sale.js";
 import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
+import mongoose from "mongoose";
 
 /* ==========================================================
    🧩 HELPER UNIFICADO (LOCAL → UTC)
@@ -262,25 +263,40 @@ export const updateDailyCashByDate = async (req, res) => {
     const { status, description } = req.body;
 
     if (!date) {
-      return res.status(400).json({ message: "Fecha requerida." });
+      return res.status(400).json({ message: "Fecha o ID requerida." });
     }
 
-    // Rango UTC correcto para ese día local
-    const localDate = new Date(`${date}T00:00:00-03:00`);
-    const { start, end } = getLocalDayRangeUTC_(localDate);
+    let updated;
 
-    const updated = await DailyCash.findOneAndUpdate(
-      {
-        user: req.user._id,
-        date: { $gte: start, $lte: end },
-      },
-      {
-        ...(status && { status }),
-        ...(description && { description }),
-        ...(status === "cerrada" && { closedAt: new Date() }),
-      },
-      { new: true }
-    );
+    // 1. Si 'date' es un ID de MongoDB válido, buscar por ID
+    if (mongoose.Types.ObjectId.isValid(date)) {
+      updated = await DailyCash.findOneAndUpdate(
+        { _id: date, user: req.user._id },
+        {
+          ...(status && { status }),
+          ...(description && { description }),
+          ...(status === "cerrada" && { closedAt: new Date() }),
+        },
+        { new: true }
+      );
+    } else {
+      // 2. Si no es un ID, asumir que es una fecha (YYYY-MM-DD)
+      const localDate = new Date(`${date}T00:00:00-03:00`);
+      const { start, end } = getLocalDayRangeUTC(localDate);
+
+      updated = await DailyCash.findOneAndUpdate(
+        {
+          user: req.user._id,
+          date: { $gte: start, $lte: end },
+        },
+        {
+          ...(status && { status }),
+          ...(description && { description }),
+          ...(status === "cerrada" && { closedAt: new Date() }),
+        },
+        { new: true }
+      );
+    }
 
     if (!updated) {
       return res.status(404).json({ message: "No se encontró caja para esa fecha." });
