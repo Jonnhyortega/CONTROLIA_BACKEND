@@ -21,8 +21,13 @@ export const googleSignIn = async (req, res) => {
     // Buscar o crear usuario
     let user = await User.findOne({ email });
     if (!user) {
-      // crear usuario con random password (no se usa)
-      user = await User.create({ name, email, password: Math.random().toString(36).slice(-10) });
+      // crear usuario
+      user = await User.create({ 
+        name, 
+        email, 
+        password: Math.random().toString(36).slice(-10),
+        isEmailVerified: true,
+      });
     }
 
     const token = generateToken(user._id);
@@ -32,6 +37,9 @@ export const googleSignIn = async (req, res) => {
       name: user.name,
       email: user.email,
       role: user.role,
+      membershipTier: user.membershipTier,
+      createdAt: user.createdAt,
+      membershipStartDate: user.membershipStartDate,
       token,
     });
   } catch (error) {
