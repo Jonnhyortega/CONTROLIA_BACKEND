@@ -260,7 +260,7 @@ export const closeDailyCashById = async (req, res) => {
 export const updateDailyCashByDate = async (req, res) => {
   try {
     const { date } = req.params;
-    const { status, description } = req.body;
+    const { status, description, extraExpenses, supplierPayments } = req.body;
 
     if (!date) {
       return res.status(400).json({ message: "Fecha o ID requerida." });
@@ -275,6 +275,8 @@ export const updateDailyCashByDate = async (req, res) => {
         {
           ...(status && { status }),
           ...(description && { description }),
+          ...(extraExpenses && { extraExpenses }),
+          ...(supplierPayments && { supplierPayments }),
           ...(status === "cerrada" && { closedAt: new Date() }),
         },
         { new: true }
@@ -292,6 +294,8 @@ export const updateDailyCashByDate = async (req, res) => {
         {
           ...(status && { status }),
           ...(description && { description }),
+          ...(extraExpenses && { extraExpenses }),
+          ...(supplierPayments && { supplierPayments }),
           ...(status === "cerrada" && { closedAt: new Date() }),
         },
         { new: true }
