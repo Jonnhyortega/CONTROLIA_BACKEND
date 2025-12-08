@@ -142,6 +142,8 @@ export const authUser = async (req, res) => {
         email: user.email,
         role: user.role,
         membershipTier: user.membershipTier,
+        createdAt: user.createdAt,
+        membershipStartDate: user.membershipStartDate,
         token: generateToken(user._id),
       });
     } else {
@@ -173,6 +175,8 @@ export const getUserProfile = async (req, res) => {
       email: user.email,
       role: user.role,
       membershipTier: user.membershipTier,
+      createdAt: user.createdAt,
+      membershipStartDate: user.membershipStartDate,
       isEmailVerified: user.isEmailVerified,
       // IMAGEN POR DEFECTO SI NO HAY LOGO
       logoUrl: customization?.logoUrl || "El usuario no cargo imagen",
@@ -227,6 +231,8 @@ export const verifyEmail = async (req, res) => {
       email: user.email,
       role: user.role,
       membershipTier: user.membershipTier,
+      createdAt: user.createdAt,
+      membershipStartDate: user.membershipStartDate,
       token: generateToken(user._id),
     });
   } catch (error) {
