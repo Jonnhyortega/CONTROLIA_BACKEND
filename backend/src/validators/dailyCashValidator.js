@@ -12,6 +12,8 @@ export const closeDailyCashSchema = z.object({
 export const updateDailyCashSchema = z.object({
   status: z.string().optional(),
   description: z.string().optional(),
+  extraExpenses: z.array(expenseSchema).optional(),
+  supplierPayments: z.array(supplierPaymentSchema).optional(),
 });
 
 export default { closeDailyCashSchema, updateDailyCashSchema };
