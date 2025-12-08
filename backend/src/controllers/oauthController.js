@@ -40,6 +40,7 @@ export const googleSignIn = async (req, res) => {
       membershipTier: user.membershipTier,
       createdAt: user.createdAt,
       membershipStartDate: user.membershipStartDate,
+      trialDaysRemaining: user.calculateTrialDaysRemaining(),
       token,
     });
   } catch (error) {

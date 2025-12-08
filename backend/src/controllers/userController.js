@@ -144,6 +144,7 @@ export const authUser = async (req, res) => {
         membershipTier: user.membershipTier,
         createdAt: user.createdAt,
         membershipStartDate: user.membershipStartDate,
+        trialDaysRemaining: user.calculateTrialDaysRemaining(),
         token: generateToken(user._id),
       });
     } else {
@@ -158,7 +159,7 @@ export const authUser = async (req, res) => {
 export const getUserProfile = async (req, res) => {
   try {
     // 👉 Obtener datos del usuario
-    const user = await User.findById(req.user._id).lean();
+    const user = await User.findById(req.user._id);
     if (!user) {
       return res.status(404).json({ message: "Usuario no encontrado" });
     }
@@ -177,6 +178,7 @@ export const getUserProfile = async (req, res) => {
       membershipTier: user.membershipTier,
       createdAt: user.createdAt,
       membershipStartDate: user.membershipStartDate,
+      trialDaysRemaining: user.calculateTrialDaysRemaining(),
       isEmailVerified: user.isEmailVerified,
       // IMAGEN POR DEFECTO SI NO HAY LOGO
       logoUrl: customization?.logoUrl || "El usuario no cargo imagen",
@@ -233,6 +235,7 @@ export const verifyEmail = async (req, res) => {
       membershipTier: user.membershipTier,
       createdAt: user.createdAt,
       membershipStartDate: user.membershipStartDate,
+      trialDaysRemaining: user.calculateTrialDaysRemaining(),
       token: generateToken(user._id),
     });
   } catch (error) {
