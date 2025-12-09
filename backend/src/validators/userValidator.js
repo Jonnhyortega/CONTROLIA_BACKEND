@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const registerSchema = z.object({
   name: z.string().min(1, "El nombre es requerido"),
+  businessName: z.string().min(1, "El nombre del negocio es requerido"),
   email: z.string().email("Email inválido"),
   password: z.string().min(6, "La contraseña debe tener al menos 6 caracteres"),
   role: z.string().optional(),
@@ -14,8 +15,10 @@ export const loginSchema = z.object({
 
 export const updateUserSchema = z.object({
   name: z.string().optional(),
+  businessName: z.string().optional(),
   email: z.string().email("Email inválido").optional(),
   password: z.string().min(6).optional(),
+  address: z.string().optional(),
   role: z.string().optional(),
 });
 

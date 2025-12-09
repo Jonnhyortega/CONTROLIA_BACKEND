@@ -10,7 +10,7 @@ export const updateUserProfile = async (req, res) => {
 
     if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
 
-    const { name, email, password } = req.body;
+    const { name, businessName, email, password, address } = req.body;
 
     // ==========================
     // 🟧 EMPLEADO: solo puede modificar su nombre
@@ -22,6 +22,7 @@ export const updateUserProfile = async (req, res) => {
         message: "Perfil actualizado",
         user: {
           name: user.name,
+          businessName: user.businessName,
           email: user.email,
           role: user.role,
         },
@@ -32,7 +33,9 @@ export const updateUserProfile = async (req, res) => {
     // 🟦 ADMIN: puede modificar TODO
     // ==========================
     if (name) user.name = name;
+    if (businessName) user.businessName = businessName;
     if (email) user.email = email;
+    if (address) user.address = address;
 
     if (password) {
       const salt = await bcrypt.genSalt(10);
@@ -45,7 +48,9 @@ export const updateUserProfile = async (req, res) => {
       message: "Perfil actualizado",
       user: {
         name: user.name,
+        businessName: user.businessName,
         email: user.email,
+        address: user.address,
         role: user.role,
       },
     });
@@ -80,7 +85,7 @@ export const changeMyPassword = async (req, res) => {
 // 📌 Registrar usuario
 export const registerUser = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, businessName, email, password, role } = req.body;
 
     const userExists = await User.findOne({ email });
     if (userExists) return res.status(400).json({ message: "Usuario ya existe" });
@@ -91,6 +96,7 @@ export const registerUser = async (req, res) => {
 
     const user = await User.create({ 
       name, 
+      businessName,
       email, 
       password, 
       role,
@@ -139,7 +145,9 @@ export const authUser = async (req, res) => {
       res.json({
         _id: user._id,
         name: user.name,
+        businessName: user.businessName,
         email: user.email,
+        address: user.address,
         role: user.role,
         membershipTier: user.membershipTier,
         createdAt: user.createdAt,
@@ -173,7 +181,9 @@ export const getUserProfile = async (req, res) => {
     res.json({
       _id: user._id,
       name: user.name,
+      businessName: user.businessName,
       email: user.email,
+      address: user.address,
       role: user.role,
       membershipTier: user.membershipTier,
       createdAt: user.createdAt,
@@ -229,6 +239,7 @@ export const verifyEmail = async (req, res) => {
       message: "Email verificado correctamente",
       _id: user._id,
       name: user.name,
+      businessName: user.businessName,
       email: user.email,
       role: user.role,
       membershipTier: user.membershipTier,

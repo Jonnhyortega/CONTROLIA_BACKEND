@@ -8,6 +8,11 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    businessName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     email: {
       type: String,
       required: true,
@@ -17,6 +22,11 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
+    },
+    address: {
+      type: String,
+      default: "",
+      trim: true,
     },
     role: {
       type: String,
