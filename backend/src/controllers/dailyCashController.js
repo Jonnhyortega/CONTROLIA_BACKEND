@@ -109,17 +109,22 @@ export const closeDailyCash = async (req, res) => {
         .json({ message: "⚠️ La caja del día ya fue cerrada." });
     }
 
-    // 🧮 Calcular totales
-    const totalExpenses = extraExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
-    const totalPayments = supplierPayments.reduce((sum, p) => sum + (p.total || 0), 0);
+    // 🧮 Calcular totales (usando la lista combinada)
+    if (extraExpenses.length > 0) {
+      dailyCash.extraExpenses.push(...extraExpenses);
+    }
+    if (supplierPayments.length > 0) {
+      dailyCash.supplierPayments.push(...supplierPayments);
+    }
+
+    const totalExpenses = dailyCash.extraExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
+    const totalPayments = dailyCash.supplierPayments.reduce((sum, p) => sum + (p.total || 0), 0);
     const totalOut = totalExpenses + totalPayments;
     const finalExpected = dailyCash.totalSalesAmount - totalOut;
     const real = finalReal ?? finalExpected;
     const difference = real - finalExpected;
 
     // 🧾 Actualizar registro
-    dailyCash.extraExpenses = extraExpenses;
-    dailyCash.supplierPayments = supplierPayments;
     dailyCash.totalOut = totalOut;
     dailyCash.finalExpected = finalExpected;
     dailyCash.finalReal = real;
@@ -224,16 +229,24 @@ export const closeDailyCashById = async (req, res) => {
 
     const { extraExpenses = [], supplierPayments = [], finalReal = null } = req.body;
 
-    const totalExpenses = extraExpenses.reduce((sum, e) => sum + e.amount, 0);
-    const totalPayments = supplierPayments.reduce((sum, p) => sum + p.total, 0);
+    // 🔄 CORRECCIÓN: Fusionar gastos en lugar de reemplazar
+    if (extraExpenses.length > 0) {
+      dailyCash.extraExpenses.push(...extraExpenses);
+    }
+    
+    if (supplierPayments.length > 0) {
+      dailyCash.supplierPayments.push(...supplierPayments);
+    }
+
+    // 🧮 CORRECCIÓN: Calcular totales usando dailyCash.extraExpenses (la lista final completa)
+    const totalExpenses = dailyCash.extraExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
+    const totalPayments = dailyCash.supplierPayments.reduce((sum, p) => sum + (p.total || 0), 0);
 
     const totalOut = totalExpenses + totalPayments;
     const finalExpected = dailyCash.totalSalesAmount - totalOut;
     const real = finalReal ?? finalExpected;
     const difference = real - finalExpected;
 
-    dailyCash.extraExpenses = extraExpenses;
-    dailyCash.supplierPayments = supplierPayments;
     dailyCash.totalOut = totalOut;
     dailyCash.finalExpected = finalExpected;
     dailyCash.finalReal = real;
@@ -266,23 +279,48 @@ export const updateDailyCashByDate = async (req, res) => {
       return res.status(400).json({ message: "Fecha o ID requerida." });
     }
 
+    // 1. Construir query de actualización (usar $push para arrays, $set para campos planos)
+    const updateQuery = {};
+
+    // Campos a setear
+    const setFields = {
+      ...(status && { status }),
+      ...(description && { description }),
+      ...(status === "cerrada" && { closedAt: new Date() }),
+    };
+
+    if (Object.keys(setFields).length > 0) {
+      updateQuery.$set = setFields;
+    }
+
+    // Arrays a pushear (para no pisar los anteriores)
+    const pushFields = {};
+    if (extraExpenses && extraExpenses.length > 0) {
+      pushFields.extraExpenses = {
+        $each: Array.isArray(extraExpenses) ? extraExpenses : [extraExpenses],
+      };
+    }
+    if (supplierPayments && supplierPayments.length > 0) {
+      pushFields.supplierPayments = {
+        $each: Array.isArray(supplierPayments) ? supplierPayments : [supplierPayments],
+      };
+    }
+
+    if (Object.keys(pushFields).length > 0) {
+      updateQuery.$push = pushFields;
+    }
+
     let updated;
 
-    // 1. Si 'date' es un ID de MongoDB válido, buscar por ID
+    // 2. Si 'date' es un ID de MongoDB válido, buscar por ID
     if (mongoose.Types.ObjectId.isValid(date)) {
       updated = await DailyCash.findOneAndUpdate(
         { _id: date, user: req.user._id },
-        {
-          ...(status && { status }),
-          ...(description && { description }),
-          ...(extraExpenses && { extraExpenses }),
-          ...(supplierPayments && { supplierPayments }),
-          ...(status === "cerrada" && { closedAt: new Date() }),
-        },
+        updateQuery,
         { new: true }
       );
     } else {
-      // 2. Si no es un ID, asumir que es una fecha (YYYY-MM-DD)
+      // 3. Si no es un ID, asumir que es una fecha (YYYY-MM-DD)
       const localDate = new Date(`${date}T00:00:00-03:00`);
       const { start, end } = getLocalDayRangeUTC(localDate);
 
@@ -291,13 +329,7 @@ export const updateDailyCashByDate = async (req, res) => {
           user: req.user._id,
           date: { $gte: start, $lte: end },
         },
-        {
-          ...(status && { status }),
-          ...(description && { description }),
-          ...(extraExpenses && { extraExpenses }),
-          ...(supplierPayments && { supplierPayments }),
-          ...(status === "cerrada" && { closedAt: new Date() }),
-        },
+        updateQuery,
         { new: true }
       );
     }
