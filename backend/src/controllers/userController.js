@@ -142,6 +142,12 @@ export const authUser = async (req, res) => {
         });
       }
 
+      // 👉 Obtener personalización (logo)
+      const customization = await Customization.findOne(
+        { user: user._id },
+        { logoUrl: 1, _id: 0 }
+      ).lean();
+
       res.json({
         _id: user._id,
         name: user.name,
@@ -153,6 +159,7 @@ export const authUser = async (req, res) => {
         createdAt: user.createdAt,
         membershipStartDate: user.membershipStartDate,
         trialDaysRemaining: user.calculateTrialDaysRemaining(),
+        logoUrl: customization?.logoUrl || null,
         token: generateToken(user._id),
       });
     } else {
