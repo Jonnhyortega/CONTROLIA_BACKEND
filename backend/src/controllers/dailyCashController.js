@@ -268,39 +268,33 @@ export const updateDailyCashByDate = async (req, res) => {
 
     let updated;
 
-    // 1. Si 'date' es un ID de MongoDB válido, buscar por ID
+    // Construir filtro
+    let filter;
     if (mongoose.Types.ObjectId.isValid(date)) {
-      updated = await DailyCash.findOneAndUpdate(
-        { _id: date, user: req.user._id },
-        {
-          ...(status && { status }),
-          ...(description && { description }),
-          ...(extraExpenses && { extraExpenses }),
-          ...(supplierPayments && { supplierPayments }),
-          ...(status === "cerrada" && { closedAt: new Date() }),
-        },
-        { new: true }
-      );
+      filter = { _id: date, user: req.user._id };
     } else {
-      // 2. Si no es un ID, asumir que es una fecha (YYYY-MM-DD)
       const localDate = new Date(`${date}T00:00:00-03:00`);
       const { start, end } = getLocalDayRangeUTC(localDate);
-
-      updated = await DailyCash.findOneAndUpdate(
-        {
-          user: req.user._id,
-          date: { $gte: start, $lte: end },
-        },
-        {
-          ...(status && { status }),
-          ...(description && { description }),
-          ...(extraExpenses && { extraExpenses }),
-          ...(supplierPayments && { supplierPayments }),
-          ...(status === "cerrada" && { closedAt: new Date() }),
-        },
-        { new: true }
-      );
+      filter = { user: req.user._id, date: { $gte: start, $lte: end } };
     }
+
+    // Construir update dinámico
+    const updateOps = {};
+    const pushOps = {};
+
+    if (status) updateOps.status = status;
+    if (description) updateOps.description = description;
+    if (status === "cerrada") updateOps.closedAt = new Date();
+
+    // Usar $push para agregar gastos en lugar de reemplazarlos
+    if (extraExpenses) pushOps.extraExpenses = { $each: extraExpenses };
+    if (supplierPayments) pushOps.supplierPayments = { $each: supplierPayments };
+
+    const updateCommand = {};
+    if (Object.keys(updateOps).length > 0) updateCommand.$set = updateOps;
+    if (Object.keys(pushOps).length > 0) updateCommand.$push = pushOps;
+
+    updated = await DailyCash.findOneAndUpdate(filter, updateCommand, { new: true });
 
     if (!updated) {
       return res.status(404).json({ message: "No se encontró caja para esa fecha." });
