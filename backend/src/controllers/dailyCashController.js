@@ -44,7 +44,7 @@ export const getTodayCash = async (req, res) => {
       const totalSalesAmount = sales.reduce((sum, s) => sum + (s.total || 0), 0);
       const totalOperations = sales.length;
 
-      dailyCash = await DailyCash.create({
+      dailyCash = await DailyCash.wcreate({
         user: req.user._id,
         date: start, // Fecha base del día (inicio del rango)
         sales: sales.map((s) => s._id),
