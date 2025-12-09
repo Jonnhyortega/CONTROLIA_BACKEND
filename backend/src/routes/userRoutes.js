@@ -6,7 +6,9 @@ import {
     updateUserProfile, 
     changeMyPassword,
     verifyEmail,
-    resendVerificationCode
+    resendVerificationCode,
+    forgotPassword,
+    resetPassword,
 } from "../controllers/userController.js";
 import validate from "../middleware/validateZod.js";
 import { 
@@ -38,6 +40,10 @@ router.post("/login", authLimiter, validate(loginSchema), authUser);
 router.post("/google", authLimiter, validate(googleSchema), googleSignIn);
 router.post("/verify-email", authLimiter, validate(verifyEmailSchema), verifyEmail);
 router.post("/resend-verification", authLimiter, validate(resendVerificationSchema), resendVerificationCode);
+
+router.post("/forgot-password", authLimiter, forgotPassword);
+router.put("/reset-password/:token", authLimiter, resetPassword);
+
 router.get("/profile", protect, getUserProfile);
 router.put("/profile", protect, validate(updateUserSchema), updateUserProfile);  
 router.patch("/profile/password", protect, validate(changePasswordSchema), changeMyPassword);

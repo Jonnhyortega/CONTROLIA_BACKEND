@@ -2,6 +2,7 @@ import User from "../models/User.js";
 import generateToken from "../utils/generateToken.js";
 import bcrypt from "bcryptjs";
 import Customization from "../models/Customization.js";
+import crypto from "crypto";
 
 // 📌 Actualizar perfil
 export const updateUserProfile = async (req, res) => {
@@ -303,3 +304,84 @@ export const resendVerificationCode = async (req, res) => {
   }
 };
 
+
+// ❓ Recuperar contraseña (Olvido)
+export const forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "No existe cuenta con ese email" });
+    }
+
+    // Generar token de reseteo
+    const resetToken = crypto.randomBytes(20).toString("hex");
+
+    // Hashear token y guardar en DB
+    user.resetPasswordToken = crypto
+      .createHash("sha256")
+      .update(resetToken)
+      .digest("hex");
+
+    // Expiración: 10 minutos
+    user.resetPasswordExpire = Date.now() + 10 * 60 * 1000;
+
+    await user.save();
+
+    // Crear URL de reseteo (frontend)
+    // Asumimos que FRONTEND_URL está en process.env, si no, fallback
+    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+    const resetUrl = `${frontendUrl}/reset-password/${resetToken}`;
+
+    // Enviar email
+    try {
+      const { sendResetPasswordEmail } = await import("../utils/emailService.js");
+      await sendResetPasswordEmail(user.email, resetUrl, user.name);
+
+      res.status(200).json({ message: "Email de recuperación enviado" });
+    } catch (err) {
+      console.error(err);
+      user.resetPasswordToken = undefined;
+      user.resetPasswordExpire = undefined;
+      await user.save();
+      return res.status(500).json({ message: "No se pudo enviar el email" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// 🔄 Resetear contraseña
+export const resetPassword = async (req, res) => {
+  try {
+    const { token } = req.params;
+    const { password } = req.body;
+
+    // Hashear el token recibido para comparar con DB
+    const resetPasswordToken = crypto
+      .createHash("sha256")
+      .update(token)
+      .digest("hex");
+
+    const user = await User.findOne({
+      resetPasswordToken,
+      resetPasswordExpire: { $gt: Date.now() },
+    });
+
+    if (!user) {
+      return res.status(400).json({ message: "Token inválido o expirado" });
+    }
+
+    // Setear nueva password (el hook pre-save la hasheará)
+    user.password = password;
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+
+    await user.save();
+
+    res.status(200).json({ message: "Contraseña actualizada correctamente" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
