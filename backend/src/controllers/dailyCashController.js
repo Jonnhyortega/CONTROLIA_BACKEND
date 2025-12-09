@@ -224,16 +224,26 @@ export const closeDailyCashById = async (req, res) => {
 
     const { extraExpenses = [], supplierPayments = [], finalReal = null } = req.body;
 
-    const totalExpenses = extraExpenses.reduce((sum, e) => sum + e.amount, 0);
-    const totalPayments = supplierPayments.reduce((sum, p) => sum + p.total, 0);
+    // 🔄 Merge existing expenses with incoming ones (if any)
+    // If the frontend sends empty arrays (which checks out), we keep what's in DB.
+    // However, if the frontend sends expenses at close time, we add them.
+    if (extraExpenses.length > 0) {
+      dailyCash.extraExpenses.push(...extraExpenses);
+    }
+    
+    if (supplierPayments.length > 0) {
+      dailyCash.supplierPayments.push(...supplierPayments);
+    }
+
+    // 🧮 Re-Calculate totals based on the FINAL arrays in dailyCash
+    const totalExpenses = dailyCash.extraExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
+    const totalPayments = dailyCash.supplierPayments.reduce((sum, p) => sum + (p.total || 0), 0);
 
     const totalOut = totalExpenses + totalPayments;
     const finalExpected = dailyCash.totalSalesAmount - totalOut;
     const real = finalReal ?? finalExpected;
     const difference = real - finalExpected;
 
-    dailyCash.extraExpenses = extraExpenses;
-    dailyCash.supplierPayments = supplierPayments;
     dailyCash.totalOut = totalOut;
     dailyCash.finalExpected = finalExpected;
     dailyCash.finalReal = real;
