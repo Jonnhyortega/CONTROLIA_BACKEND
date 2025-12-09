@@ -30,7 +30,7 @@ export const getTodayCash = async (req, res) => {
     })
       .populate({
         path: "sales",
-        populate: { path: "products.product", select: "name price" },
+        populate: { path: "products.product", select: "name price cost" },
       })
       .lean();
 
@@ -39,7 +39,7 @@ export const getTodayCash = async (req, res) => {
       const sales = await Sale.find({
         user: req.user._id,
         date: { $gte: start, $lte: end },
-      }).populate("products.product", "name price");
+      }).populate("products.product", "name price cost");
 
       const totalSalesAmount = sales.reduce((sum, s) => sum + (s.total || 0), 0);
       const totalOperations = sales.length;
@@ -57,7 +57,7 @@ export const getTodayCash = async (req, res) => {
       dailyCash = await DailyCash.findById(dailyCash._id)
         .populate({
           path: "sales",
-          populate: { path: "products.product", select: "name price" },
+          populate: { path: "products.product", select: "name price cost" },
         })
         .lean();
     }
@@ -188,7 +188,7 @@ export const getDailyCashByDate = async (req, res) => {
       date: { $gte: start, $lte: end },
     }).populate({
       path: "sales",
-      populate: { path: "products.product", select: "name price" },
+      populate: { path: "products.product", select: "name price cost" },
     });
 
     if (!dailyCash) {
