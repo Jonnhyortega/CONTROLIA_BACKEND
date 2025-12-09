@@ -44,7 +44,7 @@ export const getTodayCash = async (req, res) => {
       const totalSalesAmount = sales.reduce((sum, s) => sum + (s.total || 0), 0);
       const totalOperations = sales.length;
 
-      dailyCash = await DailyCash.create({
+      dailyCash = await DailyCash.wcreate({
         user: req.user._id,
         date: start, // Fecha base del día (inicio del rango)
         sales: sales.map((s) => s._id),
@@ -107,6 +107,7 @@ export const closeDailyCash = async (req, res) => {
     if (supplierPayments.length > 0) {
       dailyCash.supplierPayments.push(...supplierPayments);
     }
+
 
     const totalExpenses = dailyCash.extraExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
     const totalPayments = dailyCash.supplierPayments.reduce((sum, p) => sum + (p.total || 0), 0);
@@ -302,8 +303,6 @@ export const updateDailyCashByDate = async (req, res) => {
     }
 
     let updated;
-
-
 
     // 2. Si 'date' es un ID de MongoDB válido, buscar por ID
     if (mongoose.Types.ObjectId.isValid(date)) {
