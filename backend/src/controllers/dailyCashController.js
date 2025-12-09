@@ -79,15 +79,6 @@ export const closeDailyCash = async (req, res) => {
   try {
     const { extraExpenses = [], supplierPayments = [], finalReal = null } = req.body;
     
-    db.dailycashes.deleteMany({
-      totalSalesAmount: 0,
-      totalOperations: 0,
-      totalOut: 0,
-      finalExpected: 0,
-      finalReal: 0,
-      difference: 0
-    });
-    
     // 📅 Rango del día local (UTC)
     const { start, end } = getLocalDayRangeUTC(new Date());
 
@@ -109,17 +100,23 @@ export const closeDailyCash = async (req, res) => {
         .json({ message: "⚠️ La caja del día ya fue cerrada." });
     }
 
-    // 🧮 Calcular totales
-    const totalExpenses = extraExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
-    const totalPayments = supplierPayments.reduce((sum, p) => sum + (p.total || 0), 0);
+    // 🔄 Merge expenses
+    if (extraExpenses.length > 0) {
+      dailyCash.extraExpenses.push(...extraExpenses);
+    }
+    if (supplierPayments.length > 0) {
+      dailyCash.supplierPayments.push(...supplierPayments);
+    }
+
+    // 🧮 Calcular totales con los arrays combinados
+    const totalExpenses = dailyCash.extraExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
+    const totalPayments = dailyCash.supplierPayments.reduce((sum, p) => sum + (p.total || 0), 0);
     const totalOut = totalExpenses + totalPayments;
     const finalExpected = dailyCash.totalSalesAmount - totalOut;
     const real = finalReal ?? finalExpected;
     const difference = real - finalExpected;
 
     // 🧾 Actualizar registro
-    dailyCash.extraExpenses = extraExpenses;
-    dailyCash.supplierPayments = supplierPayments;
     dailyCash.totalOut = totalOut;
     dailyCash.finalExpected = finalExpected;
     dailyCash.finalReal = real;
