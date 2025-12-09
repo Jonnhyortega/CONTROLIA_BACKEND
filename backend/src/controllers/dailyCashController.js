@@ -79,15 +79,6 @@ export const closeDailyCash = async (req, res) => {
   try {
     const { extraExpenses = [], supplierPayments = [], finalReal = null } = req.body;
     
-    db.dailycashes.deleteMany({
-      totalSalesAmount: 0,
-      totalOperations: 0,
-      totalOut: 0,
-      finalExpected: 0,
-      finalReal: 0,
-      difference: 0
-    });
-    
     // 📅 Rango del día local (UTC)
     const { start, end } = getLocalDayRangeUTC(new Date());
 
@@ -311,6 +302,8 @@ export const updateDailyCashByDate = async (req, res) => {
     }
 
     let updated;
+
+
 
     // 2. Si 'date' es un ID de MongoDB válido, buscar por ID
     if (mongoose.Types.ObjectId.isValid(date)) {
