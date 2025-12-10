@@ -5,6 +5,7 @@ import {
   getProductById,
   updateProduct,
   deleteProduct,
+  getProductHistory,
 } from "../controllers/productController.js";
 import { protect } from "../middleware/authMiddleware.js";
 import validate from "../middleware/validateZod.js";
@@ -19,6 +20,8 @@ router.route("/")
   // El controller ya asigna `user: req.user._id` y valida proveedor por user, por lo que
   // limitar a "adminOnly" no es necesario si queremos que cada cuenta maneje sus productos.
   .post(protect, validate(createProductSchema), createProduct);
+
+router.get("/:id/history", protect, getProductHistory); // NUEVA RUTA de historial
 
 router.route("/:id")
   .get(protect, getProductById)

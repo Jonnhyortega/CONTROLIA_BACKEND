@@ -20,12 +20,15 @@ export const getTodayCash = async (req, res) => {
   console.log("📅 [DEBUG] getTodayCash ejecutado");
 
   try {
+    // 🔑 Multi-tenancy: DailyCash pertenece al dueño
+    const ownerId = req.user.createdBy || req.user._id;
+
     // 📆 Obtener rango del día local en UTC
     const { start, end } = getLocalDayRangeUTC(new Date());
 
     // 🧾 Buscar caja existente del día
     let dailyCash = await DailyCash.findOne({
-      user: req.user._id,
+      user: ownerId,
       date: { $gte: start, $lte: end },
     })
       .populate({
@@ -37,15 +40,15 @@ export const getTodayCash = async (req, res) => {
     // 🚫 Si no existe, crearla con las ventas del día
     if (!dailyCash) {
       const sales = await Sale.find({
-        user: req.user._id,
+        user: ownerId,
         date: { $gte: start, $lte: end },
       }).populate("products.product", "name price cost");
 
       const totalSalesAmount = sales.reduce((sum, s) => sum + (s.total || 0), 0);
       const totalOperations = sales.length;
 
-      dailyCash = await DailyCash.wcreate({
-        user: req.user._id,
+      dailyCash = await DailyCash.create({
+        user: ownerId,
         date: start, // Fecha base del día (inicio del rango)
         sales: sales.map((s) => s._id),
         totalSalesAmount,
@@ -79,12 +82,14 @@ export const closeDailyCash = async (req, res) => {
   try {
     const { extraExpenses = [], supplierPayments = [], finalReal = null } = req.body;
     
+    const ownerId = req.user.createdBy || req.user._id;
+
     // 📅 Rango del día local (UTC)
     const { start, end } = getLocalDayRangeUTC(new Date());
 
     // ✅ Buscar la caja abierta del día
     const dailyCash = await DailyCash.findOne({
-      user: req.user._id,
+      user: ownerId,
       date: { $gte: start, $lte: end },
     });
 
@@ -144,7 +149,8 @@ export const closeDailyCash = async (req, res) => {
 ========================================================== */
 export const getClosedCashDays = async (req, res) => {
   try {
-    const days = await DailyCash.find({ user: req.user._id })
+    const ownerId = req.user.createdBy || req.user._id;
+    const days = await DailyCash.find({ user: ownerId })
       .select("date status totalSalesAmount totalOut finalExpected difference")
       .sort({ date: -1 });
 
@@ -168,6 +174,8 @@ export const getDailyCashByDate = async (req, res) => {
   try {
     const { date } = req.params;
     if (!date) return res.status(400).json({ message: "Fecha requerida" });
+    
+    const ownerId = req.user.createdBy || req.user._id;
 
     // 👉 Convertir string "YYYY-MM-DD" a objeto Date sin compensar manualmente
     const localDate = new Date(`${date}T00:00:00-03:00`);
@@ -176,7 +184,7 @@ export const getDailyCashByDate = async (req, res) => {
     // console.log("🕓 Buscando caja entre:", start.toISOString(), "→", end.toISOString());
 
     const dailyCash = await DailyCash.findOne({
-      user: req.user._id,
+      user: ownerId,
       date: { $gte: start, $lte: end },
     }).populate({
       path: "sales",
@@ -205,10 +213,11 @@ export const getDailyCashByDate = async (req, res) => {
 export const closeDailyCashById = async (req, res) => {
   try {
     const { id } = req.params;
+    const ownerId = req.user.createdBy || req.user._id;
 
     const dailyCash = await DailyCash.findOne({ 
       _id: id,
-      user: req.user._id
+      user: ownerId
     });
 
     if (!dailyCash) {
@@ -266,6 +275,8 @@ export const updateDailyCashByDate = async (req, res) => {
   try {
     const { date } = req.params;
     const { status, description, extraExpenses, supplierPayments } = req.body;
+    
+    const ownerId = req.user.createdBy || req.user._id;
 
     if (!date) {
       return res.status(400).json({ message: "Fecha o ID requerida." });
@@ -307,7 +318,7 @@ export const updateDailyCashByDate = async (req, res) => {
     // 2. Si 'date' es un ID de MongoDB válido, buscar por ID
     if (mongoose.Types.ObjectId.isValid(date)) {
       updated = await DailyCash.findOneAndUpdate(
-        { _id: date, user: req.user._id },
+        { _id: date, user: ownerId },
         updateQuery,
         { new: true }
       );
@@ -318,7 +329,7 @@ export const updateDailyCashByDate = async (req, res) => {
 
       updated = await DailyCash.findOneAndUpdate(
         {
-          user: req.user._id,
+          user: ownerId,
           date: { $gte: start, $lte: end },
         },
         updateQuery,

@@ -132,6 +132,7 @@ export const registerUser = async (req, res) => {
 export const authUser = async (req, res) => {
   try {
     const { email, password } = req.body;
+    
     const user = await User.findOne({ email });
 
     if (user && (await user.matchPassword(password))) {
@@ -144,8 +145,11 @@ export const authUser = async (req, res) => {
       }
 
       // 👉 Obtener personalización (logo)
+      // 🔑 Multi-tenancy: Si soy empleado, uso el logo del dueño
+      const ownerId = user.createdBy || user._id;
+
       const customization = await Customization.findOne(
-        { user: user._id },
+        { user: ownerId },
         { logoUrl: 1, _id: 0 }
       ).lean();
 
@@ -181,8 +185,11 @@ export const getUserProfile = async (req, res) => {
     }
 
     // 👉 Obtener personalización (logo)
+    // 🔑 Multi-tenancy: Si soy empleado, uso el logo del dueño
+    const ownerId = user.createdBy || user._id;
+
     const customization = await Customization.findOne(
-      { user: req.user._id },
+      { user: ownerId },
       { logoUrl: 1, _id: 0 }
     ).lean();
 
@@ -374,6 +381,8 @@ export const resetPassword = async (req, res) => {
     }
 
     // Setear nueva password (el hook pre-save la hasheará)
+    // Setear nueva password (el hook pre-save la hasheará)
+    
     user.password = password;
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
