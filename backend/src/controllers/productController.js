@@ -144,8 +144,7 @@ export const getProductHistory = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-    
-    
+        
 export const deleteProduct = async (req, res) => {
     try {
     const ownerId = req.user.createdBy || req.user._id;
