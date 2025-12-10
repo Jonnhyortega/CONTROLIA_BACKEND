@@ -2,6 +2,7 @@ import User from "../models/User.js";
 import generateToken from "../utils/generateToken.js";
 import bcrypt from "bcryptjs";
 import Customization from "../models/Customization.js";
+import crypto from "crypto";
 
 // 📌 Actualizar perfil
 export const updateUserProfile = async (req, res) => {
@@ -10,7 +11,7 @@ export const updateUserProfile = async (req, res) => {
 
     if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
 
-    const { name, email, password } = req.body;
+    const { name, businessName, email, password, address } = req.body;
 
     // ==========================
     // 🟧 EMPLEADO: solo puede modificar su nombre
@@ -22,6 +23,7 @@ export const updateUserProfile = async (req, res) => {
         message: "Perfil actualizado",
         user: {
           name: user.name,
+          businessName: user.businessName,
           email: user.email,
           role: user.role,
         },
@@ -32,7 +34,9 @@ export const updateUserProfile = async (req, res) => {
     // 🟦 ADMIN: puede modificar TODO
     // ==========================
     if (name) user.name = name;
+    if (businessName) user.businessName = businessName;
     if (email) user.email = email;
+    if (address) user.address = address;
 
     if (password) {
       const salt = await bcrypt.genSalt(10);
@@ -45,7 +49,9 @@ export const updateUserProfile = async (req, res) => {
       message: "Perfil actualizado",
       user: {
         name: user.name,
+        businessName: user.businessName,
         email: user.email,
+        address: user.address,
         role: user.role,
       },
     });
@@ -80,7 +86,7 @@ export const changeMyPassword = async (req, res) => {
 // 📌 Registrar usuario
 export const registerUser = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, businessName, email, password, role } = req.body;
 
     const userExists = await User.findOne({ email });
     if (userExists) return res.status(400).json({ message: "Usuario ya existe" });
@@ -91,6 +97,7 @@ export const registerUser = async (req, res) => {
 
     const user = await User.create({ 
       name, 
+      businessName,
       email, 
       password, 
       role,
@@ -125,6 +132,7 @@ export const registerUser = async (req, res) => {
 export const authUser = async (req, res) => {
   try {
     const { email, password } = req.body;
+    
     const user = await User.findOne({ email });
 
     if (user && (await user.matchPassword(password))) {
@@ -136,12 +144,27 @@ export const authUser = async (req, res) => {
         });
       }
 
+      // 👉 Obtener personalización (logo)
+      // 🔑 Multi-tenancy: Si soy empleado, uso el logo del dueño
+      const ownerId = user.createdBy || user._id;
+
+      const customization = await Customization.findOne(
+        { user: ownerId },
+        { logoUrl: 1, _id: 0 }
+      ).lean();
+
       res.json({
         _id: user._id,
         name: user.name,
+        businessName: user.businessName,
         email: user.email,
+        address: user.address,
         role: user.role,
         membershipTier: user.membershipTier,
+        createdAt: user.createdAt,
+        membershipStartDate: user.membershipStartDate,
+        trialDaysRemaining: user.calculateTrialDaysRemaining(),
+        logoUrl: customization?.logoUrl || null,
         token: generateToken(user._id),
       });
     } else {
@@ -156,26 +179,33 @@ export const authUser = async (req, res) => {
 export const getUserProfile = async (req, res) => {
   try {
     // 👉 Obtener datos del usuario
-    const user = await User.findById(req.user._id).lean();
+    const user = await User.findById(req.user._id);
     if (!user) {
       return res.status(404).json({ message: "Usuario no encontrado" });
     }
 
     // 👉 Obtener personalización (logo)
+    // 🔑 Multi-tenancy: Si soy empleado, uso el logo del dueño
+    const ownerId = user.createdBy || user._id;
+
     const customization = await Customization.findOne(
-      { user: req.user._id },
+      { user: ownerId },
       { logoUrl: 1, _id: 0 }
     ).lean();
 
     res.json({
       _id: user._id,
       name: user.name,
+      businessName: user.businessName,
       email: user.email,
+      address: user.address,
       role: user.role,
       membershipTier: user.membershipTier,
+      createdAt: user.createdAt,
+      membershipStartDate: user.membershipStartDate,
+      trialDaysRemaining: user.calculateTrialDaysRemaining(),
       isEmailVerified: user.isEmailVerified,
-      // IMAGEN POR DEFECTO SI NO HAY LOGO
-      logoUrl: customization?.logoUrl || "El usuario no cargo imagen",
+      logoUrl: customization?.logoUrl || null,
     });
 
   } catch (error) {
@@ -224,11 +254,16 @@ export const verifyEmail = async (req, res) => {
       message: "Email verificado correctamente",
       _id: user._id,
       name: user.name,
+      businessName: user.businessName,
       email: user.email,
       role: user.role,
       membershipTier: user.membershipTier,
+      createdAt: user.createdAt,
+      membershipStartDate: user.membershipStartDate,
+      trialDaysRemaining: user.calculateTrialDaysRemaining(),
       token: generateToken(user._id),
     });
+    
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -276,3 +311,86 @@ export const resendVerificationCode = async (req, res) => {
   }
 };
 
+
+// ❓ Recuperar contraseña (Olvido)
+export const forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "No existe cuenta con ese email" });
+    }
+
+    // Generar token de reseteo
+    const resetToken = crypto.randomBytes(20).toString("hex");
+
+    // Hashear token y guardar en DB
+    user.resetPasswordToken = crypto
+      .createHash("sha256")
+      .update(resetToken)
+      .digest("hex");
+
+    // Expiración: 10 minutos
+    user.resetPasswordExpire = Date.now() + 10 * 60 * 1000;
+
+    await user.save();
+
+    // Crear URL de reseteo (frontend)
+    // Asumimos que FRONTEND_URL está en process.env, si no, fallback
+    const frontendUrl = process.env.FRONTEND_URL || "http://localhost:5173";
+    const resetUrl = `${frontendUrl}/reset-password/${resetToken}`;
+
+    // Enviar email
+    try {
+      const { sendResetPasswordEmail } = await import("../utils/emailService.js");
+      await sendResetPasswordEmail(user.email, resetUrl, user.name);
+
+      res.status(200).json({ message: "Email de recuperación enviado" });
+    } catch (err) {
+      console.error(err);
+      user.resetPasswordToken = undefined;
+      user.resetPasswordExpire = undefined;
+      await user.save();
+      return res.status(500).json({ message: "No se pudo enviar el email" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// 🔄 Resetear contraseña
+export const resetPassword = async (req, res) => {
+  try {
+    const { token } = req.params;
+    const { password } = req.body;
+
+    // Hashear el token recibido para comparar con DB
+    const resetPasswordToken = crypto
+      .createHash("sha256")
+      .update(token)
+      .digest("hex");
+
+    const user = await User.findOne({
+      resetPasswordToken,
+      resetPasswordExpire: { $gt: Date.now() },
+    });
+
+    if (!user) {
+      return res.status(400).json({ message: "Token inválido o expirado" });
+    }
+
+    // Setear nueva password (el hook pre-save la hasheará)
+    // Setear nueva password (el hook pre-save la hasheará)
+    
+    user.password = password;
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+
+    await user.save();
+
+    res.status(200).json({ message: "Contraseña actualizada correctamente" });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

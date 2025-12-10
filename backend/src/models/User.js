@@ -8,6 +8,11 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    businessName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     email: {
       type: String,
       required: true,
@@ -17,6 +22,11 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
+    },
+    address: {
+      type: String,
+      default: "",
+      trim: true,
     },
     role: {
       type: String,
@@ -54,6 +64,13 @@ const userSchema = new mongoose.Schema(
       type: Date,
       default: null,
     },
+    createdBy: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      default: null,
+    },
+    resetPasswordToken: String,
+    resetPasswordExpire: Date,
   },
   { timestamps: true },
   
@@ -76,6 +93,27 @@ userSchema.pre("save", async function (next) {
 // ✅ Método para comparar contraseñas
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
+};
+
+// 🕒 Helper para calcular días restantes de prueba
+userSchema.methods.calculateTrialDaysRemaining = function () {
+  if (!this.membershipStartDate) return "0";
+
+  const trialDurationDays = 90;
+  // Fecha de inicio + 90 días
+  const trialEndDate = new Date(this.membershipStartDate);
+  trialEndDate.setDate(trialEndDate.getDate() + trialDurationDays);
+
+  const now = new Date();
+  
+  // Diferencia en milisegundos
+  const diffTime = trialEndDate - now;
+  
+  // Convertir a días (redondeando hacia arriba para no mostrar 0 si quedan horas)
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  // Si ya pasó (negativo), devolver 0
+  return diffDays > 0 ? diffDays.toString() : "0";
 };
 
 const User = mongoose.model("User", userSchema);

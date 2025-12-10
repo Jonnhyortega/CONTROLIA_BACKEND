@@ -14,6 +14,8 @@ export const createEmployee = async (req, res) => {
       email,
       password,
       role: "empleado",
+      createdBy: req.user._id,
+      businessName: req.user.businessName, // Heredamos el negocio del jefe
     });
 
     res.status(201).json({
@@ -33,8 +35,10 @@ export const createEmployee = async (req, res) => {
 // 🟡 Listar empleados
 export const getEmployees = async (req, res) => {
   try {
-    const employees = await User.find({ role: "empleado" })
-      .select("-password");
+    const employees = await User.find({ 
+      role: "empleado",
+      createdBy: req.user._id 
+    }).select("-password");
 
     res.json(employees);
   } catch (error) {

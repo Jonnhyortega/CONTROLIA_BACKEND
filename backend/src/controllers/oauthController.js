@@ -20,9 +20,22 @@ export const googleSignIn = async (req, res) => {
 
     // Buscar o crear usuario
     let user = await User.findOne({ email });
+    let isNewUser = false;
+
     if (!user) {
-      // crear usuario con random password (no se usa)
-      user = await User.create({ name, email, password: Math.random().toString(36).slice(-10) });
+      // crear usuario
+      isNewUser = true;
+      user = await User.create({ 
+        name, 
+        email, 
+        password: Math.random().toString(36).slice(-10),
+        isEmailVerified: true,
+      });
+    } else if (!user.isEmailVerified) {
+      // 🔓 Si el usuario ya existía pero no estaba verificado, y entra con Google, lo verificamos
+      user.isEmailVerified = true;
+      user.active = true; 
+      await user.save();
     }
 
     const token = generateToken(user._id);
@@ -32,7 +45,12 @@ export const googleSignIn = async (req, res) => {
       name: user.name,
       email: user.email,
       role: user.role,
+      membershipTier: user.membershipTier,
+      createdAt: user.createdAt,
+      membershipStartDate: user.membershipStartDate,
+      trialDaysRemaining: user.calculateTrialDaysRemaining(),
       token,
+      isNewUser, // 🎁 Flag para mostrar bienvenida
     });
   } catch (error) {
     console.error("Error Google SignIn:", error);

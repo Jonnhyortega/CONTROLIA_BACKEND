@@ -1,6 +1,7 @@
 import Sale from "../models/Sale.js";
 import Product from "../models/Product.js";
 import DailyCash from "../models/DailyCash.js";
+import ProductHistory from "../models/ProductHistory.js";
 import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
 
 /* ==========================================================
@@ -75,6 +76,21 @@ export const createSale = async (req, res) => {
           }
 
           updated.push({ id: it.id, qty: it.qty });
+          
+          // 📝 Registrar en historial de producto
+          await ProductHistory.create({
+            product: it.id,
+            user: req.user._id,
+            action: "stock_adjustment",
+            changes: {
+              stock: {
+                old: modified.stock + it.qty,
+                new: modified.stock
+              }
+            },
+            description: "Venta realizada" 
+          });
+
           console.log(`Stock actualizado: product=${it.id} - decremento=${it.qty} -> restante=${modified.stock}`);
         }
       } catch (err) {
@@ -90,9 +106,13 @@ export const createSale = async (req, res) => {
       }
     }
 
+    // 🔑 Multi-tenancy: Si es empleado, la venta va al dueño (admin)
+    const ownerId = req.user.createdBy || req.user._id;
+
     // ✅ Crear la venta (el stock ya fue reservado)
     const newSale = await Sale.create({
-      user: req.user._id,
+      user: ownerId, // <--- CAMBIO IMPORTANTE: La venta se asigna al dueño
+      seller: req.user._id, // <--- CAMBIO: Registramos quién la hizo realmente
       products: cleanProducts,
       total,
       paymentMethod,
@@ -103,14 +123,15 @@ export const createSale = async (req, res) => {
     const { start, end } = getLocalDayRangeUTC(new Date());
 
     // ✅ Buscar o crear DailyCash del día correcto
+    // 🔑 Multi-tenancy: La caja también pertenece al dueño
     const dailyCash = await DailyCash.findOneAndUpdate(
       {
-        user: req.user._id,
+        user: ownerId, // <--- CAMBIO IMPORTANTE: La caja es del dueño
         date: { $gte: start, $lte: end },
       },
       {
         $setOnInsert: {
-          user: req.user._id,
+          user: ownerId, // <--- CAMBIO IMPORTANTE
           date: start, // inicio del día local (en UTC)
           status: "abierta",
         },
@@ -144,8 +165,12 @@ export const createSale = async (req, res) => {
 ========================================================== */
 export const getSales = async (req, res) => {
   try {
-    const sales = await Sale.find({ user: req.user._id })
+    // 🔑 Multi-tenancy: Ver ventas del dueño (si soy empleado, veo las del admin)
+    const ownerId = req.user.createdBy || req.user._id;
+
+    const sales = await Sale.find({ user: ownerId })
       .populate("user", "name email")
+      .populate("seller", "name email") // <--- Mostrar vendedor original
       .populate("products.product", "name price");
 
     res.json(sales);
@@ -159,9 +184,12 @@ export const getSales = async (req, res) => {
 ========================================================== */
 export const getSaleById = async (req, res) => {
   try {
+    // 🔑 Multi-tenancy: Buscar ventas del dueño
+    const ownerId = req.user.createdBy || req.user._id;
+
     const sale = await Sale.findOne({
       _id: req.params.id,
-      user: req.user._id,
+      user: ownerId,
     })
       .populate("user", "name email")
       .populate("products.product", "name price");
@@ -183,8 +211,11 @@ export const revertSale = async (req, res) => {
     const { id } = req.params;
     // console.log("🧾 Revirtiendo venta ID:", id);
 
+    // 🔑 Multi-tenancy: Revertir venta del dueño
+    const ownerId = req.user.createdBy || req.user._id;
+
     // 🔹 Buscar venta
-    const sale = await Sale.findOne({ _id: id, user: req.user._id }).populate(
+    const sale = await Sale.findOne({ _id: id, user: ownerId }).populate(
       "products.product"
     );
 
@@ -210,6 +241,22 @@ export const revertSale = async (req, res) => {
         { $inc: { stock: item.quantity } },
         { new: true }
       );
+
+      // 📝 Registrar en historial de producto (Reversión)
+      const currentStock = await Product.findById(productId).select("stock");
+      await ProductHistory.create({
+            product: productId,
+            user: req.user._id, // User que ejecutó la acción (auditoría)
+            action: "stock_adjustment",
+            changes: {
+              stock: {
+                // Como ya se incrementó, el old era stock - quantity
+                old: currentStock.stock - item.quantity,
+                new: currentStock.stock
+              }
+            },
+            description: `Venta revertida (${sale._id})` 
+      });
     }
 
     // 🔹 Actualizar estado de venta
@@ -222,7 +269,7 @@ export const revertSale = async (req, res) => {
 
     // 🔹 Buscar caja correspondiente
     const dailyCash = await DailyCash.findOne({
-      user: req.user._id,
+      user: ownerId, // <--- Caja del dueño
       date: { $gte: start, $lte: end },
     });
 

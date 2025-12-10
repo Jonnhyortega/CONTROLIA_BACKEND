@@ -1,6 +1,7 @@
 import DailyCash from "../models/DailyCash.js";
 import Sale from "../models/Sale.js";
 import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
+import mongoose from "mongoose";
 
 /* ==========================================================
    🧩 HELPER UNIFICADO (LOCAL → UTC)
@@ -19,32 +20,35 @@ export const getTodayCash = async (req, res) => {
   console.log("📅 [DEBUG] getTodayCash ejecutado");
 
   try {
+    // 🔑 Multi-tenancy: DailyCash pertenece al dueño
+    const ownerId = req.user.createdBy || req.user._id;
+
     // 📆 Obtener rango del día local en UTC
     const { start, end } = getLocalDayRangeUTC(new Date());
 
     // 🧾 Buscar caja existente del día
     let dailyCash = await DailyCash.findOne({
-      user: req.user._id,
+      user: ownerId,
       date: { $gte: start, $lte: end },
     })
       .populate({
         path: "sales",
-        populate: { path: "products.product", select: "name price" },
+        populate: { path: "products.product", select: "name price cost" },
       })
       .lean();
 
     // 🚫 Si no existe, crearla con las ventas del día
     if (!dailyCash) {
       const sales = await Sale.find({
-        user: req.user._id,
+        user: ownerId,
         date: { $gte: start, $lte: end },
-      }).populate("products.product", "name price");
+      }).populate("products.product", "name price cost");
 
       const totalSalesAmount = sales.reduce((sum, s) => sum + (s.total || 0), 0);
       const totalOperations = sales.length;
 
       dailyCash = await DailyCash.create({
-        user: req.user._id,
+        user: ownerId,
         date: start, // Fecha base del día (inicio del rango)
         sales: sales.map((s) => s._id),
         totalSalesAmount,
@@ -56,7 +60,7 @@ export const getTodayCash = async (req, res) => {
       dailyCash = await DailyCash.findById(dailyCash._id)
         .populate({
           path: "sales",
-          populate: { path: "products.product", select: "name price" },
+          populate: { path: "products.product", select: "name price cost" },
         })
         .lean();
     }
@@ -78,21 +82,14 @@ export const closeDailyCash = async (req, res) => {
   try {
     const { extraExpenses = [], supplierPayments = [], finalReal = null } = req.body;
     
-    db.dailycashes.deleteMany({
-      totalSalesAmount: 0,
-      totalOperations: 0,
-      totalOut: 0,
-      finalExpected: 0,
-      finalReal: 0,
-      difference: 0
-    });
-    
+    const ownerId = req.user.createdBy || req.user._id;
+
     // 📅 Rango del día local (UTC)
     const { start, end } = getLocalDayRangeUTC(new Date());
 
     // ✅ Buscar la caja abierta del día
     const dailyCash = await DailyCash.findOne({
-      user: req.user._id,
+      user: ownerId,
       date: { $gte: start, $lte: end },
     });
 
@@ -108,17 +105,23 @@ export const closeDailyCash = async (req, res) => {
         .json({ message: "⚠️ La caja del día ya fue cerrada." });
     }
 
-    // 🧮 Calcular totales
-    const totalExpenses = extraExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
-    const totalPayments = supplierPayments.reduce((sum, p) => sum + (p.total || 0), 0);
+    // 🧮 Calcular totales (usando la lista combinada)
+    if (extraExpenses.length > 0) {
+      dailyCash.extraExpenses.push(...extraExpenses);
+    }
+    if (supplierPayments.length > 0) {
+      dailyCash.supplierPayments.push(...supplierPayments);
+    }
+
+
+    const totalExpenses = dailyCash.extraExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
+    const totalPayments = dailyCash.supplierPayments.reduce((sum, p) => sum + (p.total || 0), 0);
     const totalOut = totalExpenses + totalPayments;
     const finalExpected = dailyCash.totalSalesAmount - totalOut;
     const real = finalReal ?? finalExpected;
     const difference = real - finalExpected;
 
     // 🧾 Actualizar registro
-    dailyCash.extraExpenses = extraExpenses;
-    dailyCash.supplierPayments = supplierPayments;
     dailyCash.totalOut = totalOut;
     dailyCash.finalExpected = finalExpected;
     dailyCash.finalReal = real;
@@ -146,7 +149,8 @@ export const closeDailyCash = async (req, res) => {
 ========================================================== */
 export const getClosedCashDays = async (req, res) => {
   try {
-    const days = await DailyCash.find({ user: req.user._id })
+    const ownerId = req.user.createdBy || req.user._id;
+    const days = await DailyCash.find({ user: ownerId })
       .select("date status totalSalesAmount totalOut finalExpected difference")
       .sort({ date: -1 });
 
@@ -170,6 +174,8 @@ export const getDailyCashByDate = async (req, res) => {
   try {
     const { date } = req.params;
     if (!date) return res.status(400).json({ message: "Fecha requerida" });
+    
+    const ownerId = req.user.createdBy || req.user._id;
 
     // 👉 Convertir string "YYYY-MM-DD" a objeto Date sin compensar manualmente
     const localDate = new Date(`${date}T00:00:00-03:00`);
@@ -178,11 +184,11 @@ export const getDailyCashByDate = async (req, res) => {
     // console.log("🕓 Buscando caja entre:", start.toISOString(), "→", end.toISOString());
 
     const dailyCash = await DailyCash.findOne({
-      user: req.user._id,
+      user: ownerId,
       date: { $gte: start, $lte: end },
     }).populate({
       path: "sales",
-      populate: { path: "products.product", select: "name price" },
+      populate: { path: "products.product", select: "name price cost" },
     });
 
     if (!dailyCash) {
@@ -207,10 +213,11 @@ export const getDailyCashByDate = async (req, res) => {
 export const closeDailyCashById = async (req, res) => {
   try {
     const { id } = req.params;
+    const ownerId = req.user.createdBy || req.user._id;
 
     const dailyCash = await DailyCash.findOne({ 
       _id: id,
-      user: req.user._id
+      user: ownerId
     });
 
     if (!dailyCash) {
@@ -223,16 +230,24 @@ export const closeDailyCashById = async (req, res) => {
 
     const { extraExpenses = [], supplierPayments = [], finalReal = null } = req.body;
 
-    const totalExpenses = extraExpenses.reduce((sum, e) => sum + e.amount, 0);
-    const totalPayments = supplierPayments.reduce((sum, p) => sum + p.total, 0);
+    // 🔄 CORRECCIÓN: Fusionar gastos en lugar de reemplazar
+    if (extraExpenses.length > 0) {
+      dailyCash.extraExpenses.push(...extraExpenses);
+    }
+    
+    if (supplierPayments.length > 0) {
+      dailyCash.supplierPayments.push(...supplierPayments);
+    }
+
+    // 🧮 CORRECCIÓN: Calcular totales usando dailyCash.extraExpenses (la lista final completa)
+    const totalExpenses = dailyCash.extraExpenses.reduce((sum, e) => sum + (e.amount || 0), 0);
+    const totalPayments = dailyCash.supplierPayments.reduce((sum, p) => sum + (p.total || 0), 0);
 
     const totalOut = totalExpenses + totalPayments;
     const finalExpected = dailyCash.totalSalesAmount - totalOut;
     const real = finalReal ?? finalExpected;
     const difference = real - finalExpected;
 
-    dailyCash.extraExpenses = extraExpenses;
-    dailyCash.supplierPayments = supplierPayments;
     dailyCash.totalOut = totalOut;
     dailyCash.finalExpected = finalExpected;
     dailyCash.finalReal = real;
@@ -259,28 +274,68 @@ export const closeDailyCashById = async (req, res) => {
 export const updateDailyCashByDate = async (req, res) => {
   try {
     const { date } = req.params;
-    const { status, description } = req.body;
+    const { status, description, extraExpenses, supplierPayments } = req.body;
+    
+    const ownerId = req.user.createdBy || req.user._id;
 
     if (!date) {
-      return res.status(400).json({ message: "Fecha requerida." });
+      return res.status(400).json({ message: "Fecha o ID requerida." });
     }
 
-    // Rango UTC correcto para ese día local
-    const localDate = new Date(`${date}T00:00:00-03:00`);
-    const { start, end } = getLocalDayRangeUTC(localDate);
+    // 1. Construir query de actualización (usar $push para arrays, $set para campos planos)
+    const updateQuery = {};
 
-    const updated = await DailyCash.findOneAndUpdate(
-      {
-        user: req.user._id,
-        date: { $gte: start, $lte: end },
-      },
-      {
-        ...(status && { status }),
-        ...(description && { description }),
-        ...(status === "cerrada" && { closedAt: new Date() }),
-      },
-      { new: true }
-    );
+    // Campos a setear
+    const setFields = {
+      ...(status && { status }),
+      ...(description && { description }),
+      ...(status === "cerrada" && { closedAt: new Date() }),
+    };
+
+    if (Object.keys(setFields).length > 0) {
+      updateQuery.$set = setFields;
+    }
+
+    // Arrays a pushear (para no pisar los anteriores)
+    const pushFields = {};
+    if (extraExpenses && extraExpenses.length > 0) {
+      pushFields.extraExpenses = {
+        $each: Array.isArray(extraExpenses) ? extraExpenses : [extraExpenses],
+      };
+    }
+    if (supplierPayments && supplierPayments.length > 0) {
+      pushFields.supplierPayments = {
+        $each: Array.isArray(supplierPayments) ? supplierPayments : [supplierPayments],
+      };
+    }
+
+    if (Object.keys(pushFields).length > 0) {
+      updateQuery.$push = pushFields;
+    }
+
+    let updated;
+
+    // 2. Si 'date' es un ID de MongoDB válido, buscar por ID
+    if (mongoose.Types.ObjectId.isValid(date)) {
+      updated = await DailyCash.findOneAndUpdate(
+        { _id: date, user: ownerId },
+        updateQuery,
+        { new: true }
+      );
+    } else {
+      // 3. Si no es un ID, asumir que es una fecha (YYYY-MM-DD)
+      const localDate = new Date(`${date}T00:00:00-03:00`);
+      const { start, end } = getLocalDayRangeUTC(localDate);
+
+      updated = await DailyCash.findOneAndUpdate(
+        {
+          user: ownerId,
+          date: { $gte: start, $lte: end },
+        },
+        updateQuery,
+        { new: true }
+      );
+    }
 
     if (!updated) {
       return res.status(404).json({ message: "No se encontró caja para esa fecha." });

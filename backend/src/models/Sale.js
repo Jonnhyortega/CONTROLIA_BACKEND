@@ -12,6 +12,11 @@ const saleSchema = new mongoose.Schema(
       enum: ["active", "reverted"],
       default: "active",
     },
+    seller: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User", // El usuario real que hizo la venta (empleado o admin)
+      required: false,
+    },
     products: [
       {
         product: { type: mongoose.Schema.Types.ObjectId, ref: "Product", required: false },
