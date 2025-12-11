@@ -150,9 +150,22 @@ export const closeDailyCash = async (req, res) => {
 export const getClosedCashDays = async (req, res) => {
   try {
     const ownerId = req.user.createdBy || req.user._id;
-    const days = await DailyCash.find({ user: ownerId })
-      .select("date status totalSalesAmount totalOut finalExpected difference")
-      .sort({ date: -1 });
+    const { includeDetails } = req.query;
+
+    let query = DailyCash.find({ user: ownerId }).sort({ date: -1 });
+
+    if (includeDetails === "true") {
+      // If details requested, populate sales and their products
+      query = query.populate({
+        path: "sales",
+        populate: { path: "products.product", select: "name price cost" },
+      });
+    } else {
+      // Default: lightweight summary
+      query = query.select("date status totalSalesAmount totalOut finalExpected difference totalOperations");
+    }
+
+    const days = await query;
 
     return res.status(200).json(days);
   } catch (error) {
