@@ -150,11 +150,15 @@ export const closeDailyCash = async (req, res) => {
 export const getClosedCashDays = async (req, res) => {
   try {
     const ownerId = req.user.createdBy || req.user._id;
-    const { includeDetails } = req.query;
+    const { includeDetails, details } = req.query;
 
     let query = DailyCash.find({ user: ownerId }).sort({ date: -1 });
 
-    if (includeDetails === "true") {
+    // Support both param names just in case, prioritizing 'details'
+    const shouldIncludeDetails = details === "true" || includeDetails === "true";
+
+    if (shouldIncludeDetails) {
+      console.log("✅ [getClosedCashDays] Including detailed sales info.");
       // If details requested, populate sales and their products
       query = query.populate({
         path: "sales",
