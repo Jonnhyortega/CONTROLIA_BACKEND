@@ -1,5 +1,6 @@
 import DailyCash from "../models/DailyCash.js";
 import Sale from "../models/Sale.js";
+import User from "../models/User.js";
 import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
 import mongoose from "mongoose";
 
@@ -145,31 +146,43 @@ export const closeDailyCash = async (req, res) => {
 };
 
 /* ==========================================================
-   📆 LISTAR TODAS LAS CAJAS (ABIERTAS Y CERRADAS) - DEBUG
+   📆 LISTAR TODAS LAS CAJAS (ABIERTAS Y CERRADAS) 
 ========================================================== */
+
 export const getClosedCashDays = async (req, res) => {
   try {
-    const ownerId = req.user.createdBy || req.user._id;
-    const { includeDetails, details } = req.query;
+    const { id } = req.params;
 
-    let query = DailyCash.find({ user: ownerId }).sort({ date: -1 });
+    if (!id) {
+       return res.status(400).json({ message: "Se requiere un ID de usuario." });
+    }
 
-    // Support both param names just in case, prioritizing 'details'
-    const shouldIncludeDetails = details === "true" || includeDetails === "true";
+    // Buscamos el usuario objetivo (el que viene en la URL)
+    const targetUser = await User.findById(id);
+    if (!targetUser) {
+      return res.status(404).json({ message: "Usuario no encontrado." });
+    }
 
-    if (shouldIncludeDetails) {
-      console.log("✅ [getClosedCashDays] Including detailed sales info.");
-      // If details requested, populate sales and their products
-      query = query.populate({
+    // 🔍 Determinar el ownerId según el rol del usuario OBJETIVO
+    let ownerId;
+    if (targetUser.role === "admin") {
+      ownerId = targetUser._id;
+    } else if (targetUser.role === "empleado") {
+      // Si es empleado, verificamos su creador (dueño)
+      ownerId = targetUser.createdBy;
+    } else {
+      // Fallback
+      ownerId = targetUser.createdBy || targetUser._id;
+    }
+    // Siempre devolver ventas populadas
+    const days = await DailyCash.find({ user: ownerId })
+      .sort({ date: -1 })
+      .populate({
         path: "sales",
         populate: { path: "products.product", select: "name price cost" },
       });
-    } else {
-      // Default: lightweight summary
-      query = query.select("date status totalSalesAmount totalOut finalExpected difference totalOperations");
-    }
 
-    const days = await query;
+
 
     return res.status(200).json(days);
   } catch (error) {

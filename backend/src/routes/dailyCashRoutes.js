@@ -14,7 +14,7 @@ import { closeDailyCashSchema, updateDailyCashSchema } from "../validators/daily
 const router = express.Router();
 
 router.get("/today", protect, getTodayCash);
-router.get("/days", protect, getClosedCashDays);
+router.get("/days/:id", protect, getClosedCashDays);
 router.get("/:date", protect, getDailyCashByDate);
 router.post("/close", protect, validate(closeDailyCashSchema), closeDailyCash);
 router.put("/:date", protect, validate(updateDailyCashSchema), updateDailyCashByDate);
