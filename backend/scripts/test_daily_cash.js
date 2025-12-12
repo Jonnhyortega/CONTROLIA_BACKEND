@@ -21,10 +21,11 @@ const runTest = async () => {
     }
     console.log("👤 Testing with user:", user.email, "ID:", user._id);
 
-    // Mock Req/Res
+    // Mock Req/Res for getClosedCashDays
     const req = {
-      user: user, // Simulate auth middleware
-      query: { includeDetails: "true" } // Simulate query param
+      user: user, // Just for auth checks if any (although getClosedCashDays doesn't check req.user anymore for ownerId logic, it uses params)
+      params: { id: user._id.toString() }, // ⚡ NEW: Send ID via params
+      query: {} 
     };
 
     const res = {
