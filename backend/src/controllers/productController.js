@@ -9,7 +9,7 @@ export const createProduct = async (req, res) => {
   try {
     const { name, category, price, cost, stock, barcode, description, supplier } = req.body;
 
-    if (!name || !category || !price) {
+    if (!name || !price) {
       return res.status(400).json({ message: "Faltan campos obligatorios." });
     }
 
@@ -36,7 +36,7 @@ export const createProduct = async (req, res) => {
     // ✅ Crear producto con proveedor si existe
     const product = await Product.create({
       name,
-      category,
+      category: category || "Otros",
       price,
       cost: cost || 0,
       stock: stock || 0,
