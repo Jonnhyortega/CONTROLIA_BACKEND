@@ -165,15 +165,31 @@ export const createSale = async (req, res) => {
 ========================================================== */
 export const getSales = async (req, res) => {
   try {
-    // 🔑 Multi-tenancy: Ver ventas del dueño (si soy empleado, veo las del admin)
+    // 🔑 Multi-tenancy: Ver ventas del dueño
     const ownerId = req.user.createdBy || req.user._id;
+
+    // 📄 Paginación
+    const page = Number(req.query.page) || 1;
+    const limit = Number(req.query.limit) || 20;
+    const skip = (page - 1) * limit;
+
+    // Contar total
+    const total = await Sale.countDocuments({ user: ownerId });
 
     const sales = await Sale.find({ user: ownerId })
       .populate("user", "name email")
-      .populate("seller", "name email") // <--- Mostrar vendedor original
-      .populate("products.product", "name price");
+      .populate("seller", "name email")
+      .populate("products.product", "name price")
+      .sort({ createdAt: -1 }) // Ordenar por más reciente
+      .skip(skip)
+      .limit(limit);
 
-    res.json(sales);
+    res.json({
+      sales,
+      page,
+      pages: Math.ceil(total / limit),
+      total,
+    });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
