@@ -36,4 +36,7 @@ const saleSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// 🚀 Índice para mejorar búsquedas de ventas por usuario y fecha
+saleSchema.index({ user: 1, createdAt: -1 });
+
 export default mongoose.model("Sale", saleSchema);
