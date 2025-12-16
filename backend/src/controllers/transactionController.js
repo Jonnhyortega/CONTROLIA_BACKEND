@@ -17,7 +17,7 @@ export const createTransaction = async (req, res) => {
     if (!amount || amount <= 0) {
       return res.status(400).json({ message: "El monto debe ser mayor a 0." });
     }
-    if (!type || !["CLIENT_PAYMENT", "SUPPLIER_PAYMENT"].includes(type)) {
+    if (!type || !["CLIENT_PAYMENT", "SUPPLIER_PAYMENT", "CLIENT_DEBT", "SUPPLIER_DEBT"].includes(type)) {
       return res.status(400).json({ message: "Tipo de transacción inválido." });
     }
     if (type === "CLIENT_PAYMENT" && !clientId) {
@@ -52,12 +52,18 @@ export const createTransaction = async (req, res) => {
     // Actualizar Saldo/Deuda
     if (type === "CLIENT_PAYMENT") {
       // Si el cliente paga, su deuda (balance) disminuye
-      // Asumiendo balance positivo = deuda del cliente
       await Client.findByIdAndUpdate(clientId, { $inc: { balance: -amount } });
     } else if (type === "SUPPLIER_PAYMENT") {
       // Si pagamos al proveedor, nuestra deuda disminuye
-      // Asumiendo debt positivo = deuda nuestra
       await Supplier.findByIdAndUpdate(supplierId, { $inc: { debt: -amount } });
+
+    } else if (type === "CLIENT_DEBT") {
+      // Venta fiada / Cuenta corriente -> Aumenta la deuda del cliente
+      await Client.findByIdAndUpdate(clientId, { $inc: { balance: amount } });
+
+    } else if (type === "SUPPLIER_DEBT") {
+      // Compra a proveedor / Pedido recibido -> Aumenta nuestra deuda con proveedor
+      await Supplier.findByIdAndUpdate(supplierId, { $inc: { debt: amount } });
     }
 
     res.status(201).json({
@@ -126,11 +132,19 @@ export const updateTransaction = async (req, res) => {
       const diff = newAmount - oldAmount; // Lo que aumentó el pago
 
       if (transaction.type === "CLIENT_PAYMENT" && transaction.client) {
-        // Si el pago aumentó (diff > 0), el balance baja más (-diff).
-        // Si el pago disminuyó (diff < 0), el balance sube (-diff se vuelve positivo).
+        // PAGO: Si sube el monto, baja la deuda: -diff
         await Client.findByIdAndUpdate(transaction.client, { $inc: { balance: -diff } });
       } else if (transaction.type === "SUPPLIER_PAYMENT" && transaction.supplier) {
+        // PAGO: Si sube el monto, baja la deuda: -diff
         await Supplier.findByIdAndUpdate(transaction.supplier, { $inc: { debt: -diff } });
+
+      } else if (transaction.type === "CLIENT_DEBT" && transaction.client) {
+        // DEUDA: Si sube el monto, sube la deuda: +diff
+        await Client.findByIdAndUpdate(transaction.client, { $inc: { balance: diff } });
+
+      } else if (transaction.type === "SUPPLIER_DEBT" && transaction.supplier) {
+        // DEUDA: Si sube el monto, sube la deuda: +diff
+        await Supplier.findByIdAndUpdate(transaction.supplier, { $inc: { debt: diff } });
       }
 
       transaction.amount = newAmount;
@@ -168,11 +182,18 @@ export const deleteTransaction = async (req, res) => {
 
     // Revertir efecto en saldo
     if (transaction.type === "CLIENT_PAYMENT" && transaction.client) {
-      // Si borramos un pago, el balance (deuda) vuelve a subir
+      // Borrar PAGO -> SUBE la deuda (volvemos a deber)
       await Client.findByIdAndUpdate(transaction.client, { $inc: { balance: transaction.amount } });
     } else if (transaction.type === "SUPPLIER_PAYMENT" && transaction.supplier) {
-      // Si borramos un pago a proveedor, la deuda vuelve a subir
       await Supplier.findByIdAndUpdate(transaction.supplier, { $inc: { debt: transaction.amount } });
+
+    } else if (transaction.type === "CLIENT_DEBT" && transaction.client) {
+      // Borrar DEUDA -> BAJA la deuda (anulamos el fiado)
+      await Client.findByIdAndUpdate(transaction.client, { $inc: { balance: -transaction.amount } });
+
+    } else if (transaction.type === "SUPPLIER_DEBT" && transaction.supplier) {
+      // Borrar DEUDA -> BAJA la deuda (anulamos el pedido)
+      await Supplier.findByIdAndUpdate(transaction.supplier, { $inc: { debt: -transaction.amount } });
     }
 
     await transaction.deleteOne();
