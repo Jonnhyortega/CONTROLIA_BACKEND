@@ -1,9 +1,27 @@
-# Reporte de Backend - Historial Financiero Completo
+# Reporte de Backend - Historial Financiero & Asociación de Ventas
 
-Se ha extendido el sistema de transacciones para soportar no solo **pagos**, sino también la **generación de deuda** (Pedidos de proveedores y Ventas fiadas/Cuenta corriente).
+## 🆕 Cambio Reciente: Venta Asociada a Cliente
+Se ha modificado el endpoint de creación de venta para permitir asociar una venta a un cliente registrado.
 
-## 1. Nuevos Tipos de Transacción
-El modelo `Transaction` ahora soporta los siguientes tipos en el campo `type`:
+### **POST /api/sales**
+Ahora acepta un campo opcional `clientId`.
+- **Body**:
+  ```json
+  {
+    "products": [...],
+    "total": 1000,
+    "paymentMethod": "efectivo",
+    "clientId": "64f..."  // <--- NUEVO (Opcional)
+  }
+  ```
+- **Efecto**:
+  - Guarda el ID del cliente en el objeto `Sale`.
+  - Esto permitirá filtrar ventas por cliente en el futuro para ver "qué se llevó".
+
+---
+
+## 1. Historial Financiero (Transacciones)
+El modelo `Transaction` soporta pagos y generación de deuda.
 
 | Tipo | Descripción | Efecto Automático |
 | :--- | :--- | :--- |
@@ -12,9 +30,9 @@ El modelo `Transaction` ahora soporta los siguientes tipos en el campo `type`:
 | **`CLIENT_DEBT`** | **NUEVO:** Venta fiada / Manual | **Suma** Saldo (Balance) del Cliente |
 | **`SUPPLIER_DEBT`** | **NUEVO:** Pedido recibido / Manual | **Suma** Deuda (Debt) del Proveedor |
 
-## 2. API Endpoints (`/api/transactions`)
+### API Endpoints (`/api/transactions`)
 
-### Crear Transacción (Manual)
+#### Crear Transacción (Manual)
 **POST** `/api/transactions`
 - **Body**:
   - `type`: Uno de los 4 valores de arriba.
@@ -22,34 +40,18 @@ El modelo `Transaction` ahora soporta los siguientes tipos en el campo `type`:
   - `clientId` o `supplierId`: Según corresponda.
   - `description`: Ej: "Pedido de Coca-Cola", "Fiado juan".
   - `image`: Foto de la factura o remito.
-- **Lógica**:
-  - Si envías `SUPPLIER_DEBT` (ej. llegó mercadería y factura), aumentará la deuda con ese proveedor.
-  - Si envías `CLIENT_DEBT` (ej. se llevó algo y no pagó), aumentará el saldo deudor del cliente.
 
-### Listar Historial
+#### Listar Historial
 **GET** `/api/transactions`
-- Recomendación para Frontend:
-  - En el perfil de Cliente/Proveedor, mostrar una tabla unificada de "Cuenta Corriente".
-  - Columnas: Fecha | Tipo (Debe/Haber) | Descripción | Monto | Comprobante | Acciones.
-  - **Saldo Visual**:
-    - `CLIENT_DEBT` / `SUPPLIER_DEBT` = Aumenta Deuda (Rojo).
-    - `CLIENT_PAYMENT` / `SUPPLIER_PAYMENT` = Disminuye Deuda (Verde).
+- Filtros: `?clientId=...` o `?supplierId=...`
+- Recomendación: Mostrar una tabla unificada de "Cuenta Corriente" en el perfil.
 
-### Edición y Eliminación
-- **PUT** y **DELETE** `/api/transactions/:id`
-- **Solo Admin**.
-- El sistema revierte o ajusta automáticamente los saldos si se edita el monto o elimina el registro.
+#### Edición y Eliminación (Solo Admin)
+**PUT** y **DELETE** `/api/transactions/:id`
+- El sistema ajusta automáticamente los saldos al editar o eliminar.
 
-## 3. Notas de Implementación Frontend
-- **Botones de Acción**:
-  - En Perfil Proveedor:
-    - [Registrar Pago] -> `SUPPLIER_PAYMENT` (Baja deuda)
-    - [Registrar Pedido/Factura] -> `SUPPLIER_DEBT` (Sube deuda)
-  - En Perfil Cliente:
-    - [Registrar Cobro] -> `CLIENT_PAYMENT` (Baja deuda)
-    - [Agregar a Cuenta/Fiado] -> `CLIENT_DEBT` (Sube deuda)
-- **Validación Visual**:
-  - Diferenciar visualmente en la lista los movimientos que suman deuda de los que restan.
-
-## 4. Reinicio
-Reiniciar servidor para aplicar cambios.
+## 2. Notas para Frontend
+- **Al crear una venta (POS)**: Agregar un selector de Cliente (Buscador). Si se selecciona, enviar `clientId` en el POST.
+- **Perfil de Cliente**:
+  - Mostrar historial de "Transacciones" (Pagos y Fiados).
+  - (Futuro) Podríamos agregar una pestaña "Ventas" que filtre `/api/sales?client=ID` (pendiente de implementar filtro en GET sales si es necesario).

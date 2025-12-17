@@ -7,6 +7,13 @@ const saleSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    client: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Client",
+      required: false,
+    },
+    amountPaid: { type: Number, default: 0 },
+    amountDebt: { type: Number, default: 0 },
     status: {
       type: String,
       enum: ["active", "reverted"],
@@ -28,7 +35,7 @@ const saleSchema = new mongoose.Schema(
     total: { type: Number, required: true },
     paymentMethod: {
       type: String,
-      enum: ["efectivo", "tarjeta", "transferencia", "otro", "mercado pago"],
+      enum: ["efectivo", "tarjeta", "transferencia", "otro", "mercado pago", "cuenta corriente"],
       default: "efectivo",
     },
     date: { type: Date, default: Date.now },

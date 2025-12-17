@@ -45,7 +45,11 @@ export const getTodayCash = async (req, res) => {
         date: { $gte: start, $lte: end },
       }).populate("products.product", "name price cost");
 
-      const totalSalesAmount = sales.reduce((sum, s) => sum + (s.total || 0), 0);
+      const totalSalesAmount = sales.reduce((sum, s) => {
+        // Si existe amountPaid (ventas nuevas), usamos eso. Si no (ventas viejas), usamos total.
+        const income = (s.amountPaid !== undefined && s.amountPaid !== null) ? s.amountPaid : s.total;
+        return sum + (income || 0);
+      }, 0);
       const totalOperations = sales.length;
 
       dailyCash = await DailyCash.create({

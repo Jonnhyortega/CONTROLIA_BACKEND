@@ -1,6 +1,7 @@
 import Sale from "../models/Sale.js";
 import Product from "../models/Product.js";
 import DailyCash from "../models/DailyCash.js";
+import Client from "../models/Client.js"; // ✅ Importar Client
 import ProductHistory from "../models/ProductHistory.js";
 import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
 
@@ -9,7 +10,7 @@ import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
 ========================================================== */
 export const createSale = async (req, res) => {
   try {
-    const { products, total, paymentMethod } = req.body;
+    const { products, total, paymentMethod, clientId } = req.body;
 
     if (!products || !Array.isArray(products) || products.length === 0) {
       return res.status(400).json({ message: "Debe incluir al menos un producto." });
@@ -106,7 +107,36 @@ export const createSale = async (req, res) => {
       }
     }
 
+    // ---------------------------
+    // 💰 PAGOS PARCIALES Y CUENTA CORRIENTE
+    // ---------------------------
+    // 1️⃣ Calcular deuda y pago real
+    let finalAmountPaid = total; // Por defecto paga todo
+    let finalAmountDebt = 0;
+
+    if (req.body.amountPaid !== undefined && req.body.amountPaid !== null) {
+      finalAmountPaid = Number(req.body.amountPaid);
+      if (finalAmountPaid < 0) finalAmountPaid = 0;
+      if (finalAmountPaid > total) finalAmountPaid = total; // No puede pagar más del total en esta lógica
+    }
+
+    finalAmountDebt = total - finalAmountPaid;
+
+    // 2️⃣ Si hay deuda, actualizar saldo del cliente
+    if (finalAmountDebt > 0) {
+      if (!clientId) {
+        return res
+          .status(400)
+          .json({ message: "Para dejar deuda (cuenta corriente) se requiere un cliente registrado." });
+      }
+
+      // IMPORTANTE: Incrementar balance (deuda) del cliente
+      await Client.findByIdAndUpdate(clientId, { $inc: { balance: finalAmountDebt } });
+    }
+
+    // ---------------------------
     // 🔑 Multi-tenancy: Si es empleado, la venta va al dueño (admin)
+    // ---------------------------
     const ownerId = req.user.createdBy || req.user._id;
 
     // ✅ Crear la venta (el stock ya fue reservado)
@@ -115,7 +145,10 @@ export const createSale = async (req, res) => {
       seller: req.user._id, // <--- CAMBIO: Registramos quién la hizo realmente
       products: cleanProducts,
       total,
+      amountPaid: finalAmountPaid, // ✅ NUEVO
+      amountDebt: finalAmountDebt, // ✅ NUEVO
       paymentMethod,
+      client: clientId || null,
       status: "active",
     });
 
@@ -137,7 +170,7 @@ export const createSale = async (req, res) => {
         },
         $push: { sales: newSale._id },
         $inc: {
-          totalSalesAmount: total,
+          totalSalesAmount: finalAmountPaid, // ✅ SOLO LO QUE REALMENTE INGRESÓ
           totalOperations: 1,
         },
       },
@@ -290,10 +323,10 @@ export const revertSale = async (req, res) => {
     });
 
     if (dailyCash) {
-      // 🔹 Actualizar totales
+      // 🔹 Actualizar totales (Restar lo que PAGÓ, no el total si hubo deuda)
       dailyCash.totalSalesAmount = Math.max(
         0,
-        (dailyCash.totalSalesAmount || 0) - sale.total
+        (dailyCash.totalSalesAmount || 0) - (sale.amountPaid || sale.total)
       );
       dailyCash.totalOperations = Math.max(
         0,
