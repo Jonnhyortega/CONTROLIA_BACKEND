@@ -46,8 +46,11 @@ export const getTodayCash = async (req, res) => {
       }).populate("products.product", "name price cost");
 
       const totalSalesAmount = sales.reduce((sum, s) => {
-        // Si existe amountPaid (ventas nuevas), usamos eso. Si no (ventas viejas), usamos total.
-        const income = (s.amountPaid !== undefined && s.amountPaid !== null) ? s.amountPaid : s.total;
+        let income = s.amountPaid || 0;
+        // Compatibilidad: Si paga 0 y debe 0, pero total > 0, es venta vieja (pagó todo).
+        if (income === 0 && (s.amountDebt || 0) === 0 && s.total > 0) {
+            income = s.total;
+        }
         return sum + (income || 0);
       }, 0);
       const totalOperations = sales.length;

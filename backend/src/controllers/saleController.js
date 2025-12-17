@@ -323,10 +323,16 @@ export const revertSale = async (req, res) => {
     });
 
     if (dailyCash) {
-      // 🔹 Actualizar totales (Restar lo que PAGÓ, no el total si hubo deuda)
+      // 🔹 Actualizar totales
+      let deductedAmount = sale.amountPaid || 0;
+      // Compatibilidad: Si es venta vieja, amountPaid y Debt son 0 -> descontar total
+      if (deductedAmount === 0 && (sale.amountDebt || 0) === 0 && sale.total > 0) {
+        deductedAmount = sale.total;
+      }
+
       dailyCash.totalSalesAmount = Math.max(
         0,
-        (dailyCash.totalSalesAmount || 0) - (sale.amountPaid || sale.total)
+        (dailyCash.totalSalesAmount || 0) - deductedAmount
       );
       dailyCash.totalOperations = Math.max(
         0,
