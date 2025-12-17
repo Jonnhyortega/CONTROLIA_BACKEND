@@ -11,6 +11,7 @@ import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
 export const createSale = async (req, res) => {
   try {
     const { products, total, paymentMethod, clientId } = req.body;
+    console.log("💰 [DEBUG] CreateSale Request Body:", JSON.stringify(req.body, null, 2));
 
     if (!products || !Array.isArray(products) || products.length === 0) {
       return res.status(400).json({ message: "Debe incluir al menos un producto." });
@@ -145,12 +146,15 @@ export const createSale = async (req, res) => {
       seller: req.user._id, // <--- CAMBIO: Registramos quién la hizo realmente
       products: cleanProducts,
       total,
+      total,
       amountPaid: finalAmountPaid, // ✅ NUEVO
       amountDebt: finalAmountDebt, // ✅ NUEVO
       paymentMethod,
       client: clientId || null,
       status: "active",
     });
+
+    console.log(`✅ [DEBUG] Sale Created: Paid=${finalAmountPaid}, Debt=${finalAmountDebt}, Total=${total}`);
 
     // 📅 Calcular el rango UTC equivalente al día local (Argentina)
     const { start, end } = getLocalDayRangeUTC(new Date());
