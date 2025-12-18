@@ -8,7 +8,10 @@ category: { type: String, required: true },
 price: { type: Number, required: true },
 cost: { type: Number, required: true },
 stock: { type: Number, required: true, default: 0 },
-barcode: { type: String },
+barcode: { 
+  type: String,
+  set: (v) => (v === "" || (typeof v === 'string' && v.trim() === "") ? null : v)
+},
 description: String,
 supplier: {
     type: mongoose.Schema.Types.ObjectId,

@@ -1,6 +1,7 @@
 import Sale from "../models/Sale.js";
 import Product from "../models/Product.js";
 import DailyCash from "../models/DailyCash.js";
+import Client from "../models/Client.js"; // ✅ Importar Client
 import ProductHistory from "../models/ProductHistory.js";
 import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
 
@@ -9,17 +10,23 @@ import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
 ========================================================== */
 export const createSale = async (req, res) => {
   try {
-    const { products, total, paymentMethod } = req.body;
+    // 1. Sanitizar inputs explícitamente a Números
+    let { products, total, paymentMethod, clientId, amountPaid } = req.body;
+    
+    const numericTotal = Number(total);
+    const numericAmountPaid = (amountPaid !== undefined && amountPaid !== null) ? Number(amountPaid) : undefined;
+
+    // console.log("💰 Processing Sale:", { numericTotal, numericAmountPaid, paymentMethod });
 
     if (!products || !Array.isArray(products) || products.length === 0) {
       return res.status(400).json({ message: "Debe incluir al menos un producto." });
     }
 
-    if (!total || total <= 0) {
-      return res.status(400).json({ message: "El total debe ser mayor a cero." });
+    if (isNaN(numericTotal) || numericTotal <= 0) {
+      return res.status(400).json({ message: "El total debe ser un número mayor a cero." });
     }
 
-    // 🧹 Normalizar productos (acepta productos manuales tipo “otro”)
+    // 🧹 Normalizar productos
     const cleanProducts = products.map((p) => {
       const hasProductId = p.product && p.product !== "otro";
       return {
@@ -31,16 +38,13 @@ export const createSale = async (req, res) => {
     });
 
     // ---------------------------
-    // ⚠️ STOCK: validar y decrementar antes de crear venta
+    // ⚠️ STOCK: validar y decrementar
     // ---------------------------
-    // Preparar lista de productos con product id (ignorar manuales)
     const itemsToUpdate = cleanProducts
       .filter((p) => p.product)
       .map((p) => ({ id: p.product, qty: Number(p.quantity) || 0 }));
 
-    // verificar stock disponible
     if (itemsToUpdate.length > 0) {
-      // cargar productos actuales
       const dbProducts = await Product.find({ _id: { $in: itemsToUpdate.map((i) => i.id) } });
 
       for (const it of itemsToUpdate) {
@@ -53,7 +57,6 @@ export const createSale = async (req, res) => {
         }
       }
 
-      // ahora decrementar uno a uno usando una actualización condicionada (stock >= qty)
       const updated = [];
       try {
         for (const it of itemsToUpdate) {
@@ -64,20 +67,15 @@ export const createSale = async (req, res) => {
           );
 
           if (!modified) {
-            // fallo — intentar rollback de los modificados previos
+             // Rollback logic
             for (const done of updated) {
-              try {
-                await Product.findByIdAndUpdate(done.id, { $inc: { stock: done.qty } });
-              } catch (rbErr) {
-                console.error("Error rollback stock:", rbErr);
-              }
+              await Product.findByIdAndUpdate(done.id, { $inc: { stock: done.qty } }).catch(console.error);
             }
             return res.status(400).json({ message: `No hay stock suficiente para el producto ${it.id} al intentar reservar.` });
           }
 
           updated.push({ id: it.id, qty: it.qty });
           
-          // 📝 Registrar en historial de producto
           await ProductHistory.create({
             product: it.id,
             user: req.user._id,
@@ -90,54 +88,79 @@ export const createSale = async (req, res) => {
             },
             description: "Venta realizada" 
           });
-
-          console.log(`Stock actualizado: product=${it.id} - decremento=${it.qty} -> restante=${modified.stock}`);
         }
       } catch (err) {
-        // rollback si algo falló
+        // Full rollback
         for (const done of updated) {
-          try {
-            await Product.findByIdAndUpdate(done.id, { $inc: { stock: done.qty } });
-          } catch (rbErr) {
-            console.error("Error rollback stock (catch):", rbErr);
-          }
+           await Product.findByIdAndUpdate(done.id, { $inc: { stock: done.qty } }).catch(console.error);
         }
         throw err;
       }
     }
 
-    // 🔑 Multi-tenancy: Si es empleado, la venta va al dueño (admin)
+    // ---------------------------
+    // 💰 PAGOS PARCIALES - Lógica Blindada
+    // ---------------------------
+    let finalAmountPaid = numericTotal;
+    let finalAmountDebt = 0;
+
+    // Si se envió un pago parcial explícito, usémoslo
+    if (numericAmountPaid !== undefined && !isNaN(numericAmountPaid)) {
+        finalAmountPaid = numericAmountPaid;
+        
+        // Sanity checks
+        if (finalAmountPaid < 0) finalAmountPaid = 0;
+        
+        // Normalmente no permitimos pagar más del total, pero si lo hacen, es cambio.
+        // Asumimos lógica estándar: pago no puede "cubrir más" que la deuda.
+        if (finalAmountPaid > numericTotal) finalAmountPaid = numericTotal;
+    }
+
+    finalAmountDebt = numericTotal - finalAmountPaid;
+
+    // Si hay deuda, actualizar cliente
+    if (finalAmountDebt > 0) {
+      if (!clientId) {
+        return res.status(400).json({ message: "Para dejar deuda (cuenta corriente) se requiere un cliente registrado." });
+      }
+      await Client.findByIdAndUpdate(clientId, { $inc: { balance: finalAmountDebt } });
+    }
+
+    // ---------------------------
+    // 🔑 Multi-tenancy
+    // ---------------------------
     const ownerId = req.user.createdBy || req.user._id;
 
-    // ✅ Crear la venta (el stock ya fue reservado)
+    // ✅ Crear la venta
     const newSale = await Sale.create({
-      user: ownerId, // <--- CAMBIO IMPORTANTE: La venta se asigna al dueño
-      seller: req.user._id, // <--- CAMBIO: Registramos quién la hizo realmente
+      user: ownerId, 
+      seller: req.user._id,
       products: cleanProducts,
-      total,
+      total: numericTotal,
+      amountPaid: finalAmountPaid, // Se guarda lo efectivamente pagado
+      amountDebt: finalAmountDebt,
       paymentMethod,
+      client: clientId || null,
       status: "active",
     });
 
-    // 📅 Calcular el rango UTC equivalente al día local (Argentina)
+    // 📅 Actualizar DailyCash
     const { start, end } = getLocalDayRangeUTC(new Date());
 
-    // ✅ Buscar o crear DailyCash del día correcto
-    // 🔑 Multi-tenancy: La caja también pertenece al dueño
     const dailyCash = await DailyCash.findOneAndUpdate(
       {
-        user: ownerId, // <--- CAMBIO IMPORTANTE: La caja es del dueño
+        user: ownerId,
         date: { $gte: start, $lte: end },
       },
       {
         $setOnInsert: {
-          user: ownerId, // <--- CAMBIO IMPORTANTE
-          date: start, // inicio del día local (en UTC)
+          user: ownerId,
+          date: start,
           status: "abierta",
         },
         $push: { sales: newSale._id },
         $inc: {
-          totalSalesAmount: total,
+          totalSalesAmount: finalAmountPaid, // ✅ SUMAR LO PAGADO, NO EL TOTAL
           totalOperations: 1,
         },
       },
@@ -165,15 +188,31 @@ export const createSale = async (req, res) => {
 ========================================================== */
 export const getSales = async (req, res) => {
   try {
-    // 🔑 Multi-tenancy: Ver ventas del dueño (si soy empleado, veo las del admin)
+    // 🔑 Multi-tenancy: Ver ventas del dueño
     const ownerId = req.user.createdBy || req.user._id;
+
+    // 📄 Paginación
+    const page = Number(req.query.page) || 1;
+    const limit = Number(req.query.limit) || 20;
+    const skip = (page - 1) * limit;
+
+    // Contar total
+    const total = await Sale.countDocuments({ user: ownerId });
 
     const sales = await Sale.find({ user: ownerId })
       .populate("user", "name email")
-      .populate("seller", "name email") // <--- Mostrar vendedor original
-      .populate("products.product", "name price");
+      .populate("seller", "name email")
+      .populate("products.product", "name price")
+      .sort({ createdAt: -1 }) // Ordenar por más reciente
+      .skip(skip)
+      .limit(limit);
 
-    res.json(sales);
+    res.json({
+      sales,
+      page,
+      pages: Math.ceil(total / limit),
+      total,
+    });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -275,9 +314,15 @@ export const revertSale = async (req, res) => {
 
     if (dailyCash) {
       // 🔹 Actualizar totales
+      let deductedAmount = sale.amountPaid || 0;
+      // Compatibilidad: Si es venta vieja, amountPaid y Debt son 0 -> descontar total
+      if (deductedAmount === 0 && (sale.amountDebt || 0) === 0 && sale.total > 0) {
+        deductedAmount = sale.total;
+      }
+
       dailyCash.totalSalesAmount = Math.max(
         0,
-        (dailyCash.totalSalesAmount || 0) - sale.total
+        (dailyCash.totalSalesAmount || 0) - deductedAmount
       );
       dailyCash.totalOperations = Math.max(
         0,

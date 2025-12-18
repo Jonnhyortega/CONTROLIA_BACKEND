@@ -10,6 +10,8 @@ export const saleProductSchema = z.object({
 export const createSaleSchema = z.object({
   products: z.array(saleProductSchema).min(1, "Se requiere al menos un producto"),
   total: z.coerce.number().positive("El total debe ser mayor a 0"),
+  amountPaid: z.coerce.number().optional().nullable(),
+  clientId: z.string().optional().nullable(),
   paymentMethod: z.string().optional(),
 });
 

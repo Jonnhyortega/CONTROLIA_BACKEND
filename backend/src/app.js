@@ -14,6 +14,7 @@ import dailyCashRoutes from "./routes/dailyCashRoutes.js";
 import { protect } from "./middleware/authMiddleware.js";
 import userManagementRoutes from "./routes/userManagementRoutes.js";
 import customizationRoutes from "./routes/customizationRoutes.js"
+import transactionRoutes from "./routes/transactionRoutes.js";
 
 const app = express();
 
@@ -64,6 +65,7 @@ app.use("/api/clients", protect, clientRoutes);
 app.use("/api/suppliers", protect, supplierRoutes);
 app.use("/api/daily-cash", protect, dailyCashRoutes);
 app.use("/api/customization", protect, customizationRoutes)
+app.use("/api/transactions", protect, transactionRoutes);
 app.use("/api/admin", userManagementRoutes);
 
 // Middlewares de error
