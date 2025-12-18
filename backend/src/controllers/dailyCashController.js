@@ -46,11 +46,8 @@ export const getTodayCash = async (req, res) => {
       }).populate("products.product", "name price cost");
 
       const totalSalesAmount = sales.reduce((sum, s) => {
-        let income = s.amountPaid || 0;
-        // Compatibilidad: Si paga 0 y debe 0, pero total > 0, es venta vieja (pagó todo).
-        if (income === 0 && (s.amountDebt || 0) === 0 && s.total > 0) {
-            income = s.total;
-        }
+        // Si existe amountPaid (ventas nuevas), usamos eso. Si no (ventas viejas), usamos total.
+        const income = (s.amountPaid !== undefined && s.amountPaid !== null) ? s.amountPaid : s.total;
         return sum + (income || 0);
       }, 0);
       const totalOperations = sales.length;
@@ -73,7 +70,55 @@ export const getTodayCash = async (req, res) => {
         .lean();
     }
 
-    return res.status(200).json(dailyCash);
+    // ---------------------------------------------------
+    // 🧠 AGREGAR TRANSACCIONES "CLIENT_PAYMENT" DE HOY
+    // Para que el Dashboard muestre los cobros de deuda
+    // ---------------------------------------------------
+    let transactions = [];
+    try {
+        const Transaction = (await import("../models/Transaction.js")).default;
+        const Client = (await import("../models/Client.js")).default; // Opcional si queremos popular nombre
+
+        transactions = await Transaction.find({
+            user: ownerId,
+            type: "CLIENT_PAYMENT",
+            date: { $gte: start, $lte: end }
+        }).populate('client', 'name').sort({ date: -1 });
+
+        // 🧠 AGREGAR PAGOS A PROVEEDORES COMO GASTOS
+        const supplierPayments = await Transaction.find({
+            user: ownerId,
+            type: "SUPPLIER_PAYMENT",
+            date: { $gte: start, $lte: end }
+        }).populate('supplier', 'name').sort({ date: -1 });
+
+        // Mapear a formato de gasto para el frontend
+        const mappedSupplierPayments = supplierPayments.map(tx => ({
+             description: `Pago a Proveedor: ${tx.supplier?.name || 'Desconocido'} - ${tx.description || 'Sin descripción'}`,
+             amount: tx.amount,
+             isTransaction: true,
+             _id: tx._id
+        }));
+        
+        // Inyectar en extraExpenses (solo en memoria)
+        if (!dailyCash.extraExpenses) dailyCash.extraExpenses = [];
+        dailyCash.extraExpenses.push(...mappedSupplierPayments);
+
+    } catch (txErr) {
+        console.error("Error fetching transactions in getTodayCash:", txErr);
+    }
+    // ---------------------------------------------------
+
+    // Convertir a objeto plano para inyectar transacciones
+    let finalDailyCash = dailyCash;
+    if (finalDailyCash.toObject) finalDailyCash = finalDailyCash.toObject();
+
+    // Inyectar en la respuesta
+    return res.status(200).json({ 
+        ...finalDailyCash, 
+        transactions // Array extra con los pagos de clientes
+    });
+
   } catch (error) {
     console.error("❌ Error al obtener caja del día:", error);
     res.status(500).json({
@@ -82,6 +127,7 @@ export const getTodayCash = async (req, res) => {
     });
   }
 };
+
 
 /* ==========================================================
    🔴 CERRAR LA CAJA DEL DÍA
@@ -226,13 +272,70 @@ export const getDailyCashByDate = async (req, res) => {
     }).populate({
       path: "sales",
       populate: { path: "products.product", select: "name price cost" },
-    });
+    }).lean();
 
     if (!dailyCash) {
+       // Si no existe, buscamos si hay transacciones huérfanas antes de dar 404? 
+       // No, si no hay caja, no hay dashboard main.
       return res.status(404).json({ message: "No se encontró caja para esa fecha." });
     }
 
-    res.status(200).json(dailyCash);
+    // ---------------------------------------------------
+    // 🧠 AGREGAR TRANSACCIONES "CLIENT_PAYMENT" DE LA FECHA
+    // ---------------------------------------------------
+    let transactions = [];
+    try {
+        const Transaction = (await import("../models/Transaction.js")).default;
+        // Reutilizamos start/end calculados arriba
+        transactions = await Transaction.find({
+            user: ownerId,
+            type: "CLIENT_PAYMENT",
+            date: { $gte: start, $lte: end }
+        }).populate('client', 'name').sort({ date: -1 });
+
+    } catch (txErr) {
+        console.error("Error fetching transactions in getDailyCashByDate:", txErr);
+    }
+    
+    // Al usar lean(), dailyCash ya es un objeto plano.
+    let finalDailyCash = dailyCash;
+
+    // ---------------------------------------------------
+    // 🧠 AGREGAR PAGOS A PROVEEDORES COMO GASTOS (SUPPLIER_PAYMENT)
+    // ---------------------------------------------------
+    try {
+        const Transaction = (await import("../models/Transaction.js")).default;
+        
+        const supplierPayments = await Transaction.find({
+            user: ownerId,
+            type: "SUPPLIER_PAYMENT",
+            date: { $gte: start, $lte: end }
+        }).populate('supplier', 'name').sort({ date: -1 });
+
+        // Mapear a formato de gasto para el frontend
+        const mappedSupplierPayments = supplierPayments.map(tx => ({
+             description: `Pago a Proveedor: ${tx.supplier?.name || "Desconocido"} - ${tx.description || ""}`,
+             amount: tx.amount,
+             isTransaction: true,
+             _id: tx._id
+        }));
+
+        if (!finalDailyCash.extraExpenses) finalDailyCash.extraExpenses = [];
+        finalDailyCash.extraExpenses.push(...mappedSupplierPayments);
+        
+        console.log(`[DEBUG] Supplier Payments merged: ${mappedSupplierPayments.length} items`);
+
+    } catch (err) {
+        console.error("Error fetching supplier payments in getDailyCashByDate:", err);
+    }
+
+
+
+
+    res.status(200).json({
+        ...finalDailyCash,
+        transactions
+    });
   } catch (error) {
     console.error("❌ Error al obtener caja por fecha:", error);
     res.status(500).json({

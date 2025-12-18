@@ -53,9 +53,46 @@ export const createTransaction = async (req, res) => {
     if (type === "CLIENT_PAYMENT") {
       // Si el cliente paga, su deuda (balance) disminuye
       await Client.findByIdAndUpdate(clientId, { $inc: { balance: -amount } });
+
+      // -------------------------------------------------------------
+      // 💰 IMPACTAR CAJA (Solo si es un pago real de cliente)
+      // -------------------------------------------------------------
+      // Importar dependencias necesarias o helpers
+      // Nota: Si este archivo no importa DailyCash ni getLocalDayRangeUTC, necesitamos hacerlo.
+      // Como no puedo agregar imports arriba fácilmente con este replace, asumiremos que están o los agregaremos luego.
+      // Asumimos que DailyCash y helper están disponibles o copiamos la lógica simple.
+      
+      try {
+          // Import dinámico si no están arriba (para asegurar que funcione sin romper imports existentes)
+          const DailyCashModel = (await import("../models/DailyCash.js")).default;
+          // Replicar lógica de fecha UTC
+          const now = new Date();
+          // Ajuste simple UTC-3 Argentina
+          const offsetHours = 3;
+          const localTime = new Date(now.getTime() - offsetHours * 60 * 60 * 1000);
+          localTime.setUTCHours(0, 0, 0, 0);
+          const start = new Date(localTime.getTime() + offsetHours * 60 * 60 * 1000);
+          const end = new Date(start.getTime() + 24 * 60 * 60 * 1000 - 1);
+
+          await DailyCashModel.findOneAndUpdate(
+            { user: ownerId, date: { $gte: start, $lte: end } },
+            { 
+               $inc: { totalSalesAmount: amount },
+               $setOnInsert: { user: ownerId, date: start, status: "abierta" }
+            },
+            { upsert: true }
+          );
+      } catch (err) {
+          console.error("Error actualizando caja con el pago:", err);
+      }
+
     } else if (type === "SUPPLIER_PAYMENT") {
       // Si pagamos al proveedor, nuestra deuda disminuye
       await Supplier.findByIdAndUpdate(supplierId, { $inc: { debt: -amount } });
+ 
+      // Opcional: Esto es dinero que SALIE, deberíamos registrarlo como gasto en caja?
+      // Por consistencia, si pagamos desde caja, debería ser un 'extraExpense' o 'supplierPayment' en DailyCash.
+      // Pero el usuario preguntó específicamente por cobros a clientes.
 
     } else if (type === "CLIENT_DEBT") {
       // Venta fiada / Cuenta corriente -> Aumenta la deuda del cliente
@@ -184,6 +221,29 @@ export const deleteTransaction = async (req, res) => {
     if (transaction.type === "CLIENT_PAYMENT" && transaction.client) {
       // Borrar PAGO -> SUBE la deuda (volvemos a deber)
       await Client.findByIdAndUpdate(transaction.client, { $inc: { balance: transaction.amount } });
+
+      // -------------------------------------------------------------
+      // 💰 REVERTIR IMPACTO EN CAJA
+      // -------------------------------------------------------------
+      try {
+          const DailyCashModel = (await import("../models/DailyCash.js")).default;
+          // Reconstruir rango de fecha del pago original
+          const txDate = new Date(transaction.date); 
+          // Ajuste UTC-3 (Argentina) manual para obtener start/end del día de esa transacción
+          const offsetHours = 3;
+          const localTime = new Date(txDate.getTime() - offsetHours * 60 * 60 * 1000);
+          localTime.setUTCHours(0, 0, 0, 0);
+          const start = new Date(localTime.getTime() + offsetHours * 60 * 60 * 1000);
+          const end = new Date(start.getTime() + 24 * 60 * 60 * 1000 - 1);
+
+          await DailyCashModel.findOneAndUpdate(
+            { user: ownerId, date: { $gte: start, $lte: end } },
+            { $inc: { totalSalesAmount: -transaction.amount } }
+          );
+      } catch (err) {
+          console.error("Error revirtiendo caja al eliminar pago:", err);
+      }
+
     } else if (transaction.type === "SUPPLIER_PAYMENT" && transaction.supplier) {
       await Supplier.findByIdAndUpdate(transaction.supplier, { $inc: { debt: transaction.amount } });
 

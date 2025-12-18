@@ -10,18 +10,23 @@ import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
 ========================================================== */
 export const createSale = async (req, res) => {
   try {
-    const { products, total, paymentMethod, clientId } = req.body;
-    console.log("💰 [DEBUG] CreateSale Request Body:", JSON.stringify(req.body, null, 2));
+    // 1. Sanitizar inputs explícitamente a Números
+    let { products, total, paymentMethod, clientId, amountPaid } = req.body;
+    
+    const numericTotal = Number(total);
+    const numericAmountPaid = (amountPaid !== undefined && amountPaid !== null) ? Number(amountPaid) : undefined;
+
+    // console.log("💰 Processing Sale:", { numericTotal, numericAmountPaid, paymentMethod });
 
     if (!products || !Array.isArray(products) || products.length === 0) {
       return res.status(400).json({ message: "Debe incluir al menos un producto." });
     }
 
-    if (!total || total <= 0) {
-      return res.status(400).json({ message: "El total debe ser mayor a cero." });
+    if (isNaN(numericTotal) || numericTotal <= 0) {
+      return res.status(400).json({ message: "El total debe ser un número mayor a cero." });
     }
 
-    // 🧹 Normalizar productos (acepta productos manuales tipo “otro”)
+    // 🧹 Normalizar productos
     const cleanProducts = products.map((p) => {
       const hasProductId = p.product && p.product !== "otro";
       return {
@@ -33,16 +38,13 @@ export const createSale = async (req, res) => {
     });
 
     // ---------------------------
-    // ⚠️ STOCK: validar y decrementar antes de crear venta
+    // ⚠️ STOCK: validar y decrementar
     // ---------------------------
-    // Preparar lista de productos con product id (ignorar manuales)
     const itemsToUpdate = cleanProducts
       .filter((p) => p.product)
       .map((p) => ({ id: p.product, qty: Number(p.quantity) || 0 }));
 
-    // verificar stock disponible
     if (itemsToUpdate.length > 0) {
-      // cargar productos actuales
       const dbProducts = await Product.find({ _id: { $in: itemsToUpdate.map((i) => i.id) } });
 
       for (const it of itemsToUpdate) {
@@ -55,7 +57,6 @@ export const createSale = async (req, res) => {
         }
       }
 
-      // ahora decrementar uno a uno usando una actualización condicionada (stock >= qty)
       const updated = [];
       try {
         for (const it of itemsToUpdate) {
@@ -66,20 +67,15 @@ export const createSale = async (req, res) => {
           );
 
           if (!modified) {
-            // fallo — intentar rollback de los modificados previos
+             // Rollback logic
             for (const done of updated) {
-              try {
-                await Product.findByIdAndUpdate(done.id, { $inc: { stock: done.qty } });
-              } catch (rbErr) {
-                console.error("Error rollback stock:", rbErr);
-              }
+              await Product.findByIdAndUpdate(done.id, { $inc: { stock: done.qty } }).catch(console.error);
             }
             return res.status(400).json({ message: `No hay stock suficiente para el producto ${it.id} al intentar reservar.` });
           }
 
           updated.push({ id: it.id, qty: it.qty });
           
-          // 📝 Registrar en historial de producto
           await ProductHistory.create({
             product: it.id,
             user: req.user._id,
@@ -92,89 +88,79 @@ export const createSale = async (req, res) => {
             },
             description: "Venta realizada" 
           });
-
-          console.log(`Stock actualizado: product=${it.id} - decremento=${it.qty} -> restante=${modified.stock}`);
         }
       } catch (err) {
-        // rollback si algo falló
+        // Full rollback
         for (const done of updated) {
-          try {
-            await Product.findByIdAndUpdate(done.id, { $inc: { stock: done.qty } });
-          } catch (rbErr) {
-            console.error("Error rollback stock (catch):", rbErr);
-          }
+           await Product.findByIdAndUpdate(done.id, { $inc: { stock: done.qty } }).catch(console.error);
         }
         throw err;
       }
     }
 
     // ---------------------------
-    // 💰 PAGOS PARCIALES Y CUENTA CORRIENTE
+    // 💰 PAGOS PARCIALES - Lógica Blindada
     // ---------------------------
-    // 1️⃣ Calcular deuda y pago real
-    let finalAmountPaid = total; // Por defecto paga todo
+    let finalAmountPaid = numericTotal;
     let finalAmountDebt = 0;
 
-    if (req.body.amountPaid !== undefined && req.body.amountPaid !== null) {
-      finalAmountPaid = Number(req.body.amountPaid);
-      if (finalAmountPaid < 0) finalAmountPaid = 0;
-      if (finalAmountPaid > total) finalAmountPaid = total; // No puede pagar más del total en esta lógica
+    // Si se envió un pago parcial explícito, usémoslo
+    if (numericAmountPaid !== undefined && !isNaN(numericAmountPaid)) {
+        finalAmountPaid = numericAmountPaid;
+        
+        // Sanity checks
+        if (finalAmountPaid < 0) finalAmountPaid = 0;
+        
+        // Normalmente no permitimos pagar más del total, pero si lo hacen, es cambio.
+        // Asumimos lógica estándar: pago no puede "cubrir más" que la deuda.
+        if (finalAmountPaid > numericTotal) finalAmountPaid = numericTotal;
     }
 
-    finalAmountDebt = total - finalAmountPaid;
+    finalAmountDebt = numericTotal - finalAmountPaid;
 
-    // 2️⃣ Si hay deuda, actualizar saldo del cliente
+    // Si hay deuda, actualizar cliente
     if (finalAmountDebt > 0) {
       if (!clientId) {
-        return res
-          .status(400)
-          .json({ message: "Para dejar deuda (cuenta corriente) se requiere un cliente registrado." });
+        return res.status(400).json({ message: "Para dejar deuda (cuenta corriente) se requiere un cliente registrado." });
       }
-
-      // IMPORTANTE: Incrementar balance (deuda) del cliente
       await Client.findByIdAndUpdate(clientId, { $inc: { balance: finalAmountDebt } });
     }
 
     // ---------------------------
-    // 🔑 Multi-tenancy: Si es empleado, la venta va al dueño (admin)
+    // 🔑 Multi-tenancy
     // ---------------------------
     const ownerId = req.user.createdBy || req.user._id;
 
-    // ✅ Crear la venta (el stock ya fue reservado)
+    // ✅ Crear la venta
     const newSale = await Sale.create({
-      user: ownerId, // <--- CAMBIO IMPORTANTE: La venta se asigna al dueño
-      seller: req.user._id, // <--- CAMBIO: Registramos quién la hizo realmente
+      user: ownerId, 
+      seller: req.user._id,
       products: cleanProducts,
-      total,
-      total,
-      amountPaid: finalAmountPaid, // ✅ NUEVO
-      amountDebt: finalAmountDebt, // ✅ NUEVO
+      total: numericTotal,
+      amountPaid: finalAmountPaid, // Se guarda lo efectivamente pagado
+      amountDebt: finalAmountDebt,
       paymentMethod,
       client: clientId || null,
       status: "active",
     });
 
-    console.log(`✅ [DEBUG] Sale Created: Paid=${finalAmountPaid}, Debt=${finalAmountDebt}, Total=${total}`);
-
-    // 📅 Calcular el rango UTC equivalente al día local (Argentina)
+    // 📅 Actualizar DailyCash
     const { start, end } = getLocalDayRangeUTC(new Date());
 
-    // ✅ Buscar o crear DailyCash del día correcto
-    // 🔑 Multi-tenancy: La caja también pertenece al dueño
     const dailyCash = await DailyCash.findOneAndUpdate(
       {
-        user: ownerId, // <--- CAMBIO IMPORTANTE: La caja es del dueño
+        user: ownerId,
         date: { $gte: start, $lte: end },
       },
       {
         $setOnInsert: {
-          user: ownerId, // <--- CAMBIO IMPORTANTE
-          date: start, // inicio del día local (en UTC)
+          user: ownerId,
+          date: start,
           status: "abierta",
         },
         $push: { sales: newSale._id },
         $inc: {
-          totalSalesAmount: finalAmountPaid, // ✅ SOLO LO QUE REALMENTE INGRESÓ
+          totalSalesAmount: finalAmountPaid, // ✅ SUMAR LO PAGADO, NO EL TOTAL
           totalOperations: 1,
         },
       },
