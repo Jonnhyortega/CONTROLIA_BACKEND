@@ -414,7 +414,7 @@ export const closeDailyCashById = async (req, res) => {
 export const updateDailyCashByDate = async (req, res) => {
   try {
     const { date } = req.params;
-    const { status, description, extraExpenses, supplierPayments } = req.body;
+    const { status, description, extraExpenses, supplierPayments, overwrite } = req.body;
     
     const ownerId = req.user.createdBy || req.user._id;
 
@@ -432,21 +432,28 @@ export const updateDailyCashByDate = async (req, res) => {
       ...(status === "cerrada" && { closedAt: new Date() }),
     };
 
-    if (Object.keys(setFields).length > 0) {
-      updateQuery.$set = setFields;
-    }
-
     // Arrays a pushear (para no pisar los anteriores)
     const pushFields = {};
-    if (extraExpenses && extraExpenses.length > 0) {
-      pushFields.extraExpenses = {
-        $each: Array.isArray(extraExpenses) ? extraExpenses : [extraExpenses],
-      };
+
+    // LOGIC: Si overwrite es true, usamos $set para los arrays. Si no, usamos $push.
+    if (overwrite) {
+        if (extraExpenses) setFields.extraExpenses = extraExpenses;
+        if (supplierPayments) setFields.supplierPayments = supplierPayments;
+    } else {
+        if (extraExpenses && extraExpenses.length > 0) {
+          pushFields.extraExpenses = {
+            $each: Array.isArray(extraExpenses) ? extraExpenses : [extraExpenses],
+          };
+        }
+        if (supplierPayments && supplierPayments.length > 0) {
+          pushFields.supplierPayments = {
+            $each: Array.isArray(supplierPayments) ? supplierPayments : [supplierPayments],
+          };
+        }
     }
-    if (supplierPayments && supplierPayments.length > 0) {
-      pushFields.supplierPayments = {
-        $each: Array.isArray(supplierPayments) ? supplierPayments : [supplierPayments],
-      };
+
+    if (Object.keys(setFields).length > 0) {
+      updateQuery.$set = setFields;
     }
 
     if (Object.keys(pushFields).length > 0) {
