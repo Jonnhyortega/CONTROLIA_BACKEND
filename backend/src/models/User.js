@@ -51,6 +51,20 @@ const userSchema = new mongoose.Schema(
       type: Date,
       default: null,
     },
+    // 💳 Mercado Pago Subscription Data
+    mercadoPagoSubscriptionId: {
+      type: String,
+      default: null,
+    },
+    mercadoPagoPayerId: {
+      type: String,
+      default: null,
+    },
+    subscriptionStatus: {
+      type: String,
+      enum: ["pending", "authorized", "paused", "cancelled", null],
+      default: null,
+    },
     // ✉️ Email Verification
     isEmailVerified: {
       type: Boolean,
