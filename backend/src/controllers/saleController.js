@@ -3,7 +3,9 @@ import Product from "../models/Product.js";
 import DailyCash from "../models/DailyCash.js";
 import Client from "../models/Client.js"; // ✅ Importar Client
 import ProductHistory from "../models/ProductHistory.js";
+import User from "../models/User.js";
 import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
+import { PLAN_LIMITS, ERROR_MESSAGES } from "../config/planLimits.js";
 
 /* ==========================================================
    🟢 CREAR VENTA (corrigido a horario local)
@@ -12,6 +14,27 @@ export const createSale = async (req, res) => {
   try {
     // 1. Sanitizar inputs explícitamente a Números
     let { products, total, paymentMethod, clientId, amountPaid } = req.body;
+    
+    // 🛡️ LIMITES (Operaciones Mensuales)
+    const ownerId = req.user.createdBy || req.user._id;
+    const owner = await User.findById(ownerId).select("membershipTier");
+    const tier = owner?.membershipTier || "basic";
+    const limit = PLAN_LIMITS[tier]?.monthlySales || 300;
+
+    // Calcular inicio de mes actual
+    const now = new Date();
+    const startOfMonthDate = new Date(now.getFullYear(), now.getMonth(), 1);
+
+    const currentSales = await Sale.countDocuments({ 
+        user: ownerId,
+        createdAt: { $gte: startOfMonthDate }
+    });
+
+    if (currentSales >= limit) {
+        return res.status(403).json({ 
+            message: `${ERROR_MESSAGES.monthlySales} (${currentSales}/${limit})` 
+        });
+    }
     
     const numericTotal = Number(total);
     const numericAmountPaid = (amountPaid !== undefined && amountPaid !== null) ? Number(amountPaid) : undefined;
@@ -129,7 +152,7 @@ export const createSale = async (req, res) => {
     // ---------------------------
     // 🔑 Multi-tenancy
     // ---------------------------
-    const ownerId = req.user.createdBy || req.user._id;
+    // ownerId ya definido al inicio
 
     // ✅ Crear la venta
     const newSale = await Sale.create({

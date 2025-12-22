@@ -1,9 +1,25 @@
 import User from "../models/User.js";
+import { PLAN_LIMITS, ERROR_MESSAGES } from "../config/planLimits.js";
 
 // 🟢 Crear empleado
 export const createEmployee = async (req, res) => {
   try {
     const { name, email, password } = req.body;
+
+    // 🛡️ LIMITES (Usuarios)
+    // El límite incluye al dueño. Ej: Basic (1 user) = Solo dueño. Gestion (2 users) = Dueño + 1.
+    const tier = req.user.membershipTier || "basic";
+    const limit = PLAN_LIMITS[tier]?.users || 1;
+
+    // Contamos empleados existentes (No verificamos 'active', contamos 'asientos ocupados')
+    const currentEmployees = await User.countDocuments({ createdBy: req.user._id });
+    
+    // Total = Empleados + 1 (Dueño)
+    if (currentEmployees + 1 >= limit) {
+         return res.status(403).json({ 
+            message: `${ERROR_MESSAGES.users} (${currentEmployees + 1}/${limit})` 
+        });
+    }
 
     const exists = await User.findOne({ email });
     if (exists)
