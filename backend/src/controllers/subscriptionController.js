@@ -10,7 +10,7 @@ const SUBSCRIPTION_PLANS = {
       transaction_amount: 25000, 
       currency_id: "ARS",
     },
-    back_url: "https://controlia.app/dashboard/settings/billing", 
+    back_url: "https://controlia.vercel.app/dashboard/settings/billing", 
   },
   gestion: {
     reason: "Controlia - Plan Gestión",
@@ -20,7 +20,7 @@ const SUBSCRIPTION_PLANS = {
       transaction_amount: 59000, 
       currency_id: "ARS",
     },
-    back_url: "https://controlia.app/dashboard/settings/billing",
+    back_url: "https://controlia.vercel.app/dashboard/settings/billing",
   },
   avanzado: {
     reason: "Controlia - Plan Avanzado",
