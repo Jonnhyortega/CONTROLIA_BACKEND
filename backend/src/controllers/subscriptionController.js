@@ -34,31 +34,31 @@ const SUBSCRIPTION_PLANS = {
   },
 };
 
+const PLAN_LINKS = {
+  basic: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=3613202d957149e9be752da0647f7a4e",
+  gestion: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=746be06e3dca4bf087fefdabc5075b60", 
+  avanzado: "https://www.mercadopago.com.ar/subscriptions/checkout?preapproval_plan_id=d91a8c529872470cb6cb7994f0246731",
+};
+
 export const createSubscription = async (req, res) => {
   try {
     const { plan } = req.body;
-    const userId = req.user._id;
+    
+    // Log para depuración básica
+    console.log(`Generando link para plan: ${plan}`);
 
-    if (!SUBSCRIPTION_PLANS[plan]) {
+    if (!PLAN_LINKS[plan]) {
       return res.status(400).json({ message: "Plan inválido" });
     }
 
-    const subscriptionData = {
-      ...SUBSCRIPTION_PLANS[plan],
-      payer_email: req.user.email,
-      external_reference: userId.toString(), 
-      status: "pending",
-    };
-
-    const response = await preApproval.create({ body: subscriptionData });
-
+    // Devolvemos directamente el link estático
     res.status(201).json({
-      init_point: response.init_point, // Link to redirect the user
-      id: response.id,
+      init_point: PLAN_LINKS[plan], 
+      id: "static_link", // ID dummy ya que no creamos transacción al instante
     });
   } catch (error) {
-    console.error("Error creating subscription:", error);
-    res.status(500).json({ message: "Error al crear la suscripción" });
+    console.error("Error generating subscription link:", error);
+    res.status(500).json({ message: "Error al generar el link de suscripción" });
   }
 };
 
@@ -76,8 +76,19 @@ export const handleWebhook = async (req, res) => {
         const userId = subscription.external_reference;
         const status = subscription.status; // authorized, paused, cancelled
         
-        // Find user and update
-        const user = await User.findById(userId);
+        // Find user: Try by external_reference (ID), fallback to Email mapping
+        let user = null;
+        if (userId) {
+            try {
+                user = await User.findById(userId);
+            } catch (e) { console.log("Invalid ID in external_reference, trying email..."); }
+        }
+
+        if (!user && subscription.payer_email) {
+             console.log(`Buscando usuario por email: ${subscription.payer_email}`);
+             user = await User.findOne({ email: subscription.payer_email });
+        }
+        
         if (user) {
             user.mercadoPagoSubscriptionId = id;
             user.mercadoPagoPayerId = subscription.payer_id;
