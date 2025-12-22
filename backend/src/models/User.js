@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema(
     // 🎯 SaaS Membership System
     membershipTier: {
       type: String,
-      enum: ["basic", "medium", "pro"],
+      enum: ["basic", "gestion", "avanzado"],
       default: "basic",
     },
     membershipStartDate: {
@@ -49,6 +49,20 @@ const userSchema = new mongoose.Schema(
     },
     membershipEndDate: {
       type: Date,
+      default: null,
+    },
+    // 💳 Mercado Pago Subscription Data
+    mercadoPagoSubscriptionId: {
+      type: String,
+      default: null,
+    },
+    mercadoPagoPayerId: {
+      type: String,
+      default: null,
+    },
+    subscriptionStatus: {
+      type: String,
+      enum: ["pending", "authorized", "paused", "cancelled", null],
       default: null,
     },
     // ✉️ Email Verification
@@ -99,7 +113,7 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
 userSchema.methods.calculateTrialDaysRemaining = function () {
   if (!this.membershipStartDate) return "0";
 
-  const trialDurationDays = 90;
+  const trialDurationDays = 30;
   // Fecha de inicio + 90 días
   const trialEndDate = new Date(this.membershipStartDate);
   trialEndDate.setDate(trialEndDate.getDate() + trialDurationDays);
