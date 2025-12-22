@@ -37,9 +37,9 @@ app.use((req, res, next) => {
 app.use(
   cors({
     origin: ["http://localhost:3000", 
-      "https://controlia.com", 
       "https://controlia-software.vercel.app",
-      "https://controlia.app"
+      "https://gestioncontrolia.com",
+      "https://gestioncontrolia.com",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
