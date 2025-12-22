@@ -34,18 +34,20 @@ app.use((req, res, next) => {
   }
   express.json()(req, res, next);
 });
+
 app.use(
   cors({
-    origin: ["http://localhost:3000", 
+    origin: [
+      "http://localhost:3000",
       "https://controlia-software.vercel.app",
       "https://gestioncontrolia.com",
-      "https://gestioncontrolia.com",
+      "https://www.gestioncontrolia.com", 
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
-);  
+);
 app.use(morgan("dev"));
 
 // 🏥 Health check endpoint (sin autenticación)
