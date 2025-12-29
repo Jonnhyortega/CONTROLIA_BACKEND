@@ -23,7 +23,12 @@ const app = express();
 app.set('trust proxy', 1);
 
 // 🔐 Security headers
-app.use(helmet());
+app.use(
+  helmet({
+    crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" },
+    crossOriginResourcePolicy: { policy: "cross-origin" },
+  })
+);
 
 // 📦 Compression
 app.use(compression());
@@ -41,7 +46,7 @@ app.use(
       "http://localhost:3000",
       "https://controlia-software.vercel.app",
       "https://gestioncontrolia.com",
-      "https://www.gestioncontrolia.com", 
+      "https://www.gestioncontrolia.com",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
