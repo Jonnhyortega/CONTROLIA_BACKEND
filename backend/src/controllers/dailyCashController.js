@@ -256,12 +256,15 @@ export const getDailyCashByDate = async (req, res) => {
   // console.log()
   try {
     const { date } = req.params;
-    if (!date) return res.status(400).json({ message: "Fecha requerida" });
+    if (!date || date === "undefined") return res.status(400).json({ message: "Fecha requerida" });
     
     const ownerId = req.user.createdBy || req.user._id;
 
     // 👉 Convertir string "YYYY-MM-DD" a objeto Date sin compensar manualmente
     const localDate = new Date(`${date}T00:00:00-03:00`);
+    if (isNaN(localDate.getTime())) {
+      return res.status(400).json({ message: "Formato de fecha inválido." });
+    }
     const { start, end } = getLocalDayRangeUTC(localDate); // esta función ya hace el ajuste UTC-3
 
     // console.log("🕓 Buscando caja entre:", start.toISOString(), "→", end.toISOString());
@@ -471,7 +474,15 @@ export const updateDailyCashByDate = async (req, res) => {
       );
     } else {
       // 3. Si no es un ID, asumir que es una fecha (YYYY-MM-DD)
+      if (date === "undefined" || date === "null") {
+        return res.status(400).json({ message: "Fecha inválida." });
+      }
+
       const localDate = new Date(`${date}T00:00:00-03:00`);
+      if (isNaN(localDate.getTime())) {
+        return res.status(400).json({ message: "Formato de fecha inválido." });
+      }
+
       const { start, end } = getLocalDayRangeUTC(localDate);
 
       updated = await DailyCash.findOneAndUpdate(
