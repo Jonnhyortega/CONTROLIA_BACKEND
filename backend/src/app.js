@@ -20,7 +20,12 @@ import subscriptionRoutes from "./routes/subscriptionRoutes.js";
 const app = express();
 
 // 🔐 Security headers
-app.use(helmet());
+app.use(
+  helmet({
+    crossOriginOpenerPolicy: { policy: "same-origin-allow-popups" },
+    crossOriginResourcePolicy: { policy: "cross-origin" },
+  })
+);
 
 // 📦 Compression
 app.use(compression());
@@ -33,9 +38,9 @@ app.use((req, res, next) => {
 });
 app.use(
   cors({
-    origin: ["http://localhost:3000", 
+    origin: [
+      "http://localhost:3000",
       "https://controlia-software.vercel.app",
-      "https://gestioncontrolia.com",
       "https://gestioncontrolia.com",
     ],
     credentials: true,
