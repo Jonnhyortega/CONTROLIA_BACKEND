@@ -1,3 +1,6 @@
+import User from "../models/User.js";
+import { PLAN_LIMITS, ERROR_MESSAGES } from "../config/planLimits.js";
+
 import Supplier from "../models/Supplier.js";
 
 
@@ -5,6 +8,19 @@ export const createSupplier = async (req, res) => {
   try {
     // Usar el ID del creador (admin) si existe, sino el del usuario actual
     const ownerId = req.user.createdBy || req.user._id;
+
+    // 🛡️ LIMITES
+    const owner = await User.findById(ownerId).select("membershipTier");
+    const tier = owner?.membershipTier || "basic";
+    const limit = PLAN_LIMITS[tier]?.suppliers || PLAN_LIMITS["basic"].suppliers;
+    
+    const currentCount = await Supplier.countDocuments({ user: ownerId });
+    if (currentCount >= limit) {
+        return res.status(403).json({ 
+            message: `${ERROR_MESSAGES.suppliers} (${currentCount}/${limit})` 
+        });
+    }
+
     const supplier = await Supplier.create({ ...req.body, user: ownerId });
     res.status(201).json(supplier);
   } catch (error) {

@@ -1,6 +1,8 @@
 import Product from "../models/Product.js";
 import Supplier from "../models/Supplier.js";
 import ProductHistory from "../models/ProductHistory.js";
+import User from "../models/User.js";
+import { PLAN_LIMITS, ERROR_MESSAGES } from "../config/planLimits.js";
 
 // CREAR PRODUCTO
 export const createProduct = async (req, res) => {
@@ -13,8 +15,19 @@ export const createProduct = async (req, res) => {
       return res.status(400).json({ message: "Faltan campos obligatorios." });
     }
 
-    // 🚫 Verificar duplicado
+    // 🛡️ FEATURE GATING: Límite de Productos
     const ownerId = req.user.createdBy || req.user._id;
+    
+    const owner = await User.findById(ownerId).select("membershipTier");
+    const tier = owner?.membershipTier || "basic";
+    const limit = PLAN_LIMITS[tier]?.products || PLAN_LIMITS["basic"].products;
+    
+    const currentCount = await Product.countDocuments({ user: ownerId });
+    if (currentCount >= limit) {
+        return res.status(403).json({ 
+            message: `${ERROR_MESSAGES.products} (${currentCount}/${limit})` 
+        });
+    }
 
     if (barcode) {
       const productExists = await Product.findOne({ barcode, user: ownerId });

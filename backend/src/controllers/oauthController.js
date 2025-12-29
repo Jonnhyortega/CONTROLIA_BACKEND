@@ -30,6 +30,7 @@ export const googleSignIn = async (req, res) => {
         email, 
         password: Math.random().toString(36).slice(-10),
         isEmailVerified: true,
+        businessName: "Mi Negocio",
       });
     } else if (!user.isEmailVerified) {
       // 🔓 Si el usuario ya existía pero no estaba verificado, y entra con Google, lo verificamos
@@ -50,7 +51,7 @@ export const googleSignIn = async (req, res) => {
       membershipStartDate: user.membershipStartDate,
       trialDaysRemaining: user.calculateTrialDaysRemaining(),
       token,
-      isNewUser, // 🎁 Flag para mostrar bienvenida
+      isNewUser, 
     });
   } catch (error) {
     console.error("Error Google SignIn:", error);

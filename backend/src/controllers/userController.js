@@ -103,6 +103,7 @@ export const registerUser = async (req, res) => {
       role,
       verificationCode,
       verificationCodeExpires,
+      verificationCodeExpires,
       isEmailVerified: false,
     });
 
@@ -163,6 +164,8 @@ export const authUser = async (req, res) => {
         membershipTier: user.membershipTier,
         createdAt: user.createdAt,
         membershipStartDate: user.membershipStartDate,
+        membershipEndDate: user.membershipEndDate,
+        subscriptionStatus: user.subscriptionStatus,
         trialDaysRemaining: user.calculateTrialDaysRemaining(),
         logoUrl: customization?.logoUrl || null,
         token: generateToken(user._id),
@@ -203,6 +206,8 @@ export const getUserProfile = async (req, res) => {
       membershipTier: user.membershipTier,
       createdAt: user.createdAt,
       membershipStartDate: user.membershipStartDate,
+      membershipEndDate: user.membershipEndDate,
+      subscriptionStatus: user.subscriptionStatus,
       trialDaysRemaining: user.calculateTrialDaysRemaining(),
       isEmailVerified: user.isEmailVerified,
       logoUrl: customization?.logoUrl || null,
@@ -260,6 +265,8 @@ export const verifyEmail = async (req, res) => {
       membershipTier: user.membershipTier,
       createdAt: user.createdAt,
       membershipStartDate: user.membershipStartDate,
+      membershipEndDate: user.membershipEndDate,
+      subscriptionStatus: user.subscriptionStatus,
       trialDaysRemaining: user.calculateTrialDaysRemaining(),
       token: generateToken(user._id),
     });
