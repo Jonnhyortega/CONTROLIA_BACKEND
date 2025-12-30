@@ -6,15 +6,16 @@ import {
   deleteClient,
 } from "../controllers/clientController.js";
 import { protect } from "../middleware/authMiddleware.js";
+import { checkSubscription } from "../middleware/checkSubscription.js";
 
 const router = express.Router();
 
 router.route("/")
-  .get(protect, getClients)
-  .post(protect, createClient);
+  .get(protect, checkSubscription, getClients)
+  .post(protect, checkSubscription, createClient);
 
 router.route("/:id")
-  .put(protect, updateClient)
-  .delete(protect, deleteClient);
+  .put(protect, checkSubscription, updateClient)
+  .delete(protect, checkSubscription, deleteClient);
 
 export default router;
