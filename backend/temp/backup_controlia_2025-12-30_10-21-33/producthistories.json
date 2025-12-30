@@ -1,0 +1,2298 @@
+[
+  {
+    "_id": "6939bfbd5de2dabe15e2b36c",
+    "product": "69304a367eb39d02497abf3c",
+    "user": "69375580fc63eaf31804d049",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 8,
+        "new": 7
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-10T18:45:17.472Z",
+    "updatedAt": "2025-12-10T18:45:17.472Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939c95a3ce7285b7268f275",
+    "product": "693050af7eb39d02497ac0dc",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 5,
+        "new": 4
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-10T19:26:18.741Z",
+    "updatedAt": "2025-12-10T19:26:18.741Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939c95a3ce7285b7268f278",
+    "product": "693050fa7eb39d02497ac137",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 9,
+        "new": 8
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-10T19:26:18.878Z",
+    "updatedAt": "2025-12-10T19:26:18.878Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939ca3f3ce7285b7268f31a",
+    "product": "693050837eb39d02497ac09a",
+    "user": "69375580fc63eaf31804d049",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 8,
+        "new": 7
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-10T19:30:07.874Z",
+    "updatedAt": "2025-12-10T19:30:07.874Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939ca4a3ce7285b7268f339",
+    "product": "69304a367eb39d02497abf3c",
+    "user": "69375580fc63eaf31804d049",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 7,
+        "new": 6
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-10T19:30:18.664Z",
+    "updatedAt": "2025-12-10T19:30:18.664Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939d70d06b18ce684ca3782",
+    "product": "693050af7eb39d02497ac0dc",
+    "user": "69375580fc63eaf31804d049",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 4,
+        "new": 3
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-10T20:24:45.613Z",
+    "updatedAt": "2025-12-10T20:24:45.613Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939d72106b18ce684ca37a9",
+    "product": "693050af7eb39d02497ac0dc",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 3,
+        "new": 4
+      }
+    },
+    "description": "Venta revertida (6939d70d06b18ce684ca3784)",
+    "createdAt": "2025-12-10T20:25:05.188Z",
+    "updatedAt": "2025-12-10T20:25:05.188Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939d77e06b18ce684ca37fb",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "stock": {
+        "old": 0,
+        "new": 49
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-10T20:26:38.989Z",
+    "updatedAt": "2025-12-10T20:26:38.989Z",
+    "__v": 0
+  },
+  {
+    "_id": "693aca583ce7285b7268f8ec",
+    "product": "693050af7eb39d02497ac0dc",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 4,
+        "new": 3
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-11T13:42:49.052Z",
+    "updatedAt": "2025-12-11T13:42:49.052Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b13a22de6525c2fa10a5a",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T18:55:30.883Z",
+    "updatedAt": "2025-12-11T18:55:30.883Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b13a92de6525c2fa10a60",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T18:55:37.737Z",
+    "updatedAt": "2025-12-11T18:55:37.737Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b13ab2de6525c2fa10a66",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T18:55:39.880Z",
+    "updatedAt": "2025-12-11T18:55:39.880Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b141b2de6525c2fa10a6c",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T18:57:31.341Z",
+    "updatedAt": "2025-12-11T18:57:31.341Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b14e12de6525c2fa10de5",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:00:49.355Z",
+    "updatedAt": "2025-12-11T19:00:49.355Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b14f12de6525c2fa10deb",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:01:05.937Z",
+    "updatedAt": "2025-12-11T19:01:05.937Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b14f22de6525c2fa10df1",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:01:06.947Z",
+    "updatedAt": "2025-12-11T19:01:06.947Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b15232de6525c2fa10e1a",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:01:55.696Z",
+    "updatedAt": "2025-12-11T19:01:55.696Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b160b2de6525c2fa10e43",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:05:47.247Z",
+    "updatedAt": "2025-12-11T19:05:47.247Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b16952de6525c2fa10e4c",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:08:05.641Z",
+    "updatedAt": "2025-12-11T19:08:05.641Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b16952de6525c2fa10e4e",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:08:05.646Z",
+    "updatedAt": "2025-12-11T19:08:05.646Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b16962de6525c2fa10e55",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:08:06.260Z",
+    "updatedAt": "2025-12-11T19:08:06.260Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b16972de6525c2fa10e5b",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:08:07.206Z",
+    "updatedAt": "2025-12-11T19:08:07.206Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b16992de6525c2fa10e64",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:08:09.737Z",
+    "updatedAt": "2025-12-11T19:08:09.737Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b169b2de6525c2fa10e6d",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:08:11.004Z",
+    "updatedAt": "2025-12-11T19:08:11.004Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b169b2de6525c2fa10e72",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:08:11.066Z",
+    "updatedAt": "2025-12-11T19:08:11.066Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b169b2de6525c2fa10e75",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:08:11.095Z",
+    "updatedAt": "2025-12-11T19:08:11.095Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b169b2de6525c2fa10e77",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:08:11.099Z",
+    "updatedAt": "2025-12-11T19:08:11.099Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b16b62de6525c2fa10ea2",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:08:38.793Z",
+    "updatedAt": "2025-12-11T19:08:38.793Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b175b2de6525c2fa10ee3",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-11T19:11:23.454Z",
+    "updatedAt": "2025-12-11T19:11:23.454Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c35552de6525c2fa11707",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-12T15:31:33.884Z",
+    "updatedAt": "2025-12-12T15:31:33.884Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c35682de6525c2fa1170d",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "barcode": {
+        "old": null,
+        "new": ""
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-12T15:31:52.102Z",
+    "updatedAt": "2025-12-12T15:31:52.102Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c3b3d2de6525c2fa117da",
+    "product": "693c3b162de6525c2fa117ac",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "name": {
+        "old": "asda",
+        "new": "Freidora electrica 1600w ATMA"
+      },
+      "price": {
+        "old": 132312,
+        "new": 140567
+      },
+      "cost": {
+        "old": 11321,
+        "new": 78960
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-12T15:56:45.460Z",
+    "updatedAt": "2025-12-12T15:56:45.460Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c43182de6525c2fa118db",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 10,
+        "new": 9
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-12T16:30:16.186Z",
+    "updatedAt": "2025-12-12T16:30:16.186Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c43522de6525c2fa118f7",
+    "product": "693c3f962de6525c2fa117e5",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 10,
+        "new": 9
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-12T16:31:14.166Z",
+    "updatedAt": "2025-12-12T16:31:14.166Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c43b62de6525c2fa11914",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 49,
+        "new": 48
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-12T16:32:54.362Z",
+    "updatedAt": "2025-12-12T16:32:54.362Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c43b62de6525c2fa11917",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 20,
+        "new": 19
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-12T16:32:54.677Z",
+    "updatedAt": "2025-12-12T16:32:54.677Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c43b62de6525c2fa1191a",
+    "product": "693c3b162de6525c2fa117ac",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 20,
+        "new": 19
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-12T16:32:54.819Z",
+    "updatedAt": "2025-12-12T16:32:54.819Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c4a1b2de6525c2fa11dc1",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "69375580fc63eaf31804d049",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 9,
+        "new": 8
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-12T17:00:11.768Z",
+    "updatedAt": "2025-12-12T17:00:11.768Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c4b5f2de6525c2fa11e9c",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "69375580fc63eaf31804d049",
+    "action": "update",
+    "changes": {
+      "stock": {
+        "old": 8,
+        "new": 9
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-12T17:05:35.514Z",
+    "updatedAt": "2025-12-12T17:05:35.514Z",
+    "__v": 0
+  },
+  {
+    "_id": "693daf9a06b18ce684ca38c4",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 19,
+        "new": 18
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-13T18:25:30.985Z",
+    "updatedAt": "2025-12-13T18:25:30.985Z",
+    "__v": 0
+  },
+  {
+    "_id": "693df258301b8bc8e933b628",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 18,
+        "new": 17
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-13T23:10:17.815Z",
+    "updatedAt": "2025-12-13T23:10:17.815Z",
+    "__v": 0
+  },
+  {
+    "_id": "693df25a301b8bc8e933b62b",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 30,
+        "new": 28
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-13T23:10:18.369Z",
+    "updatedAt": "2025-12-13T23:10:18.369Z",
+    "__v": 0
+  },
+  {
+    "_id": "693df2ba301b8bc8e933b649",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 28,
+        "new": 27
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-13T23:11:54.597Z",
+    "updatedAt": "2025-12-13T23:11:54.597Z",
+    "__v": 0
+  },
+  {
+    "_id": "693df2d5301b8bc8e933b667",
+    "product": "693c3b162de6525c2fa117ac",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 19,
+        "new": 15
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-13T23:12:21.595Z",
+    "updatedAt": "2025-12-13T23:12:21.595Z",
+    "__v": 0
+  },
+  {
+    "_id": "693f3109da96fcd7d73f8344",
+    "product": "693f3015da96fcd7d73f8293",
+    "user": "693f2a4b4bd30ab21331b335",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 100,
+        "new": 97
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-14T21:50:04.485Z",
+    "updatedAt": "2025-12-14T21:50:04.485Z",
+    "__v": 0
+  },
+  {
+    "_id": "693ffe7b57308bfed974f8be",
+    "product": "693f4345da96fcd7d73f8975",
+    "user": "693f2a4b4bd30ab21331b335",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 100,
+        "new": 97
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-15T12:26:35.551Z",
+    "updatedAt": "2025-12-15T12:26:35.551Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940001257308bfed974f940",
+    "product": "693f4345da96fcd7d73f8975",
+    "user": "693f2a4b4bd30ab21331b335",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 97,
+        "new": 94
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-15T12:33:22.698Z",
+    "updatedAt": "2025-12-15T12:33:22.698Z",
+    "__v": 0
+  },
+  {
+    "_id": "69401dfd57308bfed974fcbf",
+    "product": "693f4345da96fcd7d73f8975",
+    "user": "693f2a4b4bd30ab21331b335",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 94,
+        "new": 90
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-15T14:41:01.956Z",
+    "updatedAt": "2025-12-15T14:41:01.956Z",
+    "__v": 0
+  },
+  {
+    "_id": "69401dfe57308bfed974fcc2",
+    "product": "693f3015da96fcd7d73f8293",
+    "user": "693f2a4b4bd30ab21331b335",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 97,
+        "new": 94
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-15T14:41:02.173Z",
+    "updatedAt": "2025-12-15T14:41:02.173Z",
+    "__v": 0
+  },
+  {
+    "_id": "694027b357308bfed974fd02",
+    "product": "693f4345da96fcd7d73f8975",
+    "user": "693f2a4b4bd30ab21331b335",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 90,
+        "new": 88
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-15T15:22:28.002Z",
+    "updatedAt": "2025-12-15T15:22:28.002Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940308857308bfed974fd89",
+    "product": "693f4345da96fcd7d73f8975",
+    "user": "693f2a4b4bd30ab21331b335",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 88,
+        "new": 87
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-15T16:00:08.733Z",
+    "updatedAt": "2025-12-15T16:00:08.733Z",
+    "__v": 0
+  },
+  {
+    "_id": "69405970f19fa6976e26ebd7",
+    "product": "693f4345da96fcd7d73f8975",
+    "user": "6940034557308bfed974faf0",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 87,
+        "new": 86
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-15T18:54:41.001Z",
+    "updatedAt": "2025-12-15T18:54:41.001Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940604df19fa6976e26ec7b",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 9,
+        "new": 8
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-15T19:23:57.922Z",
+    "updatedAt": "2025-12-15T19:23:57.922Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940605cf19fa6976e26ec97",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 8,
+        "new": 7
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-15T19:24:12.056Z",
+    "updatedAt": "2025-12-15T19:24:12.056Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940606df19fa6976e26ecb4",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 27,
+        "new": 26
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-15T19:24:29.363Z",
+    "updatedAt": "2025-12-15T19:24:29.363Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940606ef19fa6976e26ecb7",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 17,
+        "new": 16
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-15T19:24:30.043Z",
+    "updatedAt": "2025-12-15T19:24:30.043Z",
+    "__v": 0
+  },
+  {
+    "_id": "69417ed189cfdf215e2c5070",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 7,
+        "new": 6
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-16T15:46:25.949Z",
+    "updatedAt": "2025-12-16T15:46:25.949Z",
+    "__v": 0
+  },
+  {
+    "_id": "6941824389cfdf215e2c50cd",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 48,
+        "new": 47
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-16T16:01:07.470Z",
+    "updatedAt": "2025-12-16T16:01:07.470Z",
+    "__v": 0
+  },
+  {
+    "_id": "6941824389cfdf215e2c50d0",
+    "product": "693050837eb39d02497ac09a",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 7,
+        "new": 6
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-16T16:01:07.591Z",
+    "updatedAt": "2025-12-16T16:01:07.591Z",
+    "__v": 0
+  },
+  {
+    "_id": "694182bb89cfdf215e2c555b",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 47,
+        "new": 46
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-16T16:03:07.034Z",
+    "updatedAt": "2025-12-16T16:03:07.034Z",
+    "__v": 0
+  },
+  {
+    "_id": "694182c989cfdf215e2c557c",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 26,
+        "new": 16
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-16T16:03:21.634Z",
+    "updatedAt": "2025-12-16T16:03:21.634Z",
+    "__v": 0
+  },
+  {
+    "_id": "6941894589cfdf215e2c55cc",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 16,
+        "new": 14
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-16T16:31:01.537Z",
+    "updatedAt": "2025-12-16T16:31:01.537Z",
+    "__v": 0
+  },
+  {
+    "_id": "6941c04589cfdf215e2c5d6d",
+    "product": "693c55f0b2682d4c62fc9559",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "update",
+    "changes": {
+      "category": {
+        "old": "Otros",
+        "new": "Perfumeria"
+      }
+    },
+    "description": "Actualización de producto",
+    "createdAt": "2025-12-16T20:25:41.410Z",
+    "updatedAt": "2025-12-16T20:25:41.410Z",
+    "__v": 0
+  },
+  {
+    "_id": "6941d214abaf852e3f6272a5",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 6,
+        "new": 5
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-16T21:41:40.325Z",
+    "updatedAt": "2025-12-16T21:41:40.325Z",
+    "__v": 0
+  },
+  {
+    "_id": "6941d222abaf852e3f6272c4",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 5,
+        "new": 6
+      }
+    },
+    "description": "Venta revertida (6941d214abaf852e3f6272a7)",
+    "createdAt": "2025-12-16T21:41:54.622Z",
+    "updatedAt": "2025-12-16T21:41:54.622Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942ae01fc0565f7213b0fcc",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 16,
+        "new": 15
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T13:20:01.283Z",
+    "updatedAt": "2025-12-17T13:20:01.283Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942b797fc0565f7213b139b",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 46,
+        "new": 45
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T14:00:55.515Z",
+    "updatedAt": "2025-12-17T14:00:55.515Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942be82fc0565f7213b16a4",
+    "product": "693c3f962de6525c2fa117e5",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 9,
+        "new": 8
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T14:30:26.541Z",
+    "updatedAt": "2025-12-17T14:30:26.541Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942bf08fc0565f7213b16f3",
+    "product": "693c3f962de6525c2fa117e5",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 8,
+        "new": 9
+      }
+    },
+    "description": "Venta revertida (6942be82fc0565f7213b16a6)",
+    "createdAt": "2025-12-17T14:32:40.503Z",
+    "updatedAt": "2025-12-17T14:32:40.503Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942c50e354c1d4fd399ee25",
+    "product": "6942c50e354c1d4fd399ee21",
+    "user": "6942c50d354c1d4fd399ee15",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 10,
+        "new": 8
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T14:58:22.229Z",
+    "updatedAt": "2025-12-17T14:58:22.229Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942c50e354c1d4fd399ee35",
+    "product": "6942c50e354c1d4fd399ee21",
+    "user": "6942c50d354c1d4fd399ee15",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 8,
+        "new": 10
+      }
+    },
+    "description": "Venta revertida (6942c50e354c1d4fd399ee28)",
+    "createdAt": "2025-12-17T14:58:22.785Z",
+    "updatedAt": "2025-12-17T14:58:22.785Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942cac5243018baf6e7d093",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 6,
+        "new": 5
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T15:22:45.357Z",
+    "updatedAt": "2025-12-17T15:22:45.357Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942dfe3f8e5d9813533cf7e",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 5,
+        "new": 6
+      }
+    },
+    "description": "Venta revertida (6942cac5243018baf6e7d095)",
+    "createdAt": "2025-12-17T16:52:51.641Z",
+    "updatedAt": "2025-12-17T16:52:51.641Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942dfe9f8e5d9813533cf97",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 45,
+        "new": 46
+      }
+    },
+    "description": "Venta revertida (6942b797fc0565f7213b139d)",
+    "createdAt": "2025-12-17T16:52:57.784Z",
+    "updatedAt": "2025-12-17T16:52:57.784Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942dfecf8e5d9813533cfaf",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 15,
+        "new": 16
+      }
+    },
+    "description": "Venta revertida (6942ae01fc0565f7213b0fce)",
+    "createdAt": "2025-12-17T16:53:00.503Z",
+    "updatedAt": "2025-12-17T16:53:00.503Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942dffef8e5d9813533cfcf",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 6,
+        "new": 5
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T16:53:18.460Z",
+    "updatedAt": "2025-12-17T16:53:18.460Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942e0acf8e5d9813533d00d",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 5,
+        "new": 6
+      }
+    },
+    "description": "Venta revertida (6942dffef8e5d9813533cfd1)",
+    "createdAt": "2025-12-17T16:56:12.121Z",
+    "updatedAt": "2025-12-17T16:56:12.121Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942e0bcf8e5d9813533d02d",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 6,
+        "new": 5
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T16:56:28.417Z",
+    "updatedAt": "2025-12-17T16:56:28.417Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942e3e5f8e5d9813533d058",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 5,
+        "new": 6
+      }
+    },
+    "description": "Venta revertida (6942e0bcf8e5d9813533d02f)",
+    "createdAt": "2025-12-17T17:09:57.641Z",
+    "updatedAt": "2025-12-17T17:09:57.641Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942e3fff8e5d9813533d078",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 6,
+        "new": 5
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T17:10:23.456Z",
+    "updatedAt": "2025-12-17T17:10:23.456Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942f64ff8e5d9813533d095",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 5,
+        "new": 6
+      }
+    },
+    "description": "Venta revertida (6942e3fff8e5d9813533d07a)",
+    "createdAt": "2025-12-17T18:28:31.229Z",
+    "updatedAt": "2025-12-17T18:28:31.229Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942f865f8e5d9813533d0b5",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 6,
+        "new": 5
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T18:37:25.371Z",
+    "updatedAt": "2025-12-17T18:37:25.371Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942f870f8e5d9813533d0d2",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 5,
+        "new": 6
+      }
+    },
+    "description": "Venta revertida (6942f865f8e5d9813533d0b7)",
+    "createdAt": "2025-12-17T18:37:36.953Z",
+    "updatedAt": "2025-12-17T18:37:36.953Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431349f8e5d9813533d100",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 6,
+        "new": 5
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T20:32:09.764Z",
+    "updatedAt": "2025-12-17T20:32:09.764Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431478f8e5d9813533d13e",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 5,
+        "new": 6
+      }
+    },
+    "description": "Venta revertida (6943134af8e5d9813533d102)",
+    "createdAt": "2025-12-17T20:37:12.181Z",
+    "updatedAt": "2025-12-17T20:37:12.181Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431487f8e5d9813533d15e",
+    "product": "693c3f962de6525c2fa117e5",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 9,
+        "new": 8
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T20:37:27.961Z",
+    "updatedAt": "2025-12-17T20:37:27.961Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431578f8e5d9813533d1a7",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 16,
+        "new": 15
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T20:41:28.484Z",
+    "updatedAt": "2025-12-17T20:41:28.484Z",
+    "__v": 0
+  },
+  {
+    "_id": "6943159cf8e5d9813533d1d0",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 46,
+        "new": 45
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T20:42:04.097Z",
+    "updatedAt": "2025-12-17T20:42:04.097Z",
+    "__v": 0
+  },
+  {
+    "_id": "694316a8f8e5d9813533d1ef",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 45,
+        "new": 46
+      }
+    },
+    "description": "Venta revertida (6943159cf8e5d9813533d1d2)",
+    "createdAt": "2025-12-17T20:46:32.029Z",
+    "updatedAt": "2025-12-17T20:46:32.029Z",
+    "__v": 0
+  },
+  {
+    "_id": "694316abf8e5d9813533d208",
+    "product": "693c3f962de6525c2fa117e5",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 8,
+        "new": 9
+      }
+    },
+    "description": "Venta revertida (69431488f8e5d9813533d160)",
+    "createdAt": "2025-12-17T20:46:35.681Z",
+    "updatedAt": "2025-12-17T20:46:35.681Z",
+    "__v": 0
+  },
+  {
+    "_id": "694316aef8e5d9813533d220",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 15,
+        "new": 16
+      }
+    },
+    "description": "Venta revertida (69431578f8e5d9813533d1a9)",
+    "createdAt": "2025-12-17T20:46:38.889Z",
+    "updatedAt": "2025-12-17T20:46:38.889Z",
+    "__v": 0
+  },
+  {
+    "_id": "694316c2f8e5d9813533d240",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 46,
+        "new": 45
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T20:46:58.864Z",
+    "updatedAt": "2025-12-17T20:46:58.864Z",
+    "__v": 0
+  },
+  {
+    "_id": "694317e4f8e5d9813533d25d",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 45,
+        "new": 46
+      }
+    },
+    "description": "Venta revertida (694316c2f8e5d9813533d242)",
+    "createdAt": "2025-12-17T20:51:48.597Z",
+    "updatedAt": "2025-12-17T20:51:48.597Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431808f8e5d9813533d27d",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 46,
+        "new": 45
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T20:52:24.865Z",
+    "updatedAt": "2025-12-17T20:52:24.865Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431b159466596f7dd2407a",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 45,
+        "new": 46
+      }
+    },
+    "description": "Venta revertida (69431808f8e5d9813533d27f)",
+    "createdAt": "2025-12-17T21:05:25.528Z",
+    "updatedAt": "2025-12-17T21:05:25.528Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431b289466596f7dd2409a",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 16,
+        "new": 15
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T21:05:44.382Z",
+    "updatedAt": "2025-12-17T21:05:44.382Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431bdf9466596f7dd24105",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 6,
+        "new": 5
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T21:08:47.581Z",
+    "updatedAt": "2025-12-17T21:08:47.581Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431d8d9466596f7dd2412f",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 5,
+        "new": 6
+      }
+    },
+    "description": "Venta revertida (69431bdf9466596f7dd24107)",
+    "createdAt": "2025-12-17T21:15:57.462Z",
+    "updatedAt": "2025-12-17T21:15:57.462Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431d909466596f7dd24147",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 15,
+        "new": 16
+      }
+    },
+    "description": "Venta revertida (69431b289466596f7dd2409c)",
+    "createdAt": "2025-12-17T21:16:00.497Z",
+    "updatedAt": "2025-12-17T21:16:00.497Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431da79466596f7dd24167",
+    "product": "693c55f0b2682d4c62fc9559",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 50,
+        "new": 49
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T21:16:23.654Z",
+    "updatedAt": "2025-12-17T21:16:23.654Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431e8185610fbdfaddc843",
+    "product": "693c55f0b2682d4c62fc9559",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 49,
+        "new": 50
+      }
+    },
+    "description": "Venta revertida (69431da79466596f7dd24169)",
+    "createdAt": "2025-12-17T21:20:01.750Z",
+    "updatedAt": "2025-12-17T21:20:01.750Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431e9085610fbdfaddc863",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 46,
+        "new": 45
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T21:20:16.124Z",
+    "updatedAt": "2025-12-17T21:20:16.124Z",
+    "__v": 0
+  },
+  {
+    "_id": "69432cca8c2f1679fae0f99d",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 45,
+        "new": 46
+      }
+    },
+    "description": "Venta revertida (69431e9085610fbdfaddc865)",
+    "createdAt": "2025-12-17T22:20:58.195Z",
+    "updatedAt": "2025-12-17T22:20:58.195Z",
+    "__v": 0
+  },
+  {
+    "_id": "69432ce88c2f1679fae0f9bd",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 14,
+        "new": 13
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T22:21:28.519Z",
+    "updatedAt": "2025-12-17T22:21:28.519Z",
+    "__v": 0
+  },
+  {
+    "_id": "69433498686b0d5de47004c5",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 13,
+        "new": 14
+      }
+    },
+    "description": "Venta revertida (69432ce88c2f1679fae0f9c0)",
+    "createdAt": "2025-12-17T22:54:16.436Z",
+    "updatedAt": "2025-12-17T22:54:16.436Z",
+    "__v": 0
+  },
+  {
+    "_id": "694338393b36ad578d3ac651",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 6,
+        "new": 5
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-17T23:09:45.681Z",
+    "updatedAt": "2025-12-17T23:09:45.681Z",
+    "__v": 0
+  },
+  {
+    "_id": "694403f0f0de902d6f6cb1c7",
+    "product": "693c55f0b2682d4c62fc9559",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 50,
+        "new": 49
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-18T13:38:56.858Z",
+    "updatedAt": "2025-12-18T13:38:56.858Z",
+    "__v": 0
+  },
+  {
+    "_id": "694415ddf0de902d6f6cbfb2",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 14,
+        "new": 13
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-18T14:55:26.028Z",
+    "updatedAt": "2025-12-18T14:55:26.028Z",
+    "__v": 0
+  },
+  {
+    "_id": "69442c0af0de902d6f6cc140",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 5,
+        "new": 4
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-18T16:30:02.347Z",
+    "updatedAt": "2025-12-18T16:30:02.347Z",
+    "__v": 0
+  },
+  {
+    "_id": "69442c0af0de902d6f6cc143",
+    "product": "693c3b162de6525c2fa117ac",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 15,
+        "new": 14
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-18T16:30:02.478Z",
+    "updatedAt": "2025-12-18T16:30:02.478Z",
+    "__v": 0
+  },
+  {
+    "_id": "69443f20ff11a2f4c1f730e9",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 4,
+        "new": 5
+      }
+    },
+    "description": "Venta revertida (69442c0af0de902d6f6cc146)",
+    "createdAt": "2025-12-18T17:51:28.018Z",
+    "updatedAt": "2025-12-18T17:51:28.018Z",
+    "__v": 0
+  },
+  {
+    "_id": "69443f20ff11a2f4c1f730ed",
+    "product": "693c3b162de6525c2fa117ac",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 14,
+        "new": 15
+      }
+    },
+    "description": "Venta revertida (69442c0af0de902d6f6cc146)",
+    "createdAt": "2025-12-18T17:51:28.183Z",
+    "updatedAt": "2025-12-18T17:51:28.183Z",
+    "__v": 0
+  },
+  {
+    "_id": "694449f4ff11a2f4c1f73343",
+    "product": "693c3f962de6525c2fa117e5",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 9,
+        "new": 8
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-18T18:37:40.892Z",
+    "updatedAt": "2025-12-18T18:37:40.892Z",
+    "__v": 0
+  },
+  {
+    "_id": "694449f5ff11a2f4c1f73346",
+    "product": "693c55f0b2682d4c62fc9559",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 49,
+        "new": 48
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-18T18:37:41.025Z",
+    "updatedAt": "2025-12-18T18:37:41.025Z",
+    "__v": 0
+  },
+  {
+    "_id": "69444ee8d763e496b2ee181a",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 16,
+        "new": 15
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-18T18:58:48.723Z",
+    "updatedAt": "2025-12-18T18:58:48.723Z",
+    "__v": 0
+  },
+  {
+    "_id": "69444ee9d763e496b2ee181d",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 13,
+        "new": 12
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-18T18:58:49.413Z",
+    "updatedAt": "2025-12-18T18:58:49.413Z",
+    "__v": 0
+  },
+  {
+    "_id": "694459f2d763e496b2ee1ae1",
+    "product": "693c3f962de6525c2fa117e5",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 8,
+        "new": 7
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-18T19:45:55.124Z",
+    "updatedAt": "2025-12-18T19:45:55.124Z",
+    "__v": 0
+  },
+  {
+    "_id": "6944692b8d8fe51fec9ba7e1",
+    "product": "693050837eb39d02497ac09a",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 6,
+        "new": 5
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-18T20:50:51.711Z",
+    "updatedAt": "2025-12-18T20:50:51.711Z",
+    "__v": 0
+  },
+  {
+    "_id": "6944692c8d8fe51fec9ba7e4",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 46,
+        "new": 45
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-18T20:50:52.078Z",
+    "updatedAt": "2025-12-18T20:50:52.078Z",
+    "__v": 0
+  },
+  {
+    "_id": "6945508f014eb62894598d9f",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 15,
+        "new": 14
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T13:18:07.317Z",
+    "updatedAt": "2025-12-19T13:18:07.317Z",
+    "__v": 0
+  },
+  {
+    "_id": "69457eef014eb62894598f02",
+    "product": "693b132f2de6525c2fa10877",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 12,
+        "new": 11
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T16:35:59.426Z",
+    "updatedAt": "2025-12-19T16:35:59.426Z",
+    "__v": 0
+  },
+  {
+    "_id": "69458cbd3a54d9f4dd90bb63",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 14,
+        "new": 13
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T17:34:53.396Z",
+    "updatedAt": "2025-12-19T17:34:53.396Z",
+    "__v": 0
+  },
+  {
+    "_id": "694596243a54d9f4dd90bb87",
+    "product": "693c55f0b2682d4c62fc9559",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 48,
+        "new": 47
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T18:15:00.994Z",
+    "updatedAt": "2025-12-19T18:15:00.994Z",
+    "__v": 0
+  },
+  {
+    "_id": "694596253a54d9f4dd90bb8a",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 5,
+        "new": 4
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T18:15:01.181Z",
+    "updatedAt": "2025-12-19T18:15:01.181Z",
+    "__v": 0
+  },
+  {
+    "_id": "694596253a54d9f4dd90bb8d",
+    "product": "693c3f962de6525c2fa117e5",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 7,
+        "new": 6
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T18:15:01.502Z",
+    "updatedAt": "2025-12-19T18:15:01.502Z",
+    "__v": 0
+  },
+  {
+    "_id": "694596253a54d9f4dd90bb90",
+    "product": "693c3b162de6525c2fa117ac",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 15,
+        "new": 14
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T18:15:01.830Z",
+    "updatedAt": "2025-12-19T18:15:01.830Z",
+    "__v": 0
+  },
+  {
+    "_id": "694596263a54d9f4dd90bb93",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 13,
+        "new": 12
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T18:15:02.196Z",
+    "updatedAt": "2025-12-19T18:15:02.196Z",
+    "__v": 0
+  },
+  {
+    "_id": "694596263a54d9f4dd90bb96",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 45,
+        "new": 44
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T18:15:02.643Z",
+    "updatedAt": "2025-12-19T18:15:02.643Z",
+    "__v": 0
+  },
+  {
+    "_id": "694598423a54d9f4dd90bbdb",
+    "product": "693050af7eb39d02497ac0dc",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 3,
+        "new": 2
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T18:24:02.151Z",
+    "updatedAt": "2025-12-19T18:24:02.151Z",
+    "__v": 0
+  },
+  {
+    "_id": "694598423a54d9f4dd90bbde",
+    "product": "692dfb877b7d190ea93327c5",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 1,
+        "new": 0
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T18:24:02.414Z",
+    "updatedAt": "2025-12-19T18:24:02.414Z",
+    "__v": 0
+  },
+  {
+    "_id": "69459d9e3a54d9f4dd90bcb6",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 4,
+        "new": 3
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T18:46:54.407Z",
+    "updatedAt": "2025-12-19T18:46:54.407Z",
+    "__v": 0
+  },
+  {
+    "_id": "6945a2083a54d9f4dd90bd34",
+    "product": "693c3b162de6525c2fa117ac",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 14,
+        "new": 13
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T19:05:44.246Z",
+    "updatedAt": "2025-12-19T19:05:44.246Z",
+    "__v": 0
+  },
+  {
+    "_id": "6945b3728d8fe51fec9bad2e",
+    "product": "693b134f2de6525c2fa1087c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 12,
+        "new": 11
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T20:20:02.334Z",
+    "updatedAt": "2025-12-19T20:20:02.334Z",
+    "__v": 0
+  },
+  {
+    "_id": "6945c0983a54d9f4dd90bf60",
+    "product": "694546068d8fe51fec9bacac",
+    "user": "694544e38d8fe51fec9bac7a",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 30,
+        "new": 29
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-19T21:16:08.613Z",
+    "updatedAt": "2025-12-19T21:16:08.613Z",
+    "__v": 0
+  },
+  {
+    "_id": "694972defe1969723bfdf660",
+    "product": "692e323b7b7d190ea9332865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 44,
+        "new": 43
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-22T16:33:34.744Z",
+    "updatedAt": "2025-12-22T16:33:34.744Z",
+    "__v": 0
+  },
+  {
+    "_id": "694972dffe1969723bfdf663",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 3,
+        "new": 2
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-22T16:33:35.107Z",
+    "updatedAt": "2025-12-22T16:33:35.107Z",
+    "__v": 0
+  },
+  {
+    "_id": "694b5351fe1969723bfdf93e",
+    "product": "694546068d8fe51fec9bacac",
+    "user": "694544e38d8fe51fec9bac7a",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 29,
+        "new": 28
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-24T02:43:29.223Z",
+    "updatedAt": "2025-12-24T02:43:29.223Z",
+    "__v": 0
+  },
+  {
+    "_id": "694b53f5fe1969723bfdf970",
+    "product": "694546068d8fe51fec9bacac",
+    "user": "694544e38d8fe51fec9bac7a",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 28,
+        "new": 27
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-24T02:46:13.313Z",
+    "updatedAt": "2025-12-24T02:46:13.313Z",
+    "__v": 0
+  },
+  {
+    "_id": "694b5408fe1969723bfdf998",
+    "product": "694546068d8fe51fec9bacac",
+    "user": "694544e38d8fe51fec9bac7a",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 27,
+        "new": 26
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-24T02:46:32.746Z",
+    "updatedAt": "2025-12-24T02:46:32.746Z",
+    "__v": 0
+  },
+  {
+    "_id": "69528131fe1969723bfdfa0e",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 2,
+        "new": 1
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-29T13:25:05.769Z",
+    "updatedAt": "2025-12-29T13:25:05.769Z",
+    "__v": 0
+  },
+  {
+    "_id": "6952b3b90787d3f7e24aa474",
+    "product": "693c42062de6525c2fa118bf",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 1,
+        "new": 0
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-29T17:00:41.345Z",
+    "updatedAt": "2025-12-29T17:00:41.345Z",
+    "__v": 0
+  },
+  {
+    "_id": "6952bb670787d3f7e24aa573",
+    "product": "6952985f082220faa8ee0389",
+    "user": "695298043c01119bd8691036",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 100,
+        "new": 99
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-29T17:33:27.523Z",
+    "updatedAt": "2025-12-29T17:33:27.523Z",
+    "__v": 0
+  },
+  {
+    "_id": "6952c0bd0787d3f7e24aa6fd",
+    "product": "694546068d8fe51fec9bacac",
+    "user": "694544e38d8fe51fec9bac7a",
+    "action": "stock_adjustment",
+    "changes": {
+      "stock": {
+        "old": 26,
+        "new": 25
+      }
+    },
+    "description": "Venta realizada",
+    "createdAt": "2025-12-29T17:56:13.131Z",
+    "updatedAt": "2025-12-29T17:56:13.131Z",
+    "__v": 0
+  }
+]

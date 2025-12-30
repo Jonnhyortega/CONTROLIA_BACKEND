@@ -1,0 +1,97 @@
+[
+  {
+    "_id": "69029b4790a704f90ea78702",
+    "name": "Distribuidora Norte",
+    "phone": "1144445555",
+    "email": "ventas@distribuidoranorte.com",
+    "address": "San Martín 3000",
+    "debt": 10000000,
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "createdAt": "2025-10-29T22:55:03.563Z",
+    "updatedAt": "2025-10-31T20:08:00.884Z",
+    "__v": 0
+  },
+  {
+    "_id": "69051b5b832549dc01ffd1b9",
+    "name": "Electro MB",
+    "phone": "1312123123",
+    "email": "electro@gmail.com",
+    "address": "Cañada de gomez 4789",
+    "debt": 5000,
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "createdAt": "2025-10-31T20:26:03.539Z",
+    "updatedAt": "2025-11-05T16:17:48.018Z",
+    "__v": 0
+  },
+  {
+    "_id": "692afd9fd1a99f0301249900",
+    "name": "Norberto Golosinas",
+    "phone": "1231231132",
+    "email": "norberto@golosinas.com",
+    "address": "viamonte 509",
+    "debt": null,
+    "user": "6929f1bac97cdc82e996cc9e",
+    "createdAt": "2025-11-29T14:05:19.339Z",
+    "updatedAt": "2025-11-29T14:05:19.339Z",
+    "__v": 0
+  },
+  {
+    "_id": "692afdc1d1a99f0301249904",
+    "name": "Jonson perfumerie",
+    "phone": "1122334455",
+    "email": "jonson@gmail.com",
+    "address": "santiago costamagna 5749 4b",
+    "debt": 30700.040000000037,
+    "user": "6929f1bac97cdc82e996cc9e",
+    "createdAt": "2025-11-29T14:05:53.035Z",
+    "updatedAt": "2025-12-29T17:18:14.228Z",
+    "__v": 0
+  },
+  {
+    "_id": "693b13942de6525c2fa1088d",
+    "name": "Importador KLOPS SRL",
+    "phone": "1122334455",
+    "email": "klop@gmail.com",
+    "address": "timoteo gordillo 4883",
+    "debt": -579,
+    "user": "6929f1bac97cdc82e996cc9e",
+    "createdAt": "2025-12-11T18:55:16.514Z",
+    "updatedAt": "2025-12-22T13:26:29.163Z",
+    "__v": 0
+  },
+  {
+    "_id": "693f3f9fda96fcd7d73f880f",
+    "name": "Distribukio",
+    "phone": "1112343434",
+    "email": "distribukio@distri.com",
+    "address": "Corrientes 1234",
+    "debt": 0,
+    "user": "693f2a4b4bd30ab21331b335",
+    "createdAt": "2025-12-14T22:52:15.454Z",
+    "updatedAt": "2025-12-14T22:52:15.454Z",
+    "__v": 0
+  },
+  {
+    "_id": "69454c0a8d8fe51fec9bacc6",
+    "name": "Perfumeria Ad hasan",
+    "phone": "1144556677",
+    "email": "perfumeria@gmail.com",
+    "address": "Corrientes 1234",
+    "debt": 1398000.01,
+    "user": "694544e38d8fe51fec9bac7a",
+    "createdAt": "2025-12-19T12:58:50.728Z",
+    "updatedAt": "2025-12-24T02:43:46.870Z",
+    "__v": 0
+  },
+  {
+    "_id": "6949d5e99c4d9f91be506827",
+    "name": "Sup 1",
+    "phone": "123",
+    "email": "s1@test.com",
+    "debt": 0,
+    "user": "6949d5e89c4d9f91be506812",
+    "createdAt": "2025-12-22T23:36:09.522Z",
+    "updatedAt": "2025-12-22T23:36:09.522Z",
+    "__v": 0
+  }
+]

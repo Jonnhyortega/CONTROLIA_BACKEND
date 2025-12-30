@@ -1,0 +1,74 @@
+[
+  {
+    "_id": "69029b4790a704f90ea786ff",
+    "name": "Carlos Pérez",
+    "phone": "1123456789",
+    "email": "carlos@gmail.com",
+    "address": "Av. Corrientes 1234",
+    "balance": 0,
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "__v": 0,
+    "createdAt": "2025-10-29T22:55:03.511Z",
+    "updatedAt": "2025-10-29T22:55:03.511Z"
+  },
+  {
+    "_id": "69029b4790a704f90ea78700",
+    "name": "Lucía Gómez",
+    "phone": "1198765432",
+    "email": "lucia@gmail.com",
+    "address": "Av. Rivadavia 4567",
+    "balance": 0,
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "__v": 0,
+    "createdAt": "2025-10-29T22:55:03.511Z",
+    "updatedAt": "2025-10-29T22:55:03.511Z"
+  },
+  {
+    "_id": "693df0cc301b8bc8e933b5ea",
+    "name": "Ernesto Rocamora",
+    "phone": "1131231231",
+    "email": "",
+    "address": "Av siempre viva 123",
+    "balance": -19633,
+    "user": "6929f1bac97cdc82e996cc9e",
+    "createdAt": "2025-12-13T23:03:40.200Z",
+    "updatedAt": "2025-12-18T19:07:28.371Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940318157308bfed974ffca",
+    "name": "Aaron Pico",
+    "phone": "11123232",
+    "email": "aron@gmail.com",
+    "address": "av siempre viva 123",
+    "balance": 0,
+    "user": "693f2a4b4bd30ab21331b335",
+    "createdAt": "2025-12-15T16:04:17.921Z",
+    "updatedAt": "2025-12-15T16:04:17.921Z",
+    "__v": 0
+  },
+  {
+    "_id": "69442e5cf0de902d6f6cc183",
+    "name": "Juan Perez",
+    "phone": "1122442233",
+    "email": "juan@yahoo.com.ar",
+    "address": "goleta sarandi 5666",
+    "balance": 10000,
+    "user": "6929f1bac97cdc82e996cc9e",
+    "createdAt": "2025-12-18T16:39:56.221Z",
+    "updatedAt": "2025-12-19T18:35:30.391Z",
+    "__v": 0
+  },
+  {
+    "_id": "69454c968d8fe51fec9bacd3",
+    "name": "Juan Perez",
+    "phone": "1133557799",
+    "email": "constellalvaro@gmail.com",
+    "address": "timoteo gordillo 4000",
+    "balance": 0,
+    "user": "694544e38d8fe51fec9bac7a",
+    "createdAt": "2025-12-19T13:01:10.051Z",
+    "updatedAt": "2025-12-19T13:01:10.051Z",
+    "__v": 0
+  }
+]

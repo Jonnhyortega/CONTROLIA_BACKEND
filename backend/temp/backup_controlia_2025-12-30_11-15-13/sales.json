@@ -1,0 +1,4283 @@
+[
+  {
+    "_id": "6906b1ae990f78d742f8c279",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "quantity": -1,
+        "price": 15000,
+        "_id": "6906b1ae990f78d742f8c27a"
+      }
+    ],
+    "total": -15000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-02T01:19:42.884Z",
+    "createdAt": "2025-11-02T01:19:42.894Z",
+    "updatedAt": "2025-11-02T01:20:01.876Z",
+    "__v": 0
+  },
+  {
+    "_id": "6906b1af990f78d742f8c281",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "quantity": -1,
+        "price": 15000,
+        "_id": "6906b1af990f78d742f8c282"
+      }
+    ],
+    "total": -15000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-02T01:19:43.350Z",
+    "createdAt": "2025-11-02T01:19:43.351Z",
+    "updatedAt": "2025-11-02T01:19:52.433Z",
+    "__v": 0
+  },
+  {
+    "_id": "6906b251990f78d742f8c2d3",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "quantity": 1,
+        "price": 15000,
+        "_id": "6906b251990f78d742f8c2d4"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-02T01:22:25.899Z",
+    "createdAt": "2025-11-02T01:22:25.901Z",
+    "updatedAt": "2025-11-02T01:23:12.747Z",
+    "__v": 0
+  },
+  {
+    "_id": "6906b252990f78d742f8c2e0",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "quantity": 1,
+        "price": 15000,
+        "_id": "6906b252990f78d742f8c2e1"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-02T01:22:26.983Z",
+    "createdAt": "2025-11-02T01:22:26.983Z",
+    "updatedAt": "2025-11-02T01:22:47.366Z",
+    "__v": 0
+  },
+  {
+    "_id": "6906b28ad8a06c080caca9c1",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "quantity": 5,
+        "price": 15000,
+        "_id": "6906b28ad8a06c080caca9c2"
+      }
+    ],
+    "total": 75000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-02T01:23:22.685Z",
+    "createdAt": "2025-11-02T01:23:22.687Z",
+    "updatedAt": "2025-11-02T01:23:22.687Z",
+    "__v": 0
+  },
+  {
+    "_id": "6906b28bd8a06c080caca9cd",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "quantity": 5,
+        "price": 15000,
+        "_id": "6906b28bd8a06c080caca9ce"
+      }
+    ],
+    "total": 75000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-02T01:23:23.915Z",
+    "createdAt": "2025-11-02T01:23:23.916Z",
+    "updatedAt": "2025-11-02T01:27:42.525Z",
+    "__v": 0
+  },
+  {
+    "_id": "6906b3cdd8a06c080cacaa5f",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "quantity": -3,
+        "price": 20000,
+        "_id": "6906b3cdd8a06c080cacaa60"
+      }
+    ],
+    "total": -60000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-02T01:28:45.020Z",
+    "createdAt": "2025-11-02T01:28:45.021Z",
+    "updatedAt": "2025-11-02T01:28:45.021Z",
+    "__v": 0
+  },
+  {
+    "_id": "6906b3cdd8a06c080cacaa64",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "quantity": -3,
+        "price": 20000,
+        "_id": "6906b3cdd8a06c080cacaa65"
+      }
+    ],
+    "total": -60000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-02T01:28:45.718Z",
+    "createdAt": "2025-11-02T01:28:45.719Z",
+    "updatedAt": "2025-11-02T01:28:45.719Z",
+    "__v": 0
+  },
+  {
+    "_id": "6908c072597db975cc426662",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "quantity": 1,
+        "price": 20000,
+        "_id": "6908c072597db975cc426663"
+      }
+    ],
+    "total": 20000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-03T14:47:14.204Z",
+    "createdAt": "2025-11-03T14:47:14.207Z",
+    "updatedAt": "2025-11-03T15:11:21.940Z",
+    "__v": 0
+  },
+  {
+    "_id": "6908c072597db975cc426665",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "quantity": 1,
+        "price": 20000,
+        "_id": "6908c072597db975cc426666"
+      }
+    ],
+    "total": 20000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-03T14:47:14.214Z",
+    "createdAt": "2025-11-03T14:47:14.218Z",
+    "updatedAt": "2025-11-03T15:11:26.042Z",
+    "__v": 0
+  },
+  {
+    "_id": "6908c6133576c22959bd0a8e",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "quantity": 1,
+        "price": 15000,
+        "_id": "6908c6133576c22959bd0a8f"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-03T15:11:15.839Z",
+    "createdAt": "2025-11-03T15:11:15.848Z",
+    "updatedAt": "2025-11-03T15:11:28.644Z",
+    "__v": 0
+  },
+  {
+    "_id": "6908c62a3576c22959bd0ad3",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "quantity": 5,
+        "price": 20000,
+        "_id": "6908c62a3576c22959bd0ad4"
+      }
+    ],
+    "total": 100000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-03T15:11:38.612Z",
+    "createdAt": "2025-11-03T15:11:38.613Z",
+    "updatedAt": "2025-11-03T15:11:38.613Z",
+    "__v": 0
+  },
+  {
+    "_id": "6908d33b3576c22959bd0af2",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "quantity": 1,
+        "price": 20000,
+        "_id": "6908d33b3576c22959bd0af3"
+      }
+    ],
+    "total": 20000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-03T16:07:23.588Z",
+    "createdAt": "2025-11-03T16:07:23.589Z",
+    "updatedAt": "2025-11-03T16:07:23.589Z",
+    "__v": 0
+  },
+  {
+    "_id": "6908d3773576c22959bd0b11",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "quantity": 1,
+        "price": 15000,
+        "_id": "6908d3773576c22959bd0b12"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-03T16:08:23.623Z",
+    "createdAt": "2025-11-03T16:08:23.625Z",
+    "updatedAt": "2025-11-03T16:08:23.625Z",
+    "__v": 0
+  },
+  {
+    "_id": "6908d3833576c22959bd0b32",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "quantity": 3,
+        "price": 15000,
+        "_id": "6908d3833576c22959bd0b33"
+      }
+    ],
+    "total": 45000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-03T16:08:35.635Z",
+    "createdAt": "2025-11-03T16:08:35.637Z",
+    "updatedAt": "2025-11-03T16:08:35.637Z",
+    "__v": 0
+  },
+  {
+    "_id": "6908d4b93576c22959bd0b5d",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "quantity": 1,
+        "price": 20000,
+        "_id": "6908d4b93576c22959bd0b5e"
+      }
+    ],
+    "total": 20000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-03T16:13:45.926Z",
+    "createdAt": "2025-11-03T16:13:45.929Z",
+    "updatedAt": "2025-11-03T16:13:45.929Z",
+    "__v": 0
+  },
+  {
+    "_id": "6908d4ca3576c22959bd0b7e",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": null,
+        "quantity": 2,
+        "price": 100,
+        "_id": "6908d4ca3576c22959bd0b7f"
+      }
+    ],
+    "total": 200,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-03T16:14:02.194Z",
+    "createdAt": "2025-11-03T16:14:02.195Z",
+    "updatedAt": "2025-11-03T16:14:02.195Z",
+    "__v": 0
+  },
+  {
+    "_id": "690945ecc13e3895f8423b5c",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "quantity": 1,
+        "price": 20000,
+        "_id": "690945ecc13e3895f8423b5d"
+      }
+    ],
+    "total": 20000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-04T00:16:44.269Z",
+    "createdAt": "2025-11-04T00:16:44.272Z",
+    "updatedAt": "2025-11-04T00:16:44.272Z",
+    "__v": 0
+  },
+  {
+    "_id": "690a2764d6ae264d9ec2b2de",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690951e1c13e3895f8423d69",
+        "quantity": 1,
+        "price": 15000,
+        "_id": "690a2764d6ae264d9ec2b2df"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "transferencia",
+    "date": "2025-11-04T16:18:44.992Z",
+    "createdAt": "2025-11-04T16:18:45.002Z",
+    "updatedAt": "2025-11-04T16:18:45.002Z",
+    "__v": 0
+  },
+  {
+    "_id": "690a28ad9f78f50a32984c85",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": null,
+        "name": "Clavitos",
+        "quantity": 2,
+        "price": 100,
+        "_id": "690a28ad9f78f50a32984c86"
+      }
+    ],
+    "total": 200,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-04T16:24:13.128Z",
+    "createdAt": "2025-11-04T16:24:13.138Z",
+    "updatedAt": "2025-11-04T16:24:13.138Z",
+    "__v": 0
+  },
+  {
+    "_id": "690b7759e1c107d1136ec2c1",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "690951e1c13e3895f8423d69",
+        "name": null,
+        "quantity": 1,
+        "price": 15000,
+        "_id": "690b7759e1c107d1136ec2c2"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-05T16:12:09.302Z",
+    "createdAt": "2025-11-05T16:12:09.305Z",
+    "updatedAt": "2025-11-05T22:22:11.823Z",
+    "__v": 0
+  },
+  {
+    "_id": "690b7782e1c107d1136ec2fe",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "690951e1c13e3895f8423d69",
+        "name": null,
+        "quantity": 1,
+        "price": 15000,
+        "_id": "690b7782e1c107d1136ec2ff"
+      },
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "name": null,
+        "quantity": 1,
+        "price": 15000,
+        "_id": "690b7782e1c107d1136ec300"
+      },
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "name": null,
+        "quantity": 1,
+        "price": 20000,
+        "_id": "690b7782e1c107d1136ec301"
+      }
+    ],
+    "total": 50000,
+    "paymentMethod": "transferencia",
+    "date": "2025-11-05T16:12:50.850Z",
+    "createdAt": "2025-11-05T16:12:50.854Z",
+    "updatedAt": "2025-11-05T22:36:56.718Z",
+    "__v": 0
+  },
+  {
+    "_id": "690b78d6e1c107d1136ec3be",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "690b7861e1c107d1136ec367",
+        "name": null,
+        "quantity": 2,
+        "price": 5000,
+        "_id": "690b78d6e1c107d1136ec3bf"
+      }
+    ],
+    "total": 10000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-05T16:18:30.629Z",
+    "createdAt": "2025-11-05T16:18:30.631Z",
+    "updatedAt": "2025-11-05T22:27:59.254Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bcc17953f23c42670e085",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "690b7891e1c107d1136ec36f",
+        "name": null,
+        "quantity": 19,
+        "price": 18,
+        "_id": "690bcc17953f23c42670e086"
+      }
+    ],
+    "total": 342,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-05T22:13:43.959Z",
+    "createdAt": "2025-11-05T22:13:43.962Z",
+    "updatedAt": "2025-11-05T22:26:44.703Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bcfdfc1331eb5292bc9cb",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "690b7861e1c107d1136ec367",
+        "name": null,
+        "quantity": 1,
+        "price": 5000,
+        "_id": "690bcfdfc1331eb5292bc9cc"
+      }
+    ],
+    "total": 5000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-05T22:29:51.126Z",
+    "createdAt": "2025-11-05T22:29:51.126Z",
+    "updatedAt": "2025-11-05T22:30:00.965Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bd0a6c1331eb5292bca04",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "690951e1c13e3895f8423d69",
+        "name": null,
+        "quantity": 1,
+        "price": 15000,
+        "_id": "690bd0a6c1331eb5292bca05"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-05T22:33:10.981Z",
+    "createdAt": "2025-11-05T22:33:10.981Z",
+    "updatedAt": "2025-11-05T22:35:22.514Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bd0b1c1331eb5292bca25",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "690951e1c13e3895f8423d69",
+        "name": null,
+        "quantity": 1,
+        "price": 15000,
+        "_id": "690bd0b1c1331eb5292bca26"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "transferencia",
+    "date": "2025-11-05T22:33:21.444Z",
+    "createdAt": "2025-11-05T22:33:21.445Z",
+    "updatedAt": "2025-11-05T22:33:24.714Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bd1dcc1331eb5292bca72",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "name": null,
+        "quantity": 1,
+        "price": 20000,
+        "_id": "690bd1dcc1331eb5292bca73"
+      }
+    ],
+    "total": 20000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-05T22:38:20.656Z",
+    "createdAt": "2025-11-05T22:38:20.658Z",
+    "updatedAt": "2025-11-05T22:38:25.079Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bd1eac1331eb5292bcaac",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "name": null,
+        "quantity": 1,
+        "price": 15000,
+        "_id": "690bd1eac1331eb5292bcaad"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-05T22:38:34.775Z",
+    "createdAt": "2025-11-05T22:38:34.775Z",
+    "updatedAt": "2025-11-05T22:38:41.237Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bd3f7c1331eb5292bcae7",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "690b7861e1c107d1136ec367",
+        "name": null,
+        "quantity": 1,
+        "price": 5000,
+        "_id": "690bd3f7c1331eb5292bcae8"
+      }
+    ],
+    "total": 5000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-05T22:47:19.075Z",
+    "createdAt": "2025-11-05T22:47:19.076Z",
+    "updatedAt": "2025-11-05T22:47:22.590Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bd40cc1331eb5292bcb14",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "name": null,
+        "quantity": 3,
+        "price": 20000,
+        "_id": "690bd40cc1331eb5292bcb15"
+      }
+    ],
+    "total": 60000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-05T22:47:40.475Z",
+    "createdAt": "2025-11-05T22:47:40.476Z",
+    "updatedAt": "2025-11-05T22:47:40.476Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bd414c1331eb5292bcb35",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "name": null,
+        "quantity": 1,
+        "price": 20000,
+        "_id": "690bd414c1331eb5292bcb36"
+      }
+    ],
+    "total": 20000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-05T22:47:48.847Z",
+    "createdAt": "2025-11-05T22:47:48.847Z",
+    "updatedAt": "2025-11-05T22:47:48.847Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bd421c1331eb5292bcb56",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "name": null,
+        "quantity": 1,
+        "price": 20000,
+        "_id": "690bd421c1331eb5292bcb57"
+      }
+    ],
+    "total": 20000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-05T22:48:01.630Z",
+    "createdAt": "2025-11-05T22:48:01.630Z",
+    "updatedAt": "2025-11-05T22:48:01.630Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bd595c1331eb5292bcb77",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690b7861e1c107d1136ec367",
+        "name": null,
+        "quantity": 1,
+        "price": 5000,
+        "_id": "690bd595c1331eb5292bcb78"
+      }
+    ],
+    "total": 5000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-05T22:54:13.140Z",
+    "createdAt": "2025-11-05T22:54:13.141Z",
+    "updatedAt": "2025-11-05T22:54:13.141Z",
+    "__v": 0
+  },
+  {
+    "_id": "690bde26c1331eb5292bcd22",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": null,
+        "name": "Clavos",
+        "quantity": 1,
+        "price": 100,
+        "_id": "690bde26c1331eb5292bcd23"
+      }
+    ],
+    "total": 100,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-05T23:30:46.879Z",
+    "createdAt": "2025-11-05T23:30:46.880Z",
+    "updatedAt": "2025-11-05T23:30:46.880Z",
+    "__v": 0
+  },
+  {
+    "_id": "690d4b6a243993e72636b7ea",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690b7891e1c107d1136ec36f",
+        "name": null,
+        "quantity": 10,
+        "price": 18,
+        "_id": "690d4b6a243993e72636b7eb"
+      }
+    ],
+    "total": 180,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-07T01:29:14.096Z",
+    "createdAt": "2025-11-07T01:29:14.099Z",
+    "updatedAt": "2025-11-07T01:29:14.099Z",
+    "__v": 0
+  },
+  {
+    "_id": "690e477aab842262b18dde09",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690b7861e1c107d1136ec367",
+        "name": null,
+        "quantity": 1,
+        "price": 5000,
+        "_id": "690e477aab842262b18dde0a"
+      }
+    ],
+    "total": 5000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-07T19:24:42.109Z",
+    "createdAt": "2025-11-07T19:24:42.118Z",
+    "updatedAt": "2025-11-07T19:24:42.118Z",
+    "__v": 0
+  },
+  {
+    "_id": "6913a27b435ab57013c4e3ac",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "name": null,
+        "quantity": 1,
+        "price": 15000,
+        "_id": "6913a27b435ab57013c4e3ad"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-11T20:54:19.494Z",
+    "createdAt": "2025-11-11T20:54:19.495Z",
+    "updatedAt": "2025-11-11T20:54:19.495Z",
+    "__v": 0
+  },
+  {
+    "_id": "6913a282435ab57013c4e3cd",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "name": null,
+        "quantity": 1,
+        "price": 15000,
+        "_id": "6913a282435ab57013c4e3ce"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-11T20:54:26.867Z",
+    "createdAt": "2025-11-11T20:54:26.869Z",
+    "updatedAt": "2025-11-11T20:54:26.869Z",
+    "__v": 0
+  },
+  {
+    "_id": "6913a28c435ab57013c4e3ee",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690b7861e1c107d1136ec367",
+        "name": null,
+        "quantity": 1,
+        "price": 5000,
+        "_id": "6913a28c435ab57013c4e3ef"
+      }
+    ],
+    "total": 5000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-11T20:54:36.887Z",
+    "createdAt": "2025-11-11T20:54:36.890Z",
+    "updatedAt": "2025-11-11T20:54:36.890Z",
+    "__v": 0
+  },
+  {
+    "_id": "6914b3fe435ab57013c4e63f",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "name": null,
+        "quantity": 3,
+        "price": 15000,
+        "_id": "6914b3fe435ab57013c4e640"
+      }
+    ],
+    "total": 45000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-12T16:21:18.010Z",
+    "createdAt": "2025-11-12T16:21:18.013Z",
+    "updatedAt": "2025-11-12T16:21:18.013Z",
+    "__v": 0
+  },
+  {
+    "_id": "69151da9ca2901454a1ec6cf",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906b3bad8a06c080cacaa3a",
+        "name": null,
+        "quantity": 1,
+        "price": 20000,
+        "_id": "69151da9ca2901454a1ec6d0"
+      }
+    ],
+    "total": 20000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-12T23:52:09.533Z",
+    "createdAt": "2025-11-12T23:52:09.536Z",
+    "updatedAt": "2025-11-12T23:52:09.536Z",
+    "__v": 0
+  },
+  {
+    "_id": "691633915edadef5f7f1300f",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690bd601c1331eb5292bcbae",
+        "name": null,
+        "quantity": 1,
+        "price": 30,
+        "_id": "691633915edadef5f7f13010"
+      }
+    ],
+    "total": 30,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-13T19:37:53.847Z",
+    "createdAt": "2025-11-13T19:37:53.850Z",
+    "updatedAt": "2025-11-13T19:37:53.850Z",
+    "__v": 0
+  },
+  {
+    "_id": "6916339b5edadef5f7f13030",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690b7818e1c107d1136ec35f",
+        "name": null,
+        "quantity": 1,
+        "price": 13500,
+        "_id": "6916339b5edadef5f7f13031"
+      }
+    ],
+    "total": 13500,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-13T19:38:03.495Z",
+    "createdAt": "2025-11-13T19:38:03.500Z",
+    "updatedAt": "2025-11-13T19:38:03.500Z",
+    "__v": 0
+  },
+  {
+    "_id": "691633ed5edadef5f7f13071",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "reverted",
+    "products": [
+      {
+        "product": null,
+        "name": "mecha del 8",
+        "quantity": 2,
+        "price": 18998,
+        "_id": "691633ed5edadef5f7f13072"
+      }
+    ],
+    "total": 37996,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-13T19:39:25.681Z",
+    "createdAt": "2025-11-13T19:39:25.683Z",
+    "updatedAt": "2025-11-13T19:40:00.788Z",
+    "__v": 0
+  },
+  {
+    "_id": "691639985edadef5f7f1313e",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "name": null,
+        "quantity": 2,
+        "price": 15000,
+        "_id": "691639985edadef5f7f1313f"
+      }
+    ],
+    "total": 30000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-13T20:03:36.594Z",
+    "createdAt": "2025-11-13T20:03:36.596Z",
+    "updatedAt": "2025-11-13T20:03:36.596Z",
+    "__v": 0
+  },
+  {
+    "_id": "691639dd5edadef5f7f1319b",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "6906aee9003436583d3b68b8",
+        "name": null,
+        "quantity": 2,
+        "price": 15000,
+        "_id": "691639dd5edadef5f7f1319c"
+      }
+    ],
+    "total": 30000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-13T20:04:45.890Z",
+    "createdAt": "2025-11-13T20:04:45.891Z",
+    "updatedAt": "2025-11-13T20:04:45.891Z",
+    "__v": 0
+  },
+  {
+    "_id": "691639ee5edadef5f7f131c6",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690951e1c13e3895f8423d69",
+        "name": null,
+        "quantity": 1,
+        "price": 15000,
+        "_id": "691639ee5edadef5f7f131c7"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-13T20:05:02.470Z",
+    "createdAt": "2025-11-13T20:05:02.472Z",
+    "updatedAt": "2025-11-13T20:05:02.472Z",
+    "__v": 0
+  },
+  {
+    "_id": "69163a025edadef5f7f131e7",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690951e1c13e3895f8423d69",
+        "name": null,
+        "quantity": 3,
+        "price": 15000,
+        "_id": "69163a025edadef5f7f131e8"
+      }
+    ],
+    "total": 45000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-13T20:05:22.288Z",
+    "createdAt": "2025-11-13T20:05:22.289Z",
+    "updatedAt": "2025-11-13T20:05:22.289Z",
+    "__v": 0
+  },
+  {
+    "_id": "69163a115edadef5f7f13208",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690951e1c13e3895f8423d69",
+        "name": null,
+        "quantity": 1,
+        "price": 15000,
+        "_id": "69163a115edadef5f7f13209"
+      }
+    ],
+    "total": 15000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-13T20:05:37.737Z",
+    "createdAt": "2025-11-13T20:05:37.738Z",
+    "updatedAt": "2025-11-13T20:05:37.738Z",
+    "__v": 0
+  },
+  {
+    "_id": "69163a285edadef5f7f1322b",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690b7818e1c107d1136ec35f",
+        "name": null,
+        "quantity": 4,
+        "price": 13500,
+        "_id": "69163a285edadef5f7f1322c"
+      }
+    ],
+    "total": 54000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-13T20:06:00.131Z",
+    "createdAt": "2025-11-13T20:06:00.132Z",
+    "updatedAt": "2025-11-13T20:06:00.132Z",
+    "__v": 0
+  },
+  {
+    "_id": "6916428a5edadef5f7f13280",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690b7891e1c107d1136ec36f",
+        "name": null,
+        "quantity": 1,
+        "price": 18,
+        "_id": "6916428a5edadef5f7f13281"
+      }
+    ],
+    "total": 18,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-13T20:41:46.201Z",
+    "createdAt": "2025-11-13T20:41:46.205Z",
+    "updatedAt": "2025-11-13T20:41:46.205Z",
+    "__v": 0
+  },
+  {
+    "_id": "691cc64698231c4e922f876b",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690b7861e1c107d1136ec367",
+        "name": null,
+        "quantity": 1,
+        "price": 5000,
+        "_id": "691cc64698231c4e922f876c"
+      }
+    ],
+    "total": 5000,
+    "paymentMethod": "transferencia",
+    "date": "2025-11-18T19:17:26.114Z",
+    "createdAt": "2025-11-18T19:17:26.127Z",
+    "updatedAt": "2025-11-18T19:17:26.127Z",
+    "__v": 0
+  },
+  {
+    "_id": "691cc66298231c4e922f878e",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690b7861e1c107d1136ec367",
+        "name": null,
+        "quantity": 4,
+        "price": 5000,
+        "_id": "691cc66298231c4e922f878f"
+      }
+    ],
+    "total": 20000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-18T19:17:54.102Z",
+    "createdAt": "2025-11-18T19:17:54.104Z",
+    "updatedAt": "2025-11-18T19:17:54.104Z",
+    "__v": 0
+  },
+  {
+    "_id": "6920fc3131e578996d0eaca7",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "status": "active",
+    "products": [
+      {
+        "product": "690bd601c1331eb5292bcbae",
+        "name": null,
+        "quantity": 1,
+        "price": 30,
+        "_id": "6920fc3131e578996d0eaca8"
+      }
+    ],
+    "total": 30,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-21T23:56:33.441Z",
+    "createdAt": "2025-11-21T23:56:33.449Z",
+    "updatedAt": "2025-11-21T23:56:33.449Z",
+    "__v": 0
+  },
+  {
+    "_id": "692a227bf38acad9d03a576a",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": null,
+        "name": "Cable HDMI",
+        "quantity": 3,
+        "price": 47,
+        "_id": "692a227bf38acad9d03a576b"
+      }
+    ],
+    "total": 141,
+    "paymentMethod": "transferencia",
+    "date": "2025-11-28T22:30:19.243Z",
+    "createdAt": "2025-11-28T22:30:19.274Z",
+    "updatedAt": "2025-11-28T22:30:19.274Z",
+    "__v": 0
+  },
+  {
+    "_id": "692a717a0673061614464c76",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "692a285740bdb96b8cd1ba4a",
+        "name": null,
+        "quantity": 2,
+        "price": 1200,
+        "_id": "692a717a0673061614464c77"
+      }
+    ],
+    "total": 2400,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-29T04:07:22.361Z",
+    "createdAt": "2025-11-29T04:07:22.363Z",
+    "updatedAt": "2025-11-29T05:25:55.467Z",
+    "__v": 0
+  },
+  {
+    "_id": "692a80260673061614464d64",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "692a285740bdb96b8cd1ba4a",
+        "name": null,
+        "quantity": 5,
+        "price": 1200,
+        "_id": "692a80260673061614464d65"
+      }
+    ],
+    "total": 6000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-29T05:09:58.739Z",
+    "createdAt": "2025-11-29T05:09:58.744Z",
+    "updatedAt": "2025-11-29T05:25:58.529Z",
+    "__v": 0
+  },
+  {
+    "_id": "692a82fd0673061614464dcb",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "692a7e720673061614464d48",
+        "name": null,
+        "quantity": 1,
+        "price": 3500,
+        "_id": "692a82fd0673061614464dcc"
+      }
+    ],
+    "total": 3500,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-29T05:22:05.786Z",
+    "createdAt": "2025-11-29T05:22:05.787Z",
+    "updatedAt": "2025-11-29T05:26:01.269Z",
+    "__v": 0
+  },
+  {
+    "_id": "692a83f50673061614464e36",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692a7e720673061614464d48",
+        "name": null,
+        "quantity": 8,
+        "price": 3500,
+        "_id": "692a83f50673061614464e37"
+      }
+    ],
+    "total": 28000,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-29T05:26:13.472Z",
+    "createdAt": "2025-11-29T05:26:13.472Z",
+    "updatedAt": "2025-11-29T05:26:13.472Z",
+    "__v": 0
+  },
+  {
+    "_id": "692afa59d1a99f030124982e",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692a7e720673061614464d48",
+        "name": null,
+        "quantity": 1,
+        "price": 3500,
+        "_id": "692afa59d1a99f030124982f"
+      }
+    ],
+    "total": 3500,
+    "paymentMethod": "transferencia",
+    "date": "2025-11-29T13:51:21.147Z",
+    "createdAt": "2025-11-29T13:51:21.178Z",
+    "updatedAt": "2025-11-29T13:51:21.178Z",
+    "__v": 0
+  },
+  {
+    "_id": "692afa74d1a99f0301249876",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692a285740bdb96b8cd1ba4a",
+        "name": null,
+        "quantity": 27,
+        "price": 1200,
+        "_id": "692afa74d1a99f0301249877"
+      }
+    ],
+    "total": 32400,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-29T13:51:48.587Z",
+    "createdAt": "2025-11-29T13:51:48.592Z",
+    "updatedAt": "2025-11-29T13:51:48.592Z",
+    "__v": 0
+  },
+  {
+    "_id": "692b0619d1a99f0301249998",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692afeb7d1a99f0301249952",
+        "name": null,
+        "quantity": 1,
+        "price": 980,
+        "_id": "692b0619d1a99f0301249999"
+      }
+    ],
+    "total": 980,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-29T14:41:29.916Z",
+    "createdAt": "2025-11-29T14:41:29.928Z",
+    "updatedAt": "2025-11-29T14:41:29.928Z",
+    "__v": 0
+  },
+  {
+    "_id": "692b4801d1a99f0301249e46",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692afeb7d1a99f0301249952",
+        "name": null,
+        "quantity": 1,
+        "price": 980,
+        "_id": "692b4801d1a99f0301249e47"
+      }
+    ],
+    "total": 980,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-29T19:22:41.617Z",
+    "createdAt": "2025-11-29T19:22:41.639Z",
+    "updatedAt": "2025-11-29T19:22:41.639Z",
+    "__v": 0
+  },
+  {
+    "_id": "692b481cd1a99f0301249e6d",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692afe24d1a99f0301249922",
+        "name": null,
+        "quantity": 16,
+        "price": 5350,
+        "_id": "692b481cd1a99f0301249e6e"
+      }
+    ],
+    "total": 85600,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-29T19:23:08.408Z",
+    "createdAt": "2025-11-29T19:23:08.412Z",
+    "updatedAt": "2025-11-29T19:23:08.412Z",
+    "__v": 0
+  },
+  {
+    "_id": "692b4961d1a99f0301249ecd",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692afe24d1a99f0301249922",
+        "name": null,
+        "quantity": 2,
+        "price": 5350,
+        "_id": "692b4961d1a99f0301249ece"
+      },
+      {
+        "product": "692afeb7d1a99f0301249952",
+        "name": null,
+        "quantity": 14,
+        "price": 980,
+        "_id": "692b4961d1a99f0301249ecf"
+      }
+    ],
+    "total": 24420,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-29T19:28:33.994Z",
+    "createdAt": "2025-11-29T19:28:33.996Z",
+    "updatedAt": "2025-11-29T19:28:33.996Z",
+    "__v": 0
+  },
+  {
+    "_id": "692b4a43ebb7df51dbe126af",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692a7e720673061614464d48",
+        "name": null,
+        "quantity": 1,
+        "price": 4500,
+        "_id": "692b4a43ebb7df51dbe126b0"
+      }
+    ],
+    "total": 4500,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-29T19:32:19.481Z",
+    "createdAt": "2025-11-29T19:32:19.501Z",
+    "updatedAt": "2025-11-29T19:32:19.501Z",
+    "__v": 0
+  },
+  {
+    "_id": "692b4cb7ebb7df51dbe126e4",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692afeb7d1a99f0301249952",
+        "name": null,
+        "quantity": 1,
+        "price": 980,
+        "_id": "692b4cb7ebb7df51dbe126e5"
+      }
+    ],
+    "total": 980,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-29T19:42:47.971Z",
+    "createdAt": "2025-11-29T19:42:47.977Z",
+    "updatedAt": "2025-11-29T19:42:47.977Z",
+    "__v": 0
+  },
+  {
+    "_id": "692b5530ebb7df51dbe12751",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692afe24d1a99f0301249922",
+        "name": null,
+        "quantity": 1,
+        "price": 5350,
+        "_id": "692b5530ebb7df51dbe12752"
+      }
+    ],
+    "total": 5350,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-29T20:18:56.042Z",
+    "createdAt": "2025-11-29T20:18:56.044Z",
+    "updatedAt": "2025-11-29T20:18:56.044Z",
+    "__v": 0
+  },
+  {
+    "_id": "692b57d6ebb7df51dbe12786",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692afeb7d1a99f0301249952",
+        "name": null,
+        "quantity": 2,
+        "price": 980,
+        "_id": "692b57d6ebb7df51dbe12787"
+      }
+    ],
+    "total": 1960,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-29T20:30:14.691Z",
+    "createdAt": "2025-11-29T20:30:14.696Z",
+    "updatedAt": "2025-11-29T20:30:14.696Z",
+    "__v": 0
+  },
+  {
+    "_id": "692b57e5ebb7df51dbe127b4",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692a7e720673061614464d48",
+        "name": null,
+        "quantity": 1,
+        "price": 4500,
+        "_id": "692b57e5ebb7df51dbe127b5"
+      }
+    ],
+    "total": 4500,
+    "paymentMethod": "mercado pago",
+    "date": "2025-11-29T20:30:29.666Z",
+    "createdAt": "2025-11-29T20:30:29.669Z",
+    "updatedAt": "2025-11-29T20:30:29.669Z",
+    "__v": 0
+  },
+  {
+    "_id": "692b57f9ebb7df51dbe127d4",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692afeb7d1a99f0301249952",
+        "name": null,
+        "quantity": 1,
+        "price": 980,
+        "_id": "692b57f9ebb7df51dbe127d5"
+      }
+    ],
+    "total": 980,
+    "paymentMethod": "transferencia",
+    "date": "2025-11-29T20:30:49.014Z",
+    "createdAt": "2025-11-29T20:30:49.021Z",
+    "updatedAt": "2025-11-29T20:30:49.021Z",
+    "__v": 0
+  },
+  {
+    "_id": "692b5879ebb7df51dbe12810",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692afeb7d1a99f0301249952",
+        "name": null,
+        "quantity": 1,
+        "price": 980,
+        "_id": "692b5879ebb7df51dbe12811"
+      }
+    ],
+    "total": 980,
+    "paymentMethod": "efectivo",
+    "date": "2025-11-29T20:32:57.515Z",
+    "createdAt": "2025-11-29T20:32:57.517Z",
+    "updatedAt": "2025-11-29T20:32:57.517Z",
+    "__v": 0
+  },
+  {
+    "_id": "692cf675ed4f530618d00a82",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "692cf48ded4f530618d009df",
+        "name": null,
+        "quantity": 50,
+        "price": 1500,
+        "_id": "692cf675ed4f530618d00a83"
+      }
+    ],
+    "total": 75000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-01T01:59:17.125Z",
+    "createdAt": "2025-12-01T01:59:17.131Z",
+    "updatedAt": "2025-12-01T02:00:08.052Z",
+    "__v": 0
+  },
+  {
+    "_id": "692cfc37ed4f530618d00b8b",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692afeb7d1a99f0301249952",
+        "name": null,
+        "quantity": 1,
+        "price": 980,
+        "_id": "692cfc37ed4f530618d00b8c"
+      },
+      {
+        "product": null,
+        "name": "CAble hdmi",
+        "quantity": 10,
+        "price": 1800,
+        "_id": "692cfc37ed4f530618d00b8d"
+      },
+      {
+        "product": "692a7e720673061614464d48",
+        "name": null,
+        "quantity": 4,
+        "price": 4500,
+        "_id": "692cfc37ed4f530618d00b8e"
+      },
+      {
+        "product": "692cf444bf9577f5a9aac9a8",
+        "name": null,
+        "quantity": 5,
+        "price": 1233,
+        "_id": "692cfc37ed4f530618d00b8f"
+      }
+    ],
+    "total": 43145,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-01T02:23:51.907Z",
+    "createdAt": "2025-12-01T02:23:51.922Z",
+    "updatedAt": "2025-12-01T02:23:51.922Z",
+    "__v": 0
+  },
+  {
+    "_id": "692da607f49ff14089729b42",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "692cf444bf9577f5a9aac9a8",
+        "name": null,
+        "quantity": 6,
+        "price": 1233,
+        "_id": "692da607f49ff14089729b43"
+      }
+    ],
+    "total": 7398,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-01T14:28:23.110Z",
+    "createdAt": "2025-12-01T14:28:23.120Z",
+    "updatedAt": "2025-12-01T14:28:28.428Z",
+    "__v": 0
+  },
+  {
+    "_id": "692da736f49ff14089729b6f",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "692cf48ded4f530618d009df",
+        "name": null,
+        "quantity": 1,
+        "price": 1500,
+        "_id": "692da736f49ff14089729b70"
+      }
+    ],
+    "total": 1500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-01T14:33:26.739Z",
+    "createdAt": "2025-12-01T14:33:26.740Z",
+    "updatedAt": "2025-12-01T14:33:31.276Z",
+    "__v": 0
+  },
+  {
+    "_id": "692da92ef49ff14089729b94",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "692cf48ded4f530618d009df",
+        "name": null,
+        "quantity": 1,
+        "price": 1500,
+        "_id": "692da92ef49ff14089729b95"
+      }
+    ],
+    "total": 1500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-01T14:41:50.674Z",
+    "createdAt": "2025-12-01T14:41:50.674Z",
+    "updatedAt": "2025-12-01T14:41:59.321Z",
+    "__v": 0
+  },
+  {
+    "_id": "692dab7bf49ff14089729bc5",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "692afeb7d1a99f0301249952",
+        "name": null,
+        "quantity": 1,
+        "price": 980,
+        "_id": "692dab7bf49ff14089729bc6"
+      }
+    ],
+    "total": 980,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-01T14:51:39.680Z",
+    "createdAt": "2025-12-01T14:51:39.682Z",
+    "updatedAt": "2025-12-02T00:28:14.222Z",
+    "__v": 0
+  },
+  {
+    "_id": "692e4f757b7d190ea933291b",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692dfb877b7d190ea93327c5",
+        "name": null,
+        "quantity": 2,
+        "price": 12000,
+        "_id": "692e4f757b7d190ea933291c"
+      }
+    ],
+    "total": 24000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-02T02:31:17.249Z",
+    "createdAt": "2025-12-02T02:31:17.262Z",
+    "updatedAt": "2025-12-02T02:31:17.262Z",
+    "__v": 0
+  },
+  {
+    "_id": "692e55a97b7d190ea93329bc",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 10,
+        "_id": "692e55a97b7d190ea93329bd"
+      }
+    ],
+    "total": 10,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-02T02:57:45.520Z",
+    "createdAt": "2025-12-02T02:57:45.527Z",
+    "updatedAt": "2025-12-02T02:57:45.527Z",
+    "__v": 0
+  },
+  {
+    "_id": "692e55c67b7d190ea93329dd",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 2,
+        "price": 10,
+        "_id": "692e55c67b7d190ea93329de"
+      }
+    ],
+    "total": 20,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-02T02:58:14.686Z",
+    "createdAt": "2025-12-02T02:58:14.689Z",
+    "updatedAt": "2025-12-02T02:58:14.689Z",
+    "__v": 0
+  },
+  {
+    "_id": "692f916210996d08aa24f071",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692e56167b7d190ea9332a1c",
+        "name": null,
+        "quantity": 1,
+        "price": 2400,
+        "_id": "692f916210996d08aa24f072"
+      },
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 10,
+        "_id": "692f916210996d08aa24f073"
+      }
+    ],
+    "total": 2410,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-03T01:24:50.790Z",
+    "createdAt": "2025-12-03T01:24:50.816Z",
+    "updatedAt": "2025-12-03T01:24:50.816Z",
+    "__v": 0
+  },
+  {
+    "_id": "693050187eb39d02497ac05c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 2,
+        "price": 13999,
+        "_id": "693050187eb39d02497ac05d"
+      },
+      {
+        "product": "69304a367eb39d02497abf3c",
+        "name": null,
+        "quantity": 2,
+        "price": 4500,
+        "_id": "693050187eb39d02497ac05e"
+      }
+    ],
+    "total": 36998,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-03T14:58:32.137Z",
+    "createdAt": "2025-12-03T14:58:32.146Z",
+    "updatedAt": "2025-12-03T14:58:32.146Z",
+    "__v": 0
+  },
+  {
+    "_id": "693050c17eb39d02497ac0fd",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "693050af7eb39d02497ac0dc",
+        "name": null,
+        "quantity": 1,
+        "price": 800,
+        "_id": "693050c17eb39d02497ac0fe"
+      },
+      {
+        "product": "693050837eb39d02497ac09a",
+        "name": null,
+        "quantity": 1,
+        "price": 2700,
+        "_id": "693050c17eb39d02497ac0ff"
+      }
+    ],
+    "total": 3500,
+    "paymentMethod": "transferencia",
+    "date": "2025-12-03T15:01:21.869Z",
+    "createdAt": "2025-12-03T15:01:21.871Z",
+    "updatedAt": "2025-12-03T15:01:21.871Z",
+    "__v": 0
+  },
+  {
+    "_id": "693070c6ff63109a692f4e03",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "693050af7eb39d02497ac0dc",
+        "name": null,
+        "quantity": 1,
+        "price": 800,
+        "_id": "693070c6ff63109a692f4e04"
+      },
+      {
+        "product": "69304a367eb39d02497abf3c",
+        "name": null,
+        "quantity": 1,
+        "price": 4500,
+        "_id": "693070c6ff63109a692f4e05"
+      },
+      {
+        "product": "693050837eb39d02497ac09a",
+        "name": null,
+        "quantity": 1,
+        "price": 2700,
+        "_id": "693070c6ff63109a692f4e06"
+      }
+    ],
+    "total": 8000,
+    "paymentMethod": "transferencia",
+    "date": "2025-12-03T17:17:58.262Z",
+    "createdAt": "2025-12-03T17:17:58.278Z",
+    "updatedAt": "2025-12-03T17:17:58.278Z",
+    "__v": 0
+  },
+  {
+    "_id": "6931d0f3e89ca096472c7dd3",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "6931d0f3e89ca096472c7dd4"
+      }
+    ],
+    "total": 13999,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-04T18:20:35.122Z",
+    "createdAt": "2025-12-04T18:20:35.123Z",
+    "updatedAt": "2025-12-04T18:20:35.123Z",
+    "__v": 0
+  },
+  {
+    "_id": "6931f16d2773a9f22111a61e",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "693050fa7eb39d02497ac137",
+        "name": null,
+        "quantity": 1,
+        "price": 1500,
+        "_id": "6931f16d2773a9f22111a61f"
+      }
+    ],
+    "total": 1500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-04T20:39:09.084Z",
+    "createdAt": "2025-12-04T20:39:09.085Z",
+    "updatedAt": "2025-12-04T20:39:09.085Z",
+    "__v": 0
+  },
+  {
+    "_id": "6931f17d2773a9f22111a633",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "693050af7eb39d02497ac0dc",
+        "name": null,
+        "quantity": 2,
+        "price": 800,
+        "_id": "6931f17d2773a9f22111a634"
+      }
+    ],
+    "total": 1600,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-04T20:39:25.822Z",
+    "createdAt": "2025-12-04T20:39:25.823Z",
+    "updatedAt": "2025-12-04T20:39:25.823Z",
+    "__v": 0
+  },
+  {
+    "_id": "693201d2da70519c70eecba6",
+    "user": "69320180da70519c70eecb4d",
+    "status": "active",
+    "products": [
+      {
+        "product": null,
+        "name": "cablea",
+        "quantity": 123,
+        "price": 12312312,
+        "_id": "693201d2da70519c70eecba7"
+      }
+    ],
+    "total": 1514414376,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-04T21:49:06.876Z",
+    "createdAt": "2025-12-04T21:49:06.877Z",
+    "updatedAt": "2025-12-04T21:49:06.877Z",
+    "__v": 0
+  },
+  {
+    "_id": "693208eb2773a9f22111a685",
+    "user": "693203602773a9f22111a645",
+    "status": "reverted",
+    "products": [
+      {
+        "product": null,
+        "name": "asdasda",
+        "quantity": 123123,
+        "price": 1231231231229031400,
+        "_id": "693208eb2773a9f22111a686"
+      }
+    ],
+    "total": 1.5159288288261203e+23,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-04T22:19:23.078Z",
+    "createdAt": "2025-12-04T22:19:23.079Z",
+    "updatedAt": "2025-12-04T22:19:33.765Z",
+    "__v": 0
+  },
+  {
+    "_id": "693209082773a9f22111a69f",
+    "user": "693203602773a9f22111a645",
+    "status": "active",
+    "products": [
+      {
+        "product": null,
+        "name": "sadadas",
+        "quantity": 11111111,
+        "price": 11111,
+        "_id": "693209082773a9f22111a6a0"
+      },
+      {
+        "product": null,
+        "name": "1312312",
+        "quantity": 11231,
+        "price": 1231231,
+        "_id": "693209082773a9f22111a6a1"
+      }
+    ],
+    "total": 137283509682,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-04T22:19:52.671Z",
+    "createdAt": "2025-12-04T22:19:52.672Z",
+    "updatedAt": "2025-12-04T22:19:52.672Z",
+    "__v": 0
+  },
+  {
+    "_id": "693209eb2773a9f22111a719",
+    "user": "693203602773a9f22111a645",
+    "status": "active",
+    "products": [
+      {
+        "product": "693209822773a9f22111a6f8",
+        "name": null,
+        "quantity": 1,
+        "price": 100,
+        "_id": "693209eb2773a9f22111a71a"
+      }
+    ],
+    "total": 100,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-04T22:23:39.760Z",
+    "createdAt": "2025-12-04T22:23:39.760Z",
+    "updatedAt": "2025-12-04T22:23:39.760Z",
+    "__v": 0
+  },
+  {
+    "_id": "69320a282773a9f22111a743",
+    "user": "693203602773a9f22111a645",
+    "status": "active",
+    "products": [
+      {
+        "product": null,
+        "name": "7798113301611",
+        "quantity": 1,
+        "price": 100,
+        "_id": "69320a282773a9f22111a744"
+      }
+    ],
+    "total": 100,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-04T22:24:40.983Z",
+    "createdAt": "2025-12-04T22:24:40.984Z",
+    "updatedAt": "2025-12-04T22:24:40.984Z",
+    "__v": 0
+  },
+  {
+    "_id": "69324dfb96a3244ed91960a8",
+    "user": "693203602773a9f22111a645",
+    "status": "active",
+    "products": [
+      {
+        "product": "6932390696a3244ed9196060",
+        "name": null,
+        "quantity": 1,
+        "price": 1,
+        "_id": "69324dfb96a3244ed91960a9"
+      },
+      {
+        "product": "693209822773a9f22111a6f8",
+        "name": null,
+        "quantity": 1,
+        "price": 100,
+        "_id": "69324dfb96a3244ed91960aa"
+      }
+    ],
+    "total": 101,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-05T03:14:03.673Z",
+    "createdAt": "2025-12-05T03:14:03.675Z",
+    "updatedAt": "2025-12-05T03:14:03.675Z",
+    "__v": 0
+  },
+  {
+    "_id": "69325b5d96a3244ed91962ae",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "69304a367eb39d02497abf3c",
+        "name": null,
+        "quantity": 1,
+        "price": 4500,
+        "_id": "69325b5d96a3244ed91962af"
+      },
+      {
+        "product": "692dfb877b7d190ea93327c5",
+        "name": null,
+        "quantity": 3,
+        "price": 12000,
+        "_id": "69325b5d96a3244ed91962b0"
+      }
+    ],
+    "total": 40500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-05T04:11:09.868Z",
+    "createdAt": "2025-12-05T04:11:09.869Z",
+    "updatedAt": "2025-12-05T04:11:09.869Z",
+    "__v": 0
+  },
+  {
+    "_id": "6932601a96a3244ed91962ff",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "693050fa7eb39d02497ac137",
+        "name": null,
+        "quantity": 1,
+        "price": 1500,
+        "_id": "6932601a96a3244ed9196300"
+      }
+    ],
+    "total": 1500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-05T04:31:22.932Z",
+    "createdAt": "2025-12-05T04:31:22.933Z",
+    "updatedAt": "2025-12-05T04:31:22.933Z",
+    "__v": 0
+  },
+  {
+    "_id": "6933635396a3244ed9196355",
+    "user": "693203602773a9f22111a645",
+    "status": "active",
+    "products": [
+      {
+        "product": "693209822773a9f22111a6f8",
+        "name": null,
+        "quantity": 1,
+        "price": 100,
+        "_id": "6933635396a3244ed9196356"
+      }
+    ],
+    "total": 100,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-05T22:57:23.921Z",
+    "createdAt": "2025-12-05T22:57:23.922Z",
+    "updatedAt": "2025-12-05T22:57:23.922Z",
+    "__v": 0
+  },
+  {
+    "_id": "6933b17c96a3244ed919639c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "693050837eb39d02497ac09a",
+        "name": null,
+        "quantity": 1,
+        "price": 2700,
+        "_id": "6933b17c96a3244ed919639d"
+      }
+    ],
+    "total": 2700,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-06T04:30:52.831Z",
+    "createdAt": "2025-12-06T04:30:52.832Z",
+    "updatedAt": "2025-12-06T05:31:45.856Z",
+    "__v": 0
+  },
+  {
+    "_id": "6933b91c96a3244ed91963d1",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "692dfb877b7d190ea93327c5",
+        "name": null,
+        "quantity": 1,
+        "price": 12000,
+        "_id": "6933b91c96a3244ed91963d2"
+      }
+    ],
+    "total": 12000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-06T05:03:24.749Z",
+    "createdAt": "2025-12-06T05:03:24.750Z",
+    "updatedAt": "2025-12-06T05:31:39.052Z",
+    "__v": 0
+  },
+  {
+    "_id": "6934342696a3244ed91966ba",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "69304a367eb39d02497abf3c",
+        "name": null,
+        "quantity": 1,
+        "price": 4500,
+        "_id": "6934342696a3244ed91966bb"
+      }
+    ],
+    "total": 4500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-06T13:48:22.588Z",
+    "createdAt": "2025-12-06T13:48:22.589Z",
+    "updatedAt": "2025-12-06T14:24:44.563Z",
+    "__v": 0
+  },
+  {
+    "_id": "69343c9896a3244ed9196704",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "69304a367eb39d02497abf3c",
+        "name": null,
+        "quantity": 1,
+        "price": 4500,
+        "_id": "69343c9896a3244ed9196705"
+      },
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "69343c9896a3244ed9196706"
+      }
+    ],
+    "total": 18499,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-06T14:24:24.699Z",
+    "createdAt": "2025-12-06T14:24:24.700Z",
+    "updatedAt": "2025-12-06T15:48:15.016Z",
+    "__v": 0
+  },
+  {
+    "_id": "6934871b96a3244ed9196867",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "69304a367eb39d02497abf3c",
+        "name": null,
+        "quantity": 1,
+        "price": 4500,
+        "_id": "6934871b96a3244ed9196868"
+      }
+    ],
+    "total": 4500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-06T19:42:19.374Z",
+    "createdAt": "2025-12-06T19:42:19.375Z",
+    "updatedAt": "2025-12-06T19:45:15.315Z",
+    "__v": 0
+  },
+  {
+    "_id": "6935a44634ca486ce91daca6",
+    "user": "6935a3ec34ca486ce91dac8d",
+    "status": "active",
+    "products": [
+      {
+        "product": null,
+        "name": "other",
+        "quantity": 1,
+        "price": 100,
+        "_id": "6935a44634ca486ce91daca7"
+      }
+    ],
+    "total": 100,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-07T15:59:02.367Z",
+    "createdAt": "2025-12-07T15:59:02.373Z",
+    "updatedAt": "2025-12-07T15:59:02.373Z",
+    "__v": 0
+  },
+  {
+    "_id": "6935b73b0e1b03e095e480b0",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "products": [
+      {
+        "product": "693050fa7eb39d02497ac137",
+        "name": null,
+        "quantity": 1,
+        "price": 1500,
+        "_id": "6935b73b0e1b03e095e480b1"
+      }
+    ],
+    "total": 1500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-07T17:19:55.816Z",
+    "createdAt": "2025-12-07T17:19:55.844Z",
+    "updatedAt": "2025-12-07T17:20:04.607Z",
+    "__v": 0
+  },
+  {
+    "_id": "6935ba6f39141118869be84a",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "6935ba6f39141118869be84b"
+      }
+    ],
+    "total": 13999,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-07T17:33:35.158Z",
+    "createdAt": "2025-12-07T17:33:35.161Z",
+    "updatedAt": "2025-12-07T17:33:35.161Z",
+    "__v": 0
+  },
+  {
+    "_id": "6935c26d39141118869be874",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "69304a367eb39d02497abf3c",
+        "name": null,
+        "quantity": 1,
+        "price": 4500,
+        "_id": "6935c26d39141118869be875"
+      }
+    ],
+    "total": 4500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-07T18:07:41.929Z",
+    "createdAt": "2025-12-07T18:07:41.930Z",
+    "updatedAt": "2025-12-07T18:07:41.930Z",
+    "__v": 0
+  },
+  {
+    "_id": "6935c8963f930c845f6cd723",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692dfb877b7d190ea93327c5",
+        "name": null,
+        "quantity": 1,
+        "price": 12000,
+        "_id": "6935c8963f930c845f6cd724"
+      }
+    ],
+    "total": 12000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-07T18:33:58.949Z",
+    "createdAt": "2025-12-07T18:33:58.953Z",
+    "updatedAt": "2025-12-07T18:33:58.953Z",
+    "__v": 0
+  },
+  {
+    "_id": "6935ce59aa86c51b3a8ac7d2",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "693050af7eb39d02497ac0dc",
+        "name": null,
+        "quantity": 1,
+        "price": 800,
+        "_id": "6935ce59aa86c51b3a8ac7d3"
+      }
+    ],
+    "total": 800,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-07T18:58:33.580Z",
+    "createdAt": "2025-12-07T18:58:33.607Z",
+    "updatedAt": "2025-12-07T18:58:33.607Z",
+    "__v": 0
+  },
+  {
+    "_id": "6935ce67aa86c51b3a8ac7ec",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "693050fa7eb39d02497ac137",
+        "name": null,
+        "quantity": 1,
+        "price": 1500,
+        "_id": "6935ce67aa86c51b3a8ac7ed"
+      }
+    ],
+    "total": 1500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-07T18:58:47.309Z",
+    "createdAt": "2025-12-07T18:58:47.311Z",
+    "updatedAt": "2025-12-07T18:58:47.311Z",
+    "__v": 0
+  },
+  {
+    "_id": "693704db5386bc44d04715f9",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "693050af7eb39d02497ac0dc",
+        "name": null,
+        "quantity": 1,
+        "price": 800,
+        "_id": "693704db5386bc44d04715fa"
+      }
+    ],
+    "total": 800,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-08T17:03:23.621Z",
+    "createdAt": "2025-12-08T17:03:23.636Z",
+    "updatedAt": "2025-12-08T17:03:23.636Z",
+    "__v": 0
+  },
+  {
+    "_id": "69375c0bd13d88b31bd0db51",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "693050af7eb39d02497ac0dc",
+        "name": null,
+        "quantity": 1,
+        "price": 800,
+        "_id": "69375c0bd13d88b31bd0db52"
+      }
+    ],
+    "total": 800,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-08T23:15:23.617Z",
+    "createdAt": "2025-12-08T23:15:23.662Z",
+    "updatedAt": "2025-12-08T23:15:23.662Z",
+    "__v": 0
+  },
+  {
+    "_id": "693784cded1ee6f12635c0fa",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692dfb877b7d190ea93327c5",
+        "name": null,
+        "quantity": 1,
+        "price": 12000,
+        "_id": "693784cded1ee6f12635c0fb"
+      }
+    ],
+    "total": 12000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-09T02:09:17.238Z",
+    "createdAt": "2025-12-09T02:09:17.270Z",
+    "updatedAt": "2025-12-09T02:09:17.270Z",
+    "__v": 0
+  },
+  {
+    "_id": "693790edc5dda3c65d44fadc",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692dfb877b7d190ea93327c5",
+        "name": null,
+        "quantity": 2,
+        "price": 12000,
+        "_id": "693790edc5dda3c65d44fadd"
+      }
+    ],
+    "total": 24000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-09T03:01:01.634Z",
+    "createdAt": "2025-12-09T03:01:01.665Z",
+    "updatedAt": "2025-12-09T03:01:01.665Z",
+    "__v": 0
+  },
+  {
+    "_id": "69379101c5dda3c65d44faf6",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "69304a367eb39d02497abf3c",
+        "name": null,
+        "quantity": 6,
+        "price": 4500,
+        "_id": "69379101c5dda3c65d44faf7"
+      }
+    ],
+    "total": 27000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-09T03:01:21.773Z",
+    "createdAt": "2025-12-09T03:01:21.779Z",
+    "updatedAt": "2025-12-09T03:01:21.779Z",
+    "__v": 0
+  },
+  {
+    "_id": "6937912cc5dda3c65d44fb19",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "6937912cc5dda3c65d44fb1a"
+      }
+    ],
+    "total": 13999,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-09T03:02:04.299Z",
+    "createdAt": "2025-12-09T03:02:04.302Z",
+    "updatedAt": "2025-12-09T03:02:04.302Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939b2fe3f930c845f6cd797",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "69304a367eb39d02497abf3c",
+        "name": null,
+        "quantity": 1,
+        "price": 4500,
+        "_id": "6939b2fe3f930c845f6cd798"
+      }
+    ],
+    "total": 4500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-10T17:50:54.240Z",
+    "createdAt": "2025-12-10T17:50:54.243Z",
+    "updatedAt": "2025-12-10T17:50:54.243Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939bfbd5de2dabe15e2b36e",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "69375580fc63eaf31804d049",
+    "products": [
+      {
+        "product": "69304a367eb39d02497abf3c",
+        "name": null,
+        "quantity": 1,
+        "price": 4500,
+        "_id": "6939bfbd5de2dabe15e2b36f"
+      }
+    ],
+    "total": 4500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-10T18:45:17.718Z",
+    "createdAt": "2025-12-10T18:45:17.728Z",
+    "updatedAt": "2025-12-10T18:45:17.728Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939c1ea3f930c845f6cd7dd",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "6939c1ea3f930c845f6cd7de"
+      }
+    ],
+    "total": 13999,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-10T18:54:34.308Z",
+    "createdAt": "2025-12-10T18:54:34.309Z",
+    "updatedAt": "2025-12-10T18:54:34.309Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939c95a3ce7285b7268f27a",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693050af7eb39d02497ac0dc",
+        "name": null,
+        "quantity": 1,
+        "price": 800,
+        "_id": "6939c95a3ce7285b7268f27b"
+      },
+      {
+        "product": "693050fa7eb39d02497ac137",
+        "name": null,
+        "quantity": 1,
+        "price": 1500,
+        "_id": "6939c95a3ce7285b7268f27c"
+      }
+    ],
+    "total": 2300,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-10T19:26:18.952Z",
+    "createdAt": "2025-12-10T19:26:18.969Z",
+    "updatedAt": "2025-12-10T19:26:18.969Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939ca403ce7285b7268f31c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "69375580fc63eaf31804d049",
+    "products": [
+      {
+        "product": "693050837eb39d02497ac09a",
+        "name": null,
+        "quantity": 1,
+        "price": 2700,
+        "_id": "6939ca403ce7285b7268f31d"
+      }
+    ],
+    "total": 2700,
+    "paymentMethod": "tarjeta",
+    "date": "2025-12-10T19:30:08.230Z",
+    "createdAt": "2025-12-10T19:30:08.234Z",
+    "updatedAt": "2025-12-10T19:30:08.234Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939ca4a3ce7285b7268f33b",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "69375580fc63eaf31804d049",
+    "products": [
+      {
+        "product": "69304a367eb39d02497abf3c",
+        "name": null,
+        "quantity": 1,
+        "price": 4500,
+        "_id": "6939ca4a3ce7285b7268f33c"
+      }
+    ],
+    "total": 4500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-10T19:30:18.723Z",
+    "createdAt": "2025-12-10T19:30:18.724Z",
+    "updatedAt": "2025-12-10T19:30:18.724Z",
+    "__v": 0
+  },
+  {
+    "_id": "6939d70d06b18ce684ca3784",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "reverted",
+    "seller": "69375580fc63eaf31804d049",
+    "products": [
+      {
+        "product": "693050af7eb39d02497ac0dc",
+        "name": null,
+        "quantity": 1,
+        "price": 800,
+        "_id": "6939d70d06b18ce684ca3785"
+      }
+    ],
+    "total": 800,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-10T20:24:45.807Z",
+    "createdAt": "2025-12-10T20:24:45.809Z",
+    "updatedAt": "2025-12-10T20:25:05.379Z",
+    "__v": 0
+  },
+  {
+    "_id": "693aca593ce7285b7268f8ee",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693050af7eb39d02497ac0dc",
+        "name": null,
+        "quantity": 1,
+        "price": 800,
+        "_id": "693aca593ce7285b7268f8ef"
+      }
+    ],
+    "total": 800,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-11T13:42:49.202Z",
+    "createdAt": "2025-12-11T13:42:49.204Z",
+    "updatedAt": "2025-12-11T13:42:49.204Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c43182de6525c2fa118dd",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "693c43182de6525c2fa118de"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-12T16:30:16.518Z",
+    "createdAt": "2025-12-12T16:30:16.527Z",
+    "updatedAt": "2025-12-12T16:30:16.527Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c43522de6525c2fa118f9",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c3f962de6525c2fa117e5",
+        "name": null,
+        "quantity": 1,
+        "price": 1345789,
+        "_id": "693c43522de6525c2fa118fa"
+      }
+    ],
+    "total": 1345789,
+    "paymentMethod": "tarjeta",
+    "date": "2025-12-12T16:31:14.219Z",
+    "createdAt": "2025-12-12T16:31:14.221Z",
+    "updatedAt": "2025-12-12T16:31:14.221Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c43b72de6525c2fa1191c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "693c43b72de6525c2fa1191d"
+      },
+      {
+        "product": "693b132f2de6525c2fa10877",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "693c43b72de6525c2fa1191e"
+      },
+      {
+        "product": "693c3b162de6525c2fa117ac",
+        "name": null,
+        "quantity": 1,
+        "price": 140567,
+        "_id": "693c43b72de6525c2fa1191f"
+      }
+    ],
+    "total": 264566,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-12T16:32:55.271Z",
+    "createdAt": "2025-12-12T16:32:55.293Z",
+    "updatedAt": "2025-12-12T16:32:55.293Z",
+    "__v": 0
+  },
+  {
+    "_id": "693c4a1b2de6525c2fa11dc3",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "69375580fc63eaf31804d049",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "693c4a1b2de6525c2fa11dc4"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-12T17:00:11.838Z",
+    "createdAt": "2025-12-12T17:00:11.845Z",
+    "updatedAt": "2025-12-12T17:00:11.845Z",
+    "__v": 0
+  },
+  {
+    "_id": "693daf9b06b18ce684ca38c6",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b132f2de6525c2fa10877",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "693daf9b06b18ce684ca38c7"
+      }
+    ],
+    "total": 110000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-13T18:25:31.170Z",
+    "createdAt": "2025-12-13T18:25:31.171Z",
+    "updatedAt": "2025-12-13T18:25:31.171Z",
+    "__v": 0
+  },
+  {
+    "_id": "693df25a301b8bc8e933b62d",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b132f2de6525c2fa10877",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "693df25a301b8bc8e933b62e"
+      },
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 2,
+        "price": 115789,
+        "_id": "693df25a301b8bc8e933b62f"
+      }
+    ],
+    "total": 341578,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-13T23:10:18.817Z",
+    "createdAt": "2025-12-13T23:10:19.131Z",
+    "updatedAt": "2025-12-13T23:10:19.131Z",
+    "__v": 0
+  },
+  {
+    "_id": "693df2ba301b8bc8e933b64b",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 1,
+        "price": 115789,
+        "_id": "693df2ba301b8bc8e933b64c"
+      }
+    ],
+    "total": 115789,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-13T23:11:54.678Z",
+    "createdAt": "2025-12-13T23:11:54.680Z",
+    "updatedAt": "2025-12-13T23:11:54.680Z",
+    "__v": 0
+  },
+  {
+    "_id": "693df2d5301b8bc8e933b669",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c3b162de6525c2fa117ac",
+        "name": null,
+        "quantity": 4,
+        "price": 140567,
+        "_id": "693df2d5301b8bc8e933b66a"
+      }
+    ],
+    "total": 562268,
+    "paymentMethod": "tarjeta",
+    "date": "2025-12-13T23:12:21.873Z",
+    "createdAt": "2025-12-13T23:12:21.874Z",
+    "updatedAt": "2025-12-13T23:12:21.874Z",
+    "__v": 0
+  },
+  {
+    "_id": "693f310dda96fcd7d73f8346",
+    "user": "693f2a4b4bd30ab21331b335",
+    "status": "active",
+    "seller": "693f2a4b4bd30ab21331b335",
+    "products": [
+      {
+        "product": "693f3015da96fcd7d73f8293",
+        "name": null,
+        "quantity": 3,
+        "price": 3800,
+        "_id": "693f310dda96fcd7d73f8347"
+      }
+    ],
+    "total": 11400,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-14T21:50:05.862Z",
+    "createdAt": "2025-12-14T21:50:05.976Z",
+    "updatedAt": "2025-12-14T21:50:05.976Z",
+    "__v": 0
+  },
+  {
+    "_id": "693ffe7b57308bfed974f8c0",
+    "user": "693f2a4b4bd30ab21331b335",
+    "status": "active",
+    "seller": "693f2a4b4bd30ab21331b335",
+    "products": [
+      {
+        "product": "693f4345da96fcd7d73f8975",
+        "name": null,
+        "quantity": 3,
+        "price": 6700,
+        "_id": "693ffe7b57308bfed974f8c1"
+      }
+    ],
+    "total": 20100,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-15T12:26:35.625Z",
+    "createdAt": "2025-12-15T12:26:35.636Z",
+    "updatedAt": "2025-12-15T12:26:35.636Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940001257308bfed974f942",
+    "user": "693f2a4b4bd30ab21331b335",
+    "status": "active",
+    "seller": "693f2a4b4bd30ab21331b335",
+    "products": [
+      {
+        "product": "693f4345da96fcd7d73f8975",
+        "name": null,
+        "quantity": 3,
+        "price": 6700,
+        "_id": "6940001257308bfed974f943"
+      }
+    ],
+    "total": 20100,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-15T12:33:22.797Z",
+    "createdAt": "2025-12-15T12:33:22.811Z",
+    "updatedAt": "2025-12-15T12:33:22.811Z",
+    "__v": 0
+  },
+  {
+    "_id": "69401dfe57308bfed974fcc4",
+    "user": "693f2a4b4bd30ab21331b335",
+    "status": "active",
+    "seller": "693f2a4b4bd30ab21331b335",
+    "products": [
+      {
+        "product": "693f4345da96fcd7d73f8975",
+        "name": null,
+        "quantity": 4,
+        "price": 6700,
+        "_id": "69401dfe57308bfed974fcc5"
+      },
+      {
+        "product": "693f3015da96fcd7d73f8293",
+        "name": null,
+        "quantity": 3,
+        "price": 3800,
+        "_id": "69401dfe57308bfed974fcc6"
+      }
+    ],
+    "total": 38200,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-15T14:41:02.242Z",
+    "createdAt": "2025-12-15T14:41:02.243Z",
+    "updatedAt": "2025-12-15T14:41:02.243Z",
+    "__v": 0
+  },
+  {
+    "_id": "694027b457308bfed974fd04",
+    "user": "693f2a4b4bd30ab21331b335",
+    "status": "active",
+    "seller": "693f2a4b4bd30ab21331b335",
+    "products": [
+      {
+        "product": "693f4345da96fcd7d73f8975",
+        "name": null,
+        "quantity": 2,
+        "price": 6700,
+        "_id": "694027b457308bfed974fd05"
+      }
+    ],
+    "total": 13400,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-15T15:22:28.086Z",
+    "createdAt": "2025-12-15T15:22:28.094Z",
+    "updatedAt": "2025-12-15T15:22:28.094Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940308857308bfed974fd8b",
+    "user": "693f2a4b4bd30ab21331b335",
+    "status": "active",
+    "seller": "693f2a4b4bd30ab21331b335",
+    "products": [
+      {
+        "product": "693f4345da96fcd7d73f8975",
+        "name": null,
+        "quantity": 1,
+        "price": 6700,
+        "_id": "6940308857308bfed974fd8c"
+      }
+    ],
+    "total": 6700,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-15T16:00:08.850Z",
+    "createdAt": "2025-12-15T16:00:08.851Z",
+    "updatedAt": "2025-12-15T16:00:08.851Z",
+    "__v": 0
+  },
+  {
+    "_id": "69405971f19fa6976e26ebd9",
+    "user": "693f2a4b4bd30ab21331b335",
+    "status": "active",
+    "seller": "6940034557308bfed974faf0",
+    "products": [
+      {
+        "product": "693f4345da96fcd7d73f8975",
+        "name": null,
+        "quantity": 1,
+        "price": 6700,
+        "_id": "69405971f19fa6976e26ebda"
+      }
+    ],
+    "total": 6700,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-15T18:54:41.329Z",
+    "createdAt": "2025-12-15T18:54:41.336Z",
+    "updatedAt": "2025-12-15T18:54:41.336Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940604ef19fa6976e26ec7d",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "6940604ef19fa6976e26ec7e"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-15T19:23:58.314Z",
+    "createdAt": "2025-12-15T19:23:58.324Z",
+    "updatedAt": "2025-12-15T19:23:58.324Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940605cf19fa6976e26ec99",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "6940605cf19fa6976e26ec9a"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-15T19:24:12.500Z",
+    "createdAt": "2025-12-15T19:24:12.503Z",
+    "updatedAt": "2025-12-15T19:24:12.503Z",
+    "__v": 0
+  },
+  {
+    "_id": "6940606ef19fa6976e26ecb9",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 1,
+        "price": 115789,
+        "_id": "6940606ef19fa6976e26ecba"
+      },
+      {
+        "product": "693b132f2de6525c2fa10877",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "6940606ef19fa6976e26ecbb"
+      }
+    ],
+    "total": 225789,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-15T19:24:30.285Z",
+    "createdAt": "2025-12-15T19:24:30.288Z",
+    "updatedAt": "2025-12-15T19:24:30.288Z",
+    "__v": 0
+  },
+  {
+    "_id": "69417ed289cfdf215e2c5072",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "69417ed289cfdf215e2c5073"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-16T15:46:26.060Z",
+    "createdAt": "2025-12-16T15:46:26.080Z",
+    "updatedAt": "2025-12-16T15:46:26.080Z",
+    "__v": 0
+  },
+  {
+    "_id": "6941824389cfdf215e2c50d2",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "6941824389cfdf215e2c50d3"
+      },
+      {
+        "product": "693050837eb39d02497ac09a",
+        "name": null,
+        "quantity": 1,
+        "price": 2700,
+        "_id": "6941824389cfdf215e2c50d4"
+      }
+    ],
+    "total": 16699,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-16T16:01:07.655Z",
+    "createdAt": "2025-12-16T16:01:07.716Z",
+    "updatedAt": "2025-12-16T16:01:07.716Z",
+    "__v": 0
+  },
+  {
+    "_id": "694182bb89cfdf215e2c555d",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "694182bb89cfdf215e2c555e"
+      }
+    ],
+    "total": 13999,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-16T16:03:07.099Z",
+    "createdAt": "2025-12-16T16:03:07.101Z",
+    "updatedAt": "2025-12-16T16:03:07.101Z",
+    "__v": 0
+  },
+  {
+    "_id": "694182c989cfdf215e2c557e",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 10,
+        "price": 115789,
+        "_id": "694182c989cfdf215e2c557f"
+      }
+    ],
+    "total": 1157890,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-16T16:03:21.699Z",
+    "createdAt": "2025-12-16T16:03:21.700Z",
+    "updatedAt": "2025-12-16T16:03:21.700Z",
+    "__v": 0
+  },
+  {
+    "_id": "6941894589cfdf215e2c55ce",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b132f2de6525c2fa10877",
+        "name": null,
+        "quantity": 2,
+        "price": 110000,
+        "_id": "6941894589cfdf215e2c55cf"
+      }
+    ],
+    "total": 220000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-16T16:31:01.601Z",
+    "createdAt": "2025-12-16T16:31:01.604Z",
+    "updatedAt": "2025-12-16T16:31:01.604Z",
+    "__v": 0
+  },
+  {
+    "_id": "6941d214abaf852e3f6272a7",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "6941d214abaf852e3f6272a8"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-16T21:41:40.610Z",
+    "createdAt": "2025-12-16T21:41:40.678Z",
+    "updatedAt": "2025-12-16T21:41:54.674Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942ae01fc0565f7213b0fce",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 1,
+        "price": 115789,
+        "_id": "6942ae01fc0565f7213b0fcf"
+      }
+    ],
+    "total": 115789,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T13:20:01.582Z",
+    "createdAt": "2025-12-17T13:20:01.594Z",
+    "updatedAt": "2025-12-17T16:53:00.641Z",
+    "__v": 0,
+    "amountDebt": 0,
+    "amountPaid": 0
+  },
+  {
+    "_id": "6942b797fc0565f7213b139d",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "6942b797fc0565f7213b139e"
+      }
+    ],
+    "total": 13999,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T14:00:55.589Z",
+    "createdAt": "2025-12-17T14:00:55.592Z",
+    "updatedAt": "2025-12-17T16:52:57.838Z",
+    "__v": 0,
+    "amountDebt": 0,
+    "amountPaid": 0
+  },
+  {
+    "_id": "6942be82fc0565f7213b16a6",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c3f962de6525c2fa117e5",
+        "name": null,
+        "quantity": 1,
+        "price": 1345789,
+        "_id": "6942be82fc0565f7213b16a7"
+      }
+    ],
+    "total": 1345789,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T14:30:26.618Z",
+    "createdAt": "2025-12-17T14:30:26.619Z",
+    "updatedAt": "2025-12-17T14:32:40.555Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942cac5243018baf6e7d095",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 360000,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "6942cac5243018baf6e7d096"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T15:22:45.435Z",
+    "createdAt": "2025-12-17T15:22:45.439Z",
+    "updatedAt": "2025-12-17T16:52:51.731Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942dffef8e5d9813533cfd1",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 360000,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "6942dffef8e5d9813533cfd2"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T16:53:18.560Z",
+    "createdAt": "2025-12-17T16:53:18.561Z",
+    "updatedAt": "2025-12-17T16:56:12.173Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942e0bcf8e5d9813533d02f",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 360000,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "6942e0bcf8e5d9813533d030"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T16:56:28.516Z",
+    "createdAt": "2025-12-17T16:56:28.519Z",
+    "updatedAt": "2025-12-17T17:09:57.699Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942e3fff8e5d9813533d07a",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 360000,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "6942e3fff8e5d9813533d07b"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T17:10:23.623Z",
+    "createdAt": "2025-12-17T17:10:23.653Z",
+    "updatedAt": "2025-12-17T18:28:31.283Z",
+    "__v": 0
+  },
+  {
+    "_id": "6942f865f8e5d9813533d0b7",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 360000,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "6942f865f8e5d9813533d0b8"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T18:37:25.484Z",
+    "createdAt": "2025-12-17T18:37:25.503Z",
+    "updatedAt": "2025-12-17T18:37:37.005Z",
+    "__v": 0
+  },
+  {
+    "_id": "6943134af8e5d9813533d102",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 360000,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "6943134af8e5d9813533d103"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T20:32:10.131Z",
+    "createdAt": "2025-12-17T20:32:10.144Z",
+    "updatedAt": "2025-12-17T20:37:12.238Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431488f8e5d9813533d160",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 1345789,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c3f962de6525c2fa117e5",
+        "name": null,
+        "quantity": 1,
+        "price": 1345789,
+        "_id": "69431488f8e5d9813533d161"
+      }
+    ],
+    "total": 1345789,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T20:37:28.012Z",
+    "createdAt": "2025-12-17T20:37:28.013Z",
+    "updatedAt": "2025-12-17T20:46:35.731Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431578f8e5d9813533d1a9",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 115789,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 1,
+        "price": 115789,
+        "_id": "69431578f8e5d9813533d1aa"
+      }
+    ],
+    "total": 115789,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T20:41:28.550Z",
+    "createdAt": "2025-12-17T20:41:28.550Z",
+    "updatedAt": "2025-12-17T20:46:38.937Z",
+    "__v": 0
+  },
+  {
+    "_id": "6943159cf8e5d9813533d1d2",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 13999,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "6943159cf8e5d9813533d1d3"
+      }
+    ],
+    "total": 13999,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-17T20:42:04.148Z",
+    "createdAt": "2025-12-17T20:42:04.157Z",
+    "updatedAt": "2025-12-17T20:46:32.079Z",
+    "__v": 0
+  },
+  {
+    "_id": "694316c2f8e5d9813533d242",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 13999,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "694316c2f8e5d9813533d243"
+      }
+    ],
+    "total": 13999,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T20:46:58.916Z",
+    "createdAt": "2025-12-17T20:46:58.919Z",
+    "updatedAt": "2025-12-17T20:51:48.768Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431808f8e5d9813533d27f",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 13999,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "69431808f8e5d9813533d280"
+      }
+    ],
+    "total": 13999,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T20:52:24.948Z",
+    "createdAt": "2025-12-17T20:52:24.949Z",
+    "updatedAt": "2025-12-17T21:05:25.581Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431b289466596f7dd2409c",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 115789,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 1,
+        "price": 115789,
+        "_id": "69431b289466596f7dd2409d"
+      }
+    ],
+    "total": 115789,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T21:05:44.488Z",
+    "createdAt": "2025-12-17T21:05:44.497Z",
+    "updatedAt": "2025-12-17T21:16:00.554Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431bdf9466596f7dd24107",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 360000,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "69431bdf9466596f7dd24108"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T21:08:47.645Z",
+    "createdAt": "2025-12-17T21:08:47.648Z",
+    "updatedAt": "2025-12-17T21:15:57.516Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431da79466596f7dd24169",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 4560,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c55f0b2682d4c62fc9559",
+        "name": null,
+        "quantity": 1,
+        "price": 4560,
+        "_id": "69431da79466596f7dd2416a"
+      }
+    ],
+    "total": 4560,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T21:16:23.729Z",
+    "createdAt": "2025-12-17T21:16:23.735Z",
+    "updatedAt": "2025-12-17T21:20:01.807Z",
+    "__v": 0
+  },
+  {
+    "_id": "69431e9085610fbdfaddc865",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 13999,
+    "amountDebt": 0,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "69431e9085610fbdfaddc866"
+      }
+    ],
+    "total": 13999,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T21:20:16.188Z",
+    "createdAt": "2025-12-17T21:20:16.195Z",
+    "updatedAt": "2025-12-17T22:20:58.255Z",
+    "__v": 0
+  },
+  {
+    "_id": "69432ce88c2f1679fae0f9c0",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": "693df0cc301b8bc8e933b5ea",
+    "amountPaid": 10000,
+    "amountDebt": 100000,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b132f2de6525c2fa10877",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "69432ce88c2f1679fae0f9c1"
+      }
+    ],
+    "total": 110000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T22:21:28.636Z",
+    "createdAt": "2025-12-17T22:21:28.653Z",
+    "updatedAt": "2025-12-17T22:54:16.504Z",
+    "__v": 0
+  },
+  {
+    "_id": "694338393b36ad578d3ac654",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": "693df0cc301b8bc8e933b5ea",
+    "amountPaid": 0,
+    "amountDebt": 360000,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "694338393b36ad578d3ac655"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-17T23:09:45.798Z",
+    "createdAt": "2025-12-17T23:09:45.808Z",
+    "updatedAt": "2025-12-17T23:09:45.808Z",
+    "__v": 0
+  },
+  {
+    "_id": "694403f1f0de902d6f6cb1c9",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 4560,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c55f0b2682d4c62fc9559",
+        "name": null,
+        "quantity": 1,
+        "price": 4560,
+        "_id": "694403f1f0de902d6f6cb1ca"
+      }
+    ],
+    "total": 4560,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-18T13:38:57.023Z",
+    "createdAt": "2025-12-18T13:38:57.031Z",
+    "updatedAt": "2025-12-18T13:38:57.031Z",
+    "__v": 0
+  },
+  {
+    "_id": "694415def0de902d6f6cbfb4",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 110000,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b132f2de6525c2fa10877",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "694415def0de902d6f6cbfb5"
+      }
+    ],
+    "total": 110000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-18T14:55:26.100Z",
+    "createdAt": "2025-12-18T14:55:26.103Z",
+    "updatedAt": "2025-12-18T14:55:26.103Z",
+    "__v": 0
+  },
+  {
+    "_id": "69442c0af0de902d6f6cc146",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": "693df0cc301b8bc8e933b5ea",
+    "amountPaid": 50000,
+    "amountDebt": 450567,
+    "status": "reverted",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "69442c0af0de902d6f6cc147"
+      },
+      {
+        "product": "693c3b162de6525c2fa117ac",
+        "name": null,
+        "quantity": 1,
+        "price": 140567,
+        "_id": "69442c0af0de902d6f6cc148"
+      }
+    ],
+    "total": 500567,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-18T16:30:02.624Z",
+    "createdAt": "2025-12-18T16:30:02.630Z",
+    "updatedAt": "2025-12-18T17:51:28.234Z",
+    "__v": 0
+  },
+  {
+    "_id": "694449f5ff11a2f4c1f73349",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": "69442e5cf0de902d6f6cc183",
+    "amountPaid": 500000,
+    "amountDebt": 850349,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c3f962de6525c2fa117e5",
+        "name": null,
+        "quantity": 1,
+        "price": 1345789,
+        "_id": "694449f5ff11a2f4c1f7334a"
+      },
+      {
+        "product": "693c55f0b2682d4c62fc9559",
+        "name": null,
+        "quantity": 1,
+        "price": 4560,
+        "_id": "694449f5ff11a2f4c1f7334b"
+      }
+    ],
+    "total": 1350349,
+    "paymentMethod": "mercado pago",
+    "date": "2025-12-18T18:37:41.503Z",
+    "createdAt": "2025-12-18T18:37:41.509Z",
+    "updatedAt": "2025-12-18T18:37:41.509Z",
+    "__v": 0
+  },
+  {
+    "_id": "69444ee9d763e496b2ee181f",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": "69442e5cf0de902d6f6cc183",
+    "amountPaid": 225789,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 1,
+        "price": 115789,
+        "_id": "69444ee9d763e496b2ee1820"
+      },
+      {
+        "product": "693b132f2de6525c2fa10877",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "69444ee9d763e496b2ee1821"
+      }
+    ],
+    "total": 225789,
+    "paymentMethod": "transferencia",
+    "date": "2025-12-18T18:58:49.873Z",
+    "createdAt": "2025-12-18T18:58:49.888Z",
+    "updatedAt": "2025-12-18T18:58:49.888Z",
+    "__v": 0
+  },
+  {
+    "_id": "694459f3d763e496b2ee1ae3",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 1345789,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c3f962de6525c2fa117e5",
+        "name": null,
+        "quantity": 1,
+        "price": 1345789,
+        "_id": "694459f3d763e496b2ee1ae4"
+      }
+    ],
+    "total": 1345789,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-18T19:45:55.275Z",
+    "createdAt": "2025-12-18T19:45:55.279Z",
+    "updatedAt": "2025-12-18T19:45:55.279Z",
+    "__v": 0
+  },
+  {
+    "_id": "6944692c8d8fe51fec9ba7e6",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 16699,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693050837eb39d02497ac09a",
+        "name": null,
+        "quantity": 1,
+        "price": 2700,
+        "_id": "6944692c8d8fe51fec9ba7e7"
+      },
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "6944692c8d8fe51fec9ba7e8"
+      }
+    ],
+    "total": 16699,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-18T20:50:52.261Z",
+    "createdAt": "2025-12-18T20:50:52.263Z",
+    "updatedAt": "2025-12-18T20:50:52.263Z",
+    "__v": 0
+  },
+  {
+    "_id": "6945508f014eb62894598da1",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 115789,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 1,
+        "price": 115789,
+        "_id": "6945508f014eb62894598da2"
+      }
+    ],
+    "total": 115789,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-19T13:18:07.514Z",
+    "createdAt": "2025-12-19T13:18:07.518Z",
+    "updatedAt": "2025-12-19T13:18:07.518Z",
+    "__v": 0
+  },
+  {
+    "_id": "69457eef014eb62894598f04",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 110000,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b132f2de6525c2fa10877",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "69457eef014eb62894598f05"
+      }
+    ],
+    "total": 110000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-19T16:35:59.690Z",
+    "createdAt": "2025-12-19T16:35:59.709Z",
+    "updatedAt": "2025-12-19T16:35:59.709Z",
+    "__v": 0
+  },
+  {
+    "_id": "69458cbd3a54d9f4dd90bb65",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 115789,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 1,
+        "price": 115789,
+        "_id": "69458cbd3a54d9f4dd90bb66"
+      }
+    ],
+    "total": 115789,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-19T17:34:53.502Z",
+    "createdAt": "2025-12-19T17:34:53.505Z",
+    "updatedAt": "2025-12-19T17:34:53.505Z",
+    "__v": 0
+  },
+  {
+    "_id": "694596273a54d9f4dd90bb98",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": "69442e5cf0de902d6f6cc183",
+    "amountPaid": 1980704,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c55f0b2682d4c62fc9559",
+        "name": null,
+        "quantity": 1,
+        "price": 4560,
+        "_id": "694596273a54d9f4dd90bb99"
+      },
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "694596273a54d9f4dd90bb9a"
+      },
+      {
+        "product": "693c3f962de6525c2fa117e5",
+        "name": null,
+        "quantity": 1,
+        "price": 1345789,
+        "_id": "694596273a54d9f4dd90bb9b"
+      },
+      {
+        "product": "693c3b162de6525c2fa117ac",
+        "name": null,
+        "quantity": 1,
+        "price": 140567,
+        "_id": "694596273a54d9f4dd90bb9c"
+      },
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 1,
+        "price": 115789,
+        "_id": "694596273a54d9f4dd90bb9d"
+      },
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "694596273a54d9f4dd90bb9e"
+      }
+    ],
+    "total": 1980704,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-19T18:15:03.428Z",
+    "createdAt": "2025-12-19T18:15:03.441Z",
+    "updatedAt": "2025-12-19T18:15:03.441Z",
+    "__v": 0
+  },
+  {
+    "_id": "694598423a54d9f4dd90bbe1",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": "69442e5cf0de902d6f6cc183",
+    "amountPaid": 2800,
+    "amountDebt": 10000,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693050af7eb39d02497ac0dc",
+        "name": null,
+        "quantity": 1,
+        "price": 800,
+        "_id": "694598423a54d9f4dd90bbe2"
+      },
+      {
+        "product": "692dfb877b7d190ea93327c5",
+        "name": null,
+        "quantity": 1,
+        "price": 12000,
+        "_id": "694598423a54d9f4dd90bbe3"
+      }
+    ],
+    "total": 12800,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-19T18:24:02.889Z",
+    "createdAt": "2025-12-19T18:24:02.899Z",
+    "updatedAt": "2025-12-19T18:24:02.899Z",
+    "__v": 0
+  },
+  {
+    "_id": "69459d9e3a54d9f4dd90bcb8",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 360000,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "69459d9e3a54d9f4dd90bcb9"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-19T18:46:54.508Z",
+    "createdAt": "2025-12-19T18:46:54.540Z",
+    "updatedAt": "2025-12-19T18:46:54.540Z",
+    "__v": 0
+  },
+  {
+    "_id": "6945a2083a54d9f4dd90bd36",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": "693df0cc301b8bc8e933b5ea",
+    "amountPaid": 140567,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c3b162de6525c2fa117ac",
+        "name": null,
+        "quantity": 1,
+        "price": 140567,
+        "_id": "6945a2083a54d9f4dd90bd37"
+      }
+    ],
+    "total": 140567,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-19T19:05:44.430Z",
+    "createdAt": "2025-12-19T19:05:44.431Z",
+    "updatedAt": "2025-12-19T19:05:44.431Z",
+    "__v": 0
+  },
+  {
+    "_id": "6945b3728d8fe51fec9bad30",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 115789,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693b134f2de6525c2fa1087c",
+        "name": null,
+        "quantity": 1,
+        "price": 115789,
+        "_id": "6945b3728d8fe51fec9bad31"
+      }
+    ],
+    "total": 115789,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-19T20:20:02.518Z",
+    "createdAt": "2025-12-19T20:20:02.519Z",
+    "updatedAt": "2025-12-19T20:20:02.519Z",
+    "__v": 0
+  },
+  {
+    "_id": "6945c0983a54d9f4dd90bf62",
+    "user": "694544e38d8fe51fec9bac7a",
+    "client": null,
+    "amountPaid": 110000,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "694544e38d8fe51fec9bac7a",
+    "products": [
+      {
+        "product": "694546068d8fe51fec9bacac",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "6945c0983a54d9f4dd90bf63"
+      }
+    ],
+    "total": 110000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-19T21:16:08.710Z",
+    "createdAt": "2025-12-19T21:16:08.711Z",
+    "updatedAt": "2025-12-19T21:16:08.711Z",
+    "__v": 0
+  },
+  {
+    "_id": "694972dffe1969723bfdf665",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 373999,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "692e323b7b7d190ea9332865",
+        "name": null,
+        "quantity": 1,
+        "price": 13999,
+        "_id": "694972dffe1969723bfdf666"
+      },
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "694972dffe1969723bfdf667"
+      }
+    ],
+    "total": 373999,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-22T16:33:35.288Z",
+    "createdAt": "2025-12-22T16:33:35.290Z",
+    "updatedAt": "2025-12-22T16:33:35.290Z",
+    "__v": 0
+  },
+  {
+    "_id": "694b5351fe1969723bfdf940",
+    "user": "694544e38d8fe51fec9bac7a",
+    "client": null,
+    "amountPaid": 110000,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "694544e38d8fe51fec9bac7a",
+    "products": [
+      {
+        "product": "694546068d8fe51fec9bacac",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "694b5351fe1969723bfdf941"
+      }
+    ],
+    "total": 110000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-24T02:43:29.407Z",
+    "createdAt": "2025-12-24T02:43:29.408Z",
+    "updatedAt": "2025-12-24T02:43:29.408Z",
+    "__v": 0
+  },
+  {
+    "_id": "694b53f5fe1969723bfdf972",
+    "user": "694544e38d8fe51fec9bac7a",
+    "client": null,
+    "amountPaid": 110000,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "694544e38d8fe51fec9bac7a",
+    "products": [
+      {
+        "product": "694546068d8fe51fec9bacac",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "694b53f5fe1969723bfdf973"
+      }
+    ],
+    "total": 110000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-24T02:46:13.492Z",
+    "createdAt": "2025-12-24T02:46:13.492Z",
+    "updatedAt": "2025-12-24T02:46:13.492Z",
+    "__v": 0
+  },
+  {
+    "_id": "694b5408fe1969723bfdf99a",
+    "user": "694544e38d8fe51fec9bac7a",
+    "client": null,
+    "amountPaid": 110000,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "694544e38d8fe51fec9bac7a",
+    "products": [
+      {
+        "product": "694546068d8fe51fec9bacac",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "694b5408fe1969723bfdf99b"
+      }
+    ],
+    "total": 110000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-24T02:46:32.925Z",
+    "createdAt": "2025-12-24T02:46:32.925Z",
+    "updatedAt": "2025-12-24T02:46:32.925Z",
+    "__v": 0
+  },
+  {
+    "_id": "69528131fe1969723bfdfa10",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 360000,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "69528131fe1969723bfdfa11"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-29T13:25:05.953Z",
+    "createdAt": "2025-12-29T13:25:05.954Z",
+    "updatedAt": "2025-12-29T13:25:05.954Z",
+    "__v": 0
+  },
+  {
+    "_id": "6952b3b90787d3f7e24aa476",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "client": null,
+    "amountPaid": 360000,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "6929f1bac97cdc82e996cc9e",
+    "products": [
+      {
+        "product": "693c42062de6525c2fa118bf",
+        "name": null,
+        "quantity": 1,
+        "price": 360000,
+        "_id": "6952b3b90787d3f7e24aa477"
+      }
+    ],
+    "total": 360000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-29T17:00:41.412Z",
+    "createdAt": "2025-12-29T17:00:41.415Z",
+    "updatedAt": "2025-12-29T17:00:41.415Z",
+    "__v": 0
+  },
+  {
+    "_id": "6952bb670787d3f7e24aa575",
+    "user": "695298043c01119bd8691036",
+    "client": null,
+    "amountPaid": 1500,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "695298043c01119bd8691036",
+    "products": [
+      {
+        "product": "6952985f082220faa8ee0389",
+        "name": null,
+        "quantity": 1,
+        "price": 1500,
+        "_id": "6952bb670787d3f7e24aa576"
+      }
+    ],
+    "total": 1500,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-29T17:33:27.591Z",
+    "createdAt": "2025-12-29T17:33:27.592Z",
+    "updatedAt": "2025-12-29T17:33:27.592Z",
+    "__v": 0
+  },
+  {
+    "_id": "6952c0bd0787d3f7e24aa6ff",
+    "user": "694544e38d8fe51fec9bac7a",
+    "client": null,
+    "amountPaid": 110000,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "694544e38d8fe51fec9bac7a",
+    "products": [
+      {
+        "product": "694546068d8fe51fec9bacac",
+        "name": null,
+        "quantity": 1,
+        "price": 110000,
+        "_id": "6952c0bd0787d3f7e24aa700"
+      }
+    ],
+    "total": 110000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-29T17:56:13.195Z",
+    "createdAt": "2025-12-29T17:56:13.196Z",
+    "updatedAt": "2025-12-29T17:56:13.196Z",
+    "__v": 0
+  },
+  {
+    "_id": "6952f3e7e3fe5bd389aadbfa",
+    "user": "694960388d8fe51fec9baf4c",
+    "client": null,
+    "amountPaid": 100000,
+    "amountDebt": 0,
+    "status": "active",
+    "seller": "694960388d8fe51fec9baf4c",
+    "products": [
+      {
+        "product": null,
+        "name": "Producto",
+        "quantity": 1,
+        "price": 100000,
+        "_id": "6952f3e7e3fe5bd389aadbfb"
+      }
+    ],
+    "total": 100000,
+    "paymentMethod": "efectivo",
+    "date": "2025-12-29T21:34:31.306Z",
+    "createdAt": "2025-12-29T21:34:31.315Z",
+    "updatedAt": "2025-12-29T21:34:31.315Z",
+    "__v": 0
+  }
+]

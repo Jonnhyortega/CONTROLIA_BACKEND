@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "69359c2d67eaa00f4854d6ad",
+    "version": "001",
+    "name": "add_membership_and_verification_fields",
+    "status": "completed",
+    "executedAt": "2025-12-07T15:24:29.929Z",
+    "__v": 0
+  },
+  {
+    "_id": "6937305762fcf29f3e6c50dc",
+    "version": "002",
+    "name": "sync_membership_date_with_created_at",
+    "status": "completed",
+    "executedAt": "2025-12-08T20:08:55.555Z",
+    "__v": 0
+  }
+]
