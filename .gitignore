@@ -1,3 +1,4 @@
 .env
-.env
 controlia-software/
+backend/backups/
+backend/temp/backend/src/config/serviceAccountKey.json

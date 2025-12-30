@@ -1,0 +1,1709 @@
+[
+  {
+    "_id": "690b76d9e1c107d1136ec277",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "date": "2025-11-05T03:00:00.000Z",
+    "sales": [
+      "690bd40cc1331eb5292bcb14",
+      "690bd414c1331eb5292bcb35",
+      "690bd421c1331eb5292bcb56",
+      "690bd595c1331eb5292bcb77",
+      "690bde26c1331eb5292bcd22"
+    ],
+    "totalSalesAmount": 105100,
+    "totalOperations": 5,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 105100,
+    "finalReal": 105100,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "690bde48c1331eb5292bcd3c"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "690bde48c1331eb5292bcd3d"
+      }
+    ],
+    "createdAt": "2025-11-05T16:10:01.733Z",
+    "updatedAt": "2025-11-05T23:31:20.161Z",
+    "__v": 11
+  },
+  {
+    "_id": "690d4b30243993e72636b7cc",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "date": "2025-11-06T03:00:00.000Z",
+    "sales": [
+      "690d4b6a243993e72636b7ea"
+    ],
+    "totalSalesAmount": 180,
+    "totalOperations": 1,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 180,
+    "finalReal": 180,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "690d4b75243993e72636b804"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "690d4b75243993e72636b805"
+      }
+    ],
+    "createdAt": "2025-11-07T01:28:16.634Z",
+    "updatedAt": "2025-11-07T01:29:25.960Z",
+    "__v": 1
+  },
+  {
+    "_id": "690e4563ab842262b18dddee",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "date": "2025-11-07T03:00:00.000Z",
+    "sales": [
+      "690e477aab842262b18dde09"
+    ],
+    "totalSalesAmount": 5000,
+    "totalOperations": 1,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 5000,
+    "finalReal": 5000,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "69151d82ca2901454a1ec689"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "69151d82ca2901454a1ec68a"
+      }
+    ],
+    "createdAt": "2025-11-07T19:15:47.413Z",
+    "updatedAt": "2025-11-12T23:51:30.163Z",
+    "__v": 1
+  },
+  {
+    "_id": "69139e23435ab57013c4e370",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "date": "2025-11-11T03:00:00.000Z",
+    "sales": [
+      "6913a27b435ab57013c4e3ac",
+      "6913a282435ab57013c4e3cd",
+      "6913a28c435ab57013c4e3ee"
+    ],
+    "totalSalesAmount": 35000,
+    "totalOperations": 3,
+    "description": "",
+    "totalOut": 10888,
+    "finalExpected": 24112,
+    "finalReal": 24112,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "Almacen",
+        "amount": 10300,
+        "_id": "6913a2ae435ab57013c4e435"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "mercado pago",
+        "total": 588,
+        "_id": "6913a2ae435ab57013c4e436"
+      }
+    ],
+    "createdAt": "2025-11-11T20:35:47.739Z",
+    "updatedAt": "2025-11-11T20:55:10.364Z",
+    "__v": 1
+  },
+  {
+    "_id": "6914b306435ab57013c4e5ba",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "date": "2025-11-12T03:00:00.000Z",
+    "sales": [
+      "6914b3fe435ab57013c4e63f",
+      "69151da9ca2901454a1ec6cf"
+    ],
+    "totalSalesAmount": 65000,
+    "totalOperations": 2,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 45000,
+    "finalReal": 45000,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "6914b40e435ab57013c4e683"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "6914b40e435ab57013c4e684"
+      }
+    ],
+    "createdAt": "2025-11-12T16:17:10.999Z",
+    "updatedAt": "2025-11-12T23:52:09.595Z",
+    "__v": 1
+  },
+  {
+    "_id": "691630385edadef5f7f12fb2",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "date": "2025-11-13T03:00:00.000Z",
+    "sales": [
+      "691633915edadef5f7f1300f",
+      "6916339b5edadef5f7f13030",
+      "691639985edadef5f7f1313e",
+      "691639dd5edadef5f7f1319b",
+      "691639ee5edadef5f7f131c6",
+      "69163a025edadef5f7f131e7",
+      "69163a115edadef5f7f13208",
+      "69163a285edadef5f7f1322b",
+      "6916428a5edadef5f7f13280"
+    ],
+    "totalSalesAmount": 202548,
+    "totalOperations": 9,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 202548,
+    "finalReal": 202548,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "691c8433cb37d3f7a4d222f3"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "691c8433cb37d3f7a4d222f4"
+      }
+    ],
+    "createdAt": "2025-11-13T19:23:36.555Z",
+    "updatedAt": "2025-11-18T14:35:31.037Z",
+    "__v": 2
+  },
+  {
+    "_id": "691b6abc929382be55212d24",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "date": "2025-11-17T03:00:00.000Z",
+    "sales": [],
+    "totalSalesAmount": 0,
+    "totalOperations": 0,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "691c8437cb37d3f7a4d222f9"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "691c8437cb37d3f7a4d222fa"
+      }
+    ],
+    "createdAt": "2025-11-17T18:34:36.392Z",
+    "updatedAt": "2025-11-18T14:35:35.642Z",
+    "__v": 1
+  },
+  {
+    "_id": "691c7600cb37d3f7a4d222a2",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "date": "2025-11-18T03:00:00.000Z",
+    "sales": [
+      "691cc64698231c4e922f876b",
+      "691cc66298231c4e922f878e"
+    ],
+    "totalSalesAmount": 25000,
+    "totalOperations": 2,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "691c843acb37d3f7a4d222ff"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "691c843acb37d3f7a4d22300"
+      }
+    ],
+    "createdAt": "2025-11-18T13:34:56.400Z",
+    "updatedAt": "2025-11-18T19:17:54.337Z",
+    "__v": 1
+  },
+  {
+    "_id": "6920f2e731e578996d0eac36",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "date": "2025-11-21T03:00:00.000Z",
+    "sales": [
+      "6920fc3131e578996d0eaca7"
+    ],
+    "totalSalesAmount": 30,
+    "totalOperations": 1,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [],
+    "supplierPayments": [],
+    "createdAt": "2025-11-21T23:16:55.881Z",
+    "updatedAt": "2025-11-21T23:56:33.784Z",
+    "__v": 0
+  },
+  {
+    "_id": "692209a631e578996d0eacc6",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "date": "2025-11-22T03:00:00.000Z",
+    "sales": [],
+    "totalSalesAmount": 0,
+    "totalOperations": 0,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [],
+    "supplierPayments": [],
+    "createdAt": "2025-11-22T19:06:14.060Z",
+    "updatedAt": "2025-11-22T19:06:14.060Z",
+    "__v": 0
+  },
+  {
+    "_id": "69272273ffa695036a4d2a0a",
+    "user": "69024f044f9ed2b7fcbcb0fc",
+    "date": "2025-11-26T03:00:00.000Z",
+    "sales": [],
+    "totalSalesAmount": 0,
+    "totalOperations": 0,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [],
+    "supplierPayments": [],
+    "createdAt": "2025-11-26T15:53:23.804Z",
+    "updatedAt": "2025-11-26T15:53:23.804Z",
+    "__v": 0
+  },
+  {
+    "_id": "6929df8d99c92b578413332e",
+    "user": "6929df6c1d567e0ef53db44c",
+    "date": "2025-11-28T03:00:00.000Z",
+    "sales": [],
+    "totalSalesAmount": 0,
+    "totalOperations": 0,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [],
+    "supplierPayments": [],
+    "createdAt": "2025-11-28T17:44:45.968Z",
+    "updatedAt": "2025-11-28T17:44:45.968Z",
+    "__v": 0
+  },
+  {
+    "_id": "6929f1bbc97cdc82e996cca8",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "date": "2025-11-28T03:00:00.000Z",
+    "sales": [
+      "692a227bf38acad9d03a576a"
+    ],
+    "totalSalesAmount": 141,
+    "totalOperations": 1,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 141,
+    "finalReal": 141,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "692a71840673061614464c9a"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "692a71840673061614464c9b"
+      }
+    ],
+    "createdAt": "2025-11-28T19:02:19.343Z",
+    "updatedAt": "2025-11-29T04:07:33.000Z",
+    "__v": 1
+  },
+  {
+    "_id": "692a716c0673061614464c68",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "date": "2025-11-29T03:00:00.000Z",
+    "sales": [
+      "692a83f50673061614464e36",
+      "692afa59d1a99f030124982e",
+      "692afa74d1a99f0301249876",
+      "692b0619d1a99f0301249998",
+      "692b4801d1a99f0301249e46",
+      "692b481cd1a99f0301249e6d",
+      "692b4961d1a99f0301249ecd",
+      "692b4a43ebb7df51dbe126af",
+      "692b4cb7ebb7df51dbe126e4",
+      "692b5530ebb7df51dbe12751",
+      "692b57d6ebb7df51dbe12786",
+      "692b57e5ebb7df51dbe127b4",
+      "692b57f9ebb7df51dbe127d4",
+      "692b5879ebb7df51dbe12810"
+    ],
+    "totalSalesAmount": 195130,
+    "totalOperations": 14,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 195130,
+    "finalReal": 195130,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "692e4f877b7d190ea9332937"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "692e4f877b7d190ea9332938"
+      }
+    ],
+    "createdAt": "2025-11-29T04:07:08.861Z",
+    "updatedAt": "2025-12-02T02:31:35.533Z",
+    "__v": 4
+  },
+  {
+    "_id": "692cf64aed4f530618d00a68",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "date": "2025-11-30T03:00:00.000Z",
+    "sales": [
+      "692cfc37ed4f530618d00b8b"
+    ],
+    "totalSalesAmount": 43145,
+    "totalOperations": 1,
+    "description": "",
+    "totalOut": 1120,
+    "finalExpected": 42025,
+    "finalReal": 42025,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "Almacen",
+        "amount": 120,
+        "_id": "692e4faa7b7d190ea933293d"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "transferencia",
+        "total": 1000,
+        "_id": "692e4faa7b7d190ea933293e"
+      }
+    ],
+    "createdAt": "2025-12-01T01:58:34.576Z",
+    "updatedAt": "2025-12-02T02:32:10.095Z",
+    "__v": 2
+  },
+  {
+    "_id": "692d9da470d297d39c599fcb",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "date": "2025-12-01T03:00:00.000Z",
+    "sales": [
+      "692e4f757b7d190ea933291b",
+      "692e55a97b7d190ea93329bc",
+      "692e55c67b7d190ea93329dd"
+    ],
+    "totalSalesAmount": 24030,
+    "totalOperations": 3,
+    "description": "",
+    "totalOut": 87678,
+    "finalExpected": -63648,
+    "finalReal": -63648,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "Almacen",
+        "amount": 5678,
+        "_id": "692f920010996d08aa24f096"
+      },
+      {
+        "description": "AFIP",
+        "amount": 67000,
+        "_id": "692f920010996d08aa24f097"
+      },
+      {
+        "description": "ABL",
+        "amount": 15000,
+        "_id": "692f920010996d08aa24f098"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "transferencia",
+        "total": 0,
+        "_id": "692f920010996d08aa24f099"
+      }
+    ],
+    "createdAt": "2025-12-01T13:52:36.449Z",
+    "updatedAt": "2025-12-03T01:27:28.227Z",
+    "__v": 5
+  },
+  {
+    "_id": "692e56dc7b7d190ea9332a50",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "date": "2025-12-02T03:00:00.000Z",
+    "sales": [
+      "692f916210996d08aa24f071"
+    ],
+    "totalSalesAmount": 2410,
+    "totalOperations": 1,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 2410,
+    "finalReal": 2410,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "6931f1532773a9f22111a5f4"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "6931f1532773a9f22111a5f5"
+      }
+    ],
+    "createdAt": "2025-12-02T03:02:52.277Z",
+    "updatedAt": "2025-12-04T20:38:43.435Z",
+    "__v": 1
+  },
+  {
+    "_id": "692fa7db10996d08aa24f12a",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "date": "2025-12-03T03:00:00.000Z",
+    "sales": [
+      "693050187eb39d02497ac05c",
+      "693050c17eb39d02497ac0fd",
+      "693070c6ff63109a692f4e03"
+    ],
+    "totalSalesAmount": 48498,
+    "totalOperations": 3,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 48498,
+    "finalReal": 48498,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "69325b3c96a3244ed9196296"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "69325b3c96a3244ed9196297"
+      }
+    ],
+    "createdAt": "2025-12-03T03:00:43.236Z",
+    "updatedAt": "2025-12-05T04:10:36.723Z",
+    "__v": 1
+  },
+  {
+    "_id": "6931bd2c3c806eddfb22eaee",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "date": "2025-12-04T03:00:00.000Z",
+    "sales": [
+      "6931d0f3e89ca096472c7dd3",
+      "6931f16d2773a9f22111a61e",
+      "6931f17d2773a9f22111a633"
+    ],
+    "totalSalesAmount": 17099,
+    "totalOperations": 3,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 17099,
+    "finalReal": 17099,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "6934505e96a3244ed91967ee"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "6934505e96a3244ed91967ef"
+      }
+    ],
+    "createdAt": "2025-12-04T16:56:12.644Z",
+    "updatedAt": "2025-12-06T15:48:46.714Z",
+    "__v": 1
+  },
+  {
+    "_id": "6931c8cae89ca096472c7d88",
+    "user": "6931c8c8e89ca096472c7d7f",
+    "date": "2025-12-04T00:00:00.000Z",
+    "sales": [],
+    "totalSalesAmount": 0,
+    "totalOperations": 0,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [],
+    "supplierPayments": [],
+    "createdAt": "2025-12-04T17:45:46.263Z",
+    "updatedAt": "2025-12-04T17:45:46.263Z",
+    "__v": 0
+  },
+  {
+    "_id": "6932018bda70519c70eecb5a",
+    "user": "69320180da70519c70eecb4d",
+    "date": "2025-12-04T03:00:00.000Z",
+    "sales": [
+      "693201d2da70519c70eecba6"
+    ],
+    "totalSalesAmount": 1514414376,
+    "totalOperations": 1,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [],
+    "supplierPayments": [],
+    "createdAt": "2025-12-04T21:47:55.534Z",
+    "updatedAt": "2025-12-04T21:49:06.934Z",
+    "__v": 0
+  },
+  {
+    "_id": "693203692773a9f22111a64f",
+    "user": "693203602773a9f22111a645",
+    "date": "2025-12-04T00:00:00.000Z",
+    "sales": [
+      "693209082773a9f22111a69f",
+      "693209eb2773a9f22111a719",
+      "69320a282773a9f22111a743"
+    ],
+    "totalSalesAmount": 137283509882,
+    "totalOperations": 3,
+    "description": "",
+    "totalOut": 1111,
+    "finalExpected": 137283508571,
+    "finalReal": 137283508571,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "dsdsadas",
+        "amount": 1111,
+        "_id": "693209182773a9f22111a6ae"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "693209182773a9f22111a6af"
+      }
+    ],
+    "createdAt": "2025-12-04T21:55:53.314Z",
+    "updatedAt": "2025-12-04T22:24:41.164Z",
+    "__v": 2
+  },
+  {
+    "_id": "693234a62773a9f22111a76d",
+    "user": "693203602773a9f22111a645",
+    "date": "2025-12-05T00:00:00.000Z",
+    "sales": [
+      "69324dfb96a3244ed91960a8",
+      "6933635396a3244ed9196355"
+    ],
+    "totalSalesAmount": 201,
+    "totalOperations": 2,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 101,
+    "finalReal": 101,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "69324e1496a3244ed91960b8"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "69324e1496a3244ed91960b9"
+      }
+    ],
+    "createdAt": "2025-12-05T01:25:58.166Z",
+    "updatedAt": "2025-12-05T22:57:24.113Z",
+    "__v": 1
+  },
+  {
+    "_id": "6932429d96a3244ed9196074",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "date": "2025-12-05T00:00:00.000Z",
+    "sales": [
+      "69325b5d96a3244ed91962ae",
+      "6932601a96a3244ed91962ff"
+    ],
+    "totalSalesAmount": 42000,
+    "totalOperations": 2,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 42000,
+    "finalReal": 42000,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "6934505996a3244ed91967e8"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "6934505996a3244ed91967e9"
+      }
+    ],
+    "createdAt": "2025-12-05T02:25:33.872Z",
+    "updatedAt": "2025-12-06T15:48:41.813Z",
+    "__v": 1
+  },
+  {
+    "_id": "6932a98796a3244ed9196313",
+    "user": "6931c8c8e89ca096472c7d7f",
+    "date": "2025-12-05T00:00:00.000Z",
+    "sales": [],
+    "totalSalesAmount": 0,
+    "totalOperations": 0,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "69332ee996a3244ed9196327"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "69332ee996a3244ed9196328"
+      }
+    ],
+    "createdAt": "2025-12-05T09:44:39.261Z",
+    "updatedAt": "2025-12-05T19:13:45.893Z",
+    "__v": 1
+  },
+  {
+    "_id": "69332f1096a3244ed9196338",
+    "user": "69332f0a96a3244ed919632e",
+    "date": "2025-12-05T00:00:00.000Z",
+    "sales": [],
+    "totalSalesAmount": 0,
+    "totalOperations": 0,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [],
+    "supplierPayments": [],
+    "createdAt": "2025-12-05T19:14:24.696Z",
+    "updatedAt": "2025-12-05T19:14:24.696Z",
+    "__v": 0
+  },
+  {
+    "_id": "6934879996a3244ed91968c5",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "date": "2025-12-06T00:00:00.000Z",
+    "sales": [
+      "6933b17c96a3244ed919639c",
+      "6933b91c96a3244ed91963d1",
+      "6934342696a3244ed91966ba",
+      "69343c9896a3244ed9196704"
+    ],
+    "totalSalesAmount": 37699,
+    "totalOperations": 4,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 37699,
+    "finalReal": 37699,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "6935790196a3244ed9196af3"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "6935790196a3244ed9196af4"
+      }
+    ],
+    "createdAt": "2025-12-06T19:44:25.408Z",
+    "updatedAt": "2025-12-07T12:54:25.888Z",
+    "__v": 2
+  },
+  {
+    "_id": "693578f596a3244ed9196ae7",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "date": "2025-12-07T00:00:00.000Z",
+    "sales": [
+      "6935ba6f39141118869be84a",
+      "6935c26d39141118869be874",
+      "6935c8963f930c845f6cd723"
+    ],
+    "totalSalesAmount": 30499,
+    "totalOperations": 3,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "6935790696a3244ed9196af9"
+      }
+    ],
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "6935790696a3244ed9196afa"
+      }
+    ],
+    "createdAt": "2025-12-07T12:54:13.548Z",
+    "updatedAt": "2025-12-07T18:33:59.135Z",
+    "__v": 1
+  },
+  {
+    "_id": "6935a446f338bc556fe5302f",
+    "user": "6935a3ec34ca486ce91dac8d",
+    "__v": 0,
+    "createdAt": "2025-12-07T15:59:02.435Z",
+    "date": "2025-12-07T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "6935a44634ca486ce91daca6"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 1,
+    "totalOut": 0,
+    "totalSalesAmount": 100,
+    "updatedAt": "2025-12-07T15:59:02.435Z"
+  },
+  {
+    "_id": "6935b73bf338bc556fe53044",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 2,
+    "createdAt": "2025-12-07T17:19:55.919Z",
+    "date": "2025-12-07T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "",
+        "amount": 0,
+        "_id": "6938199ddfe1c27ad666951d"
+      }
+    ],
+    "finalExpected": 2300,
+    "finalReal": 2300,
+    "sales": [
+      "6935ce59aa86c51b3a8ac7d2",
+      "6935ce67aa86c51b3a8ac7ec"
+    ],
+    "status": "cerrada",
+    "supplierPayments": [
+      {
+        "metodo": "efectivo",
+        "total": 0,
+        "_id": "6938199ddfe1c27ad666951e"
+      }
+    ],
+    "totalOperations": 2,
+    "totalOut": 0,
+    "totalSalesAmount": 2300,
+    "updatedAt": "2025-12-09T12:44:13.442Z"
+  },
+  {
+    "_id": "693704daf338bc556fe532b1",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 7,
+    "createdAt": "2025-12-08T17:03:23.698Z",
+    "date": "2025-12-08T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "alquiler",
+        "amount": 546000,
+        "_id": "6937888141ceea0e6f56e94a"
+      }
+    ],
+    "finalExpected": -532400,
+    "finalReal": -532400,
+    "sales": [
+      "693704db5386bc44d04715f9",
+      "69375c0bd13d88b31bd0db51",
+      "693784cded1ee6f12635c0fa"
+    ],
+    "status": "cerrada",
+    "supplierPayments": [],
+    "totalOperations": 3,
+    "totalOut": 546000,
+    "totalSalesAmount": 13600,
+    "updatedAt": "2025-12-09T02:25:10.555Z"
+  },
+  {
+    "_id": "693790eef338bc556fe53550",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 0,
+    "createdAt": "2025-12-09T03:01:01.883Z",
+    "date": "2025-12-09T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "ABL",
+        "amount": 54000,
+        "_id": "69379141c5dda3c65d44fb31"
+      },
+      {
+        "description": "Pago a Proveedor: Jonson perfumerie - Factura 2323232",
+        "amount": 100000,
+        "_id": "6937915bc5dda3c65d44fb45"
+      }
+    ],
+    "finalExpected": -89001,
+    "finalReal": -89001,
+    "sales": [
+      "693790edc5dda3c65d44fadc",
+      "69379101c5dda3c65d44faf6",
+      "6937912cc5dda3c65d44fb19"
+    ],
+    "status": "cerrada",
+    "supplierPayments": [],
+    "totalOperations": 3,
+    "totalOut": 154000,
+    "totalSalesAmount": 64999,
+    "updatedAt": "2025-12-09T04:05:09.001Z"
+  },
+  {
+    "_id": "6939b2fef338bc556fe53a10",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 1,
+    "createdAt": "2025-12-10T17:50:54.435Z",
+    "date": "2025-12-10T00:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "ferreteria",
+        "amount": 8000,
+        "_id": "6939d73006b18ce684ca37c7"
+      },
+      {
+        "description": "limpieza",
+        "amount": 5000,
+        "_id": "6939d74206b18ce684ca37d7"
+      }
+    ],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "6939b2fe3f930c845f6cd797",
+      "6939c1ea3f930c845f6cd7dd"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 2,
+    "totalOut": 0,
+    "totalSalesAmount": 18499,
+    "updatedAt": "2025-12-10T20:25:38.917Z"
+  },
+  {
+    "_id": "6939bfbdf338bc556fe53a30",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 0,
+    "createdAt": "2025-12-10T18:45:18.043Z",
+    "date": "2025-12-10T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "Limpieza",
+        "amount": 1000,
+        "_id": "6939e0673ce7285b7268f5c9"
+      }
+    ],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "6939bfbd5de2dabe15e2b36e",
+      "6939c95a3ce7285b7268f27a",
+      "6939ca403ce7285b7268f31c",
+      "6939ca4a3ce7285b7268f33b"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 4,
+    "totalOut": 0,
+    "totalSalesAmount": 14000,
+    "updatedAt": "2025-12-10T21:04:39.772Z"
+  },
+  {
+    "_id": "693aca59f338bc556fe53e9b",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 0,
+    "createdAt": "2025-12-11T13:42:49.375Z",
+    "date": "2025-12-11T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "693aca593ce7285b7268f8ee"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 1,
+    "totalOut": 0,
+    "totalSalesAmount": 800,
+    "updatedAt": "2025-12-11T13:42:49.375Z"
+  },
+  {
+    "_id": "693c4318f338bc556fe54182",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 0,
+    "createdAt": "2025-12-12T16:30:16.585Z",
+    "date": "2025-12-12T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "ARCA",
+        "amount": 78000,
+        "_id": "693c47902de6525c2fa11b24"
+      }
+    ],
+    "finalExpected": 2252355,
+    "finalReal": 2252355,
+    "sales": [
+      "693c43182de6525c2fa118dd",
+      "693c43522de6525c2fa118f9",
+      "693c43b72de6525c2fa1191c",
+      "693c4a1b2de6525c2fa11dc3"
+    ],
+    "status": "cerrada",
+    "supplierPayments": [],
+    "totalOperations": 4,
+    "totalOut": 78000,
+    "totalSalesAmount": 2330355,
+    "updatedAt": "2025-12-12T23:09:04.140Z"
+  },
+  {
+    "_id": "693daf9bf338bc556fe549f8",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 0,
+    "createdAt": "2025-12-13T18:25:31.353Z",
+    "date": "2025-12-13T00:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "693daf9b06b18ce684ca38c6"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 1,
+    "totalOut": 0,
+    "totalSalesAmount": 110000,
+    "updatedAt": "2025-12-13T18:25:31.353Z"
+  },
+  {
+    "_id": "693df25bf338bc556fe54a05",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 0,
+    "createdAt": "2025-12-13T23:10:19.417Z",
+    "date": "2025-12-13T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "Luz",
+        "amount": 34000,
+        "_id": "693df302301b8bc8e933b682"
+      }
+    ],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "693df25a301b8bc8e933b62d",
+      "693df2ba301b8bc8e933b64b",
+      "693df2d5301b8bc8e933b669"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 3,
+    "totalOut": 0,
+    "totalSalesAmount": 1019635,
+    "updatedAt": "2025-12-13T23:13:06.084Z"
+  },
+  {
+    "_id": "693f310df338bc556fe54c2e",
+    "user": "693f2a4b4bd30ab21331b335",
+    "__v": 0,
+    "createdAt": "2025-12-14T21:50:06.227Z",
+    "date": "2025-12-14T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "693f310dda96fcd7d73f8346"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 1,
+    "totalOut": 0,
+    "totalSalesAmount": 11400,
+    "updatedAt": "2025-12-14T21:50:06.227Z"
+  },
+  {
+    "_id": "693ffe7af338bc556fe54da1",
+    "user": "693f2a4b4bd30ab21331b335",
+    "__v": 0,
+    "createdAt": "2025-12-15T12:26:35.764Z",
+    "date": "2025-12-15T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "Limpieza",
+        "amount": 5000,
+        "_id": "693ffec757308bfed974f92a"
+      }
+    ],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "693ffe7b57308bfed974f8c0",
+      "6940001257308bfed974f942",
+      "69401dfe57308bfed974fcc4",
+      "694027b457308bfed974fd04",
+      "6940308857308bfed974fd8b",
+      "69405971f19fa6976e26ebd9"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 6,
+    "totalOut": 0,
+    "totalSalesAmount": 105200,
+    "updatedAt": "2025-12-15T18:54:41.526Z"
+  },
+  {
+    "_id": "6940604df338bc556fe54ed3",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 0,
+    "createdAt": "2025-12-15T19:23:58.735Z",
+    "date": "2025-12-15T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "gas",
+        "amount": 10000,
+        "_id": "6940609ff19fa6976e26ecd3"
+      }
+    ],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "6940604ef19fa6976e26ec7d",
+      "6940605cf19fa6976e26ec99",
+      "6940606ef19fa6976e26ecb9"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 3,
+    "totalOut": 0,
+    "totalSalesAmount": 945789,
+    "updatedAt": "2025-12-15T19:25:19.251Z"
+  },
+  {
+    "_id": "69417ed26a74d017c16fb8e0",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 1,
+    "createdAt": "2025-12-16T15:46:26.149Z",
+    "date": "2025-12-16T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "Limpieza",
+        "amount": 5000,
+        "_id": "6941825789cfdf215e2c50eb"
+      }
+    ],
+    "finalExpected": 1763588,
+    "finalReal": 1763588,
+    "sales": [
+      "69417ed289cfdf215e2c5072",
+      "6941824389cfdf215e2c50d2",
+      "694182bb89cfdf215e2c555d",
+      "694182c989cfdf215e2c557e",
+      "6941894589cfdf215e2c55ce"
+    ],
+    "status": "cerrada",
+    "supplierPayments": [],
+    "totalOperations": 5,
+    "totalOut": 5000,
+    "totalSalesAmount": 1108588.03,
+    "updatedAt": "2025-12-18T17:51:46.434Z"
+  },
+  {
+    "_id": "6941cead6a74d017c16fb9b3",
+    "user": "6941ceac89b770ddcebbd9e2",
+    "__v": 0,
+    "createdAt": "2025-12-16T21:27:09.180Z",
+    "date": "2025-12-16T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "6941cead89b770ddcebbd9eb"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 1,
+    "totalOut": 0,
+    "totalSalesAmount": 100,
+    "updatedAt": "2025-12-16T21:27:09.180Z"
+  },
+  {
+    "_id": "6942ae016a74d017c16fbc8f",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 20,
+    "createdAt": "2025-12-17T13:20:01.681Z",
+    "date": "2025-12-17T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "Limpieza",
+        "amount": 15000,
+        "_id": "6942ae0ffc0565f7213b0fe4"
+      }
+    ],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "694338393b36ad578d3ac654"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 1,
+    "totalOut": 0,
+    "totalSalesAmount": 559999.97,
+    "updatedAt": "2025-12-19T21:32:39.529Z"
+  },
+  {
+    "_id": "694403f025ac52249835d8cd",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 1,
+    "createdAt": "2025-12-18T13:38:57.262Z",
+    "date": "2025-12-18T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "Bebida",
+        "amount": 1500,
+        "_id": "69440495f0de902d6f6cb230"
+      },
+      {
+        "description": "Almuerzo",
+        "amount": 20000,
+        "_id": "69444a30ff11a2f4c1f73385"
+      },
+      {
+        "description": "Pago a Proveedor: Importador KLOPS SRL - Pedido",
+        "amount": 400000,
+        "_id": "69444a4aff11a2f4c1f733a3"
+      },
+      {
+        "description": "abl",
+        "amount": 50000,
+        "_id": "69445a49d763e496b2ee1df5"
+      },
+      {
+        "description": "Pago a Proveedor: Jonson perfumerie - ",
+        "amount": 22000,
+        "_id": "69445a68d763e496b2ee1e3d"
+      },
+      {
+        "description": "Pago a Proveedor: Jonson perfumerie - ",
+        "amount": 19200,
+        "_id": "694462d2203c5357725cda82"
+      }
+    ],
+    "finalExpected": 3670686,
+    "finalReal": 3670686,
+    "sales": [
+      "694403f1f0de902d6f6cb1c9",
+      "694415def0de902d6f6cbfb4",
+      "694449f5ff11a2f4c1f73349",
+      "69444ee9d763e496b2ee181f",
+      "694459f3d763e496b2ee1ae3",
+      "6944692c8d8fe51fec9ba7e6"
+    ],
+    "status": "cerrada",
+    "supplierPayments": [],
+    "totalOperations": 6,
+    "totalOut": 512700,
+    "totalSalesAmount": 4183386,
+    "updatedAt": "2025-12-18T20:51:09.771Z"
+  },
+  {
+    "_id": "6945508f25ac52249835dae6",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 1,
+    "createdAt": "2025-12-19T13:18:07.591Z",
+    "date": "2025-12-19T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "Retiro",
+        "amount": 1000,
+        "_id": "69455552014eb62894598e12"
+      },
+      {
+        "description": "Alquiler",
+        "amount": 550000,
+        "_id": "694596343a54d9f4dd90bbb5"
+      },
+      {
+        "description": "Retiro",
+        "amount": 1000,
+        "_id": "6945a1d13a54d9f4dd90bd10"
+      },
+      {
+        "description": "Alquiler",
+        "amount": 550000,
+        "_id": "6945a1d13a54d9f4dd90bd11"
+      }
+    ],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "6945508f014eb62894598da1",
+      "69457eef014eb62894598f04",
+      "69458cbd3a54d9f4dd90bb65",
+      "694596273a54d9f4dd90bb98",
+      "694598423a54d9f4dd90bbe1",
+      "69459d9e3a54d9f4dd90bcb8",
+      "6945a2083a54d9f4dd90bd36",
+      "6945b3728d8fe51fec9bad30"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 8,
+    "totalOut": 0,
+    "totalSalesAmount": 2941438,
+    "updatedAt": "2025-12-19T21:32:39.629Z"
+  },
+  {
+    "_id": "6945c0003a54d9f4dd90bf2a",
+    "user": "694544e38d8fe51fec9bac7a",
+    "date": "2025-12-19T03:00:00.000Z",
+    "sales": [
+      "6945c0983a54d9f4dd90bf62"
+    ],
+    "totalSalesAmount": 110000,
+    "totalOperations": 1,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [
+      {
+        "description": "Limpieza",
+        "amount": 10000,
+        "_id": "6945ee55bde93df8b71e0b57"
+      }
+    ],
+    "supplierPayments": [],
+    "createdAt": "2025-12-19T21:13:36.691Z",
+    "updatedAt": "2025-12-20T00:31:16.991Z",
+    "__v": 1
+  },
+  {
+    "_id": "694972df25ac52249835e3fd",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 0,
+    "createdAt": "2025-12-22T16:33:35.472Z",
+    "date": "2025-12-22T00:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "694972dffe1969723bfdf665"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 1,
+    "totalOut": 0,
+    "totalSalesAmount": 373999,
+    "updatedAt": "2025-12-22T16:33:35.472Z"
+  },
+  {
+    "_id": "694b530afe1969723bfdf90e",
+    "user": "694544e38d8fe51fec9bac7a",
+    "date": "2025-12-24T00:00:00.000Z",
+    "sales": [
+      "694b5351fe1969723bfdf940",
+      "694b53f5fe1969723bfdf972",
+      "694b5408fe1969723bfdf99a"
+    ],
+    "totalSalesAmount": 330000,
+    "totalOperations": 3,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [
+      {
+        "description": "Pago a Proveedor: Perfumeria Ad hasan - Sin descripción",
+        "amount": 199999.99,
+        "_id": "694b530cfe1969723bfdf916"
+      },
+      {
+        "description": "Pago a Proveedor: Perfumeria Ad hasan - test",
+        "amount": 2000,
+        "_id": "694b530cfe1969723bfdf917"
+      },
+      {
+        "description": "Pago a Proveedor: Pago directo",
+        "amount": 199999.99,
+        "_id": "694b530cfe1969723bfdf918"
+      }
+    ],
+    "supplierPayments": [],
+    "createdAt": "2025-12-24T02:42:18.963Z",
+    "updatedAt": "2025-12-24T02:46:33.104Z",
+    "__v": 0
+  },
+  {
+    "_id": "6952813225ac52249835eab8",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 0,
+    "createdAt": "2025-12-29T13:25:06.136Z",
+    "date": "2025-12-29T00:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [],
+    "finalExpected": 0,
+    "finalReal": 0,
+    "sales": [
+      "69528131fe1969723bfdfa10"
+    ],
+    "status": "abierta",
+    "supplierPayments": [],
+    "totalOperations": 1,
+    "totalOut": 0,
+    "totalSalesAmount": 360000,
+    "updatedAt": "2025-12-29T13:25:06.136Z"
+  },
+  {
+    "_id": "6952b3b925ac52249835ead0",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "__v": 0,
+    "createdAt": "2025-12-29T17:00:41.475Z",
+    "date": "2025-12-29T03:00:00.000Z",
+    "description": "",
+    "difference": 0,
+    "extraExpenses": [
+      {
+        "description": "limpieza",
+        "amount": 100,
+        "_id": "6952b3c00787d3f7e24aa48d"
+      },
+      {
+        "description": "Pago a Proveedor: Jonson perfumerie - 5000",
+        "amount": 100,
+        "_id": "6952b7d60787d3f7e24aa51e"
+      }
+    ],
+    "finalExpected": 359800,
+    "finalReal": 359800,
+    "sales": [
+      "6952b3b90787d3f7e24aa476"
+    ],
+    "status": "cerrada",
+    "supplierPayments": [],
+    "totalOperations": 1,
+    "totalOut": 200,
+    "totalSalesAmount": 360000,
+    "updatedAt": "2025-12-29T17:18:43.377Z"
+  },
+  {
+    "_id": "6952b65c0787d3f7e24aa4b3",
+    "user": "695298043c01119bd8691036",
+    "date": "2025-12-29T03:00:00.000Z",
+    "sales": [
+      "6952bb670787d3f7e24aa575"
+    ],
+    "totalSalesAmount": 1500,
+    "totalOperations": 1,
+    "description": "",
+    "totalOut": 100,
+    "finalExpected": 1400,
+    "finalReal": 1400,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "limpieza",
+        "amount": 100,
+        "_id": "6952b6630787d3f7e24aa4c6"
+      }
+    ],
+    "supplierPayments": [],
+    "createdAt": "2025-12-29T17:11:56.948Z",
+    "updatedAt": "2025-12-29T23:31:57.382Z",
+    "__v": 0
+  },
+  {
+    "_id": "6952bbdf0787d3f7e24aa60e",
+    "user": "694544e38d8fe51fec9bac7a",
+    "date": "2025-12-29T03:00:00.000Z",
+    "sales": [
+      "6952c0bd0787d3f7e24aa6ff"
+    ],
+    "totalSalesAmount": 110000,
+    "totalOperations": 1,
+    "description": "",
+    "totalOut": 1000,
+    "finalExpected": 109000,
+    "finalReal": 109000,
+    "difference": 0,
+    "status": "cerrada",
+    "extraExpenses": [
+      {
+        "description": "Limpieza",
+        "amount": 1000,
+        "_id": "6952bbe70787d3f7e24aa621"
+      }
+    ],
+    "supplierPayments": [],
+    "createdAt": "2025-12-29T17:35:27.927Z",
+    "updatedAt": "2025-12-29T18:00:21.838Z",
+    "__v": 0
+  },
+  {
+    "_id": "6952c2810787d3f7e24aa84d",
+    "user": "693f2a4b4bd30ab21331b335",
+    "date": "2025-12-29T03:00:00.000Z",
+    "sales": [],
+    "totalSalesAmount": 0,
+    "totalOperations": 0,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [],
+    "supplierPayments": [],
+    "createdAt": "2025-12-29T18:03:45.219Z",
+    "updatedAt": "2025-12-29T18:03:45.219Z",
+    "__v": 0
+  },
+  {
+    "_id": "6952f333e3fe5bd389aadbc9",
+    "user": "694960388d8fe51fec9baf4c",
+    "date": "2025-12-29T03:00:00.000Z",
+    "sales": [
+      "6952f3e7e3fe5bd389aadbfa"
+    ],
+    "totalSalesAmount": 100000,
+    "totalOperations": 1,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [
+      {
+        "description": "limpieza",
+        "amount": 900,
+        "_id": "6952f51de3fe5bd389aadc0f"
+      }
+    ],
+    "supplierPayments": [],
+    "createdAt": "2025-12-29T21:31:31.933Z",
+    "updatedAt": "2025-12-29T21:39:41.169Z",
+    "__v": 0
+  },
+  {
+    "_id": "6953141ce3fe5bd389aadf77",
+    "user": "6953141ae3fe5bd389aadf5e",
+    "date": "2025-12-29T03:00:00.000Z",
+    "sales": [],
+    "totalSalesAmount": 0,
+    "totalOperations": 0,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [],
+    "supplierPayments": [],
+    "createdAt": "2025-12-29T23:51:56.354Z",
+    "updatedAt": "2025-12-29T23:51:56.354Z",
+    "__v": 0
+  },
+  {
+    "_id": "6953ac6a229ccabe11b43e36",
+    "user": "6929f1bac97cdc82e996cc9e",
+    "date": "2025-12-30T00:00:00.000Z",
+    "sales": [],
+    "totalSalesAmount": 0,
+    "totalOperations": 0,
+    "description": "",
+    "totalOut": 0,
+    "finalExpected": 0,
+    "finalReal": 0,
+    "difference": 0,
+    "status": "abierta",
+    "extraExpenses": [],
+    "supplierPayments": [],
+    "createdAt": "2025-12-30T10:41:46.485Z",
+    "updatedAt": "2025-12-30T10:41:46.485Z",
+    "__v": 0
+  }
+]

@@ -13,6 +13,7 @@ dotenv.config({ path: path.join(__dirname, "../.env") });
 import connectDB from "./config/db_temp.js";
 import app from "./app.js";
 import validateEnv from "./utils/validateEnv.js";
+import initScheduler from "./scheduler/backupScheduler.js";
 
 // 🔐 Validar variables de entorno antes de iniciar
 validateEnv();
@@ -27,6 +28,7 @@ validateEnv();
 connectDB();
 
 const PORT = process.env.PORT || 5000;
+initScheduler(); // Iniciar tareas programadas
 app.listen(PORT, () =>
   console.log(`🚀 Controlia backend corriendo en puerto ${PORT}`)
 );
