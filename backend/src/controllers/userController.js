@@ -401,3 +401,46 @@ export const resetPassword = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+// 🆘 Activar acceso de emergencia (24hs)
+export const activateEmergencyAccess = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id);
+
+    if (!user) {
+      return res.status(404).json({ message: "Usuario no encontrado" });
+    }
+
+    // Política de 30 días
+    const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+    const now = new Date();
+
+    if (user.emergencyAccessLastUsedAt) {
+      const timeSinceLastUse = now - new Date(user.emergencyAccessLastUsedAt);
+      
+      if (timeSinceLastUse < THIRTY_DAYS_MS) {
+        // Calcular días restantes para el próximo uso
+        const daysToWait = Math.ceil((THIRTY_DAYS_MS - timeSinceLastUse) / (1000 * 60 * 60 * 24));
+        return res.status(400).json({ 
+          message: `El acceso de emergencia solo se puede usar una vez cada 30 días. Podrás usarlo nuevamente en ${daysToWait} días.`,
+          cooldownActive: true
+        });
+      }
+    }
+
+    // Otorgar 24 horas
+    const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+    user.emergencyAccessExpires = new Date(now.getTime() + ONE_DAY_MS);
+    user.emergencyAccessLastUsedAt = now;
+
+    await user.save();
+
+    res.json({
+      message: "Acceso de emergencia activado por 24 horas.",
+      emergencyAccessExpires: user.emergencyAccessExpires
+    });
+
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

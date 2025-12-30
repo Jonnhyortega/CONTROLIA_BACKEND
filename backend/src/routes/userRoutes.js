@@ -9,6 +9,7 @@ import {
     resendVerificationCode,
     forgotPassword,
     resetPassword,
+    activateEmergencyAccess,
 } from "../controllers/userController.js";
 import validate from "../middleware/validateZod.js";
 import { 
@@ -47,4 +48,5 @@ router.put("/reset-password/:token", authLimiter, resetPassword);
 router.get("/profile", protect, getUserProfile);
 router.put("/profile", protect, validate(updateUserSchema), updateUserProfile);  
 router.patch("/profile/password", protect, validate(changePasswordSchema), changeMyPassword);
+router.post("/emergency-access", protect, activateEmergencyAccess); // 🆘 Nueva ruta
 export default router;

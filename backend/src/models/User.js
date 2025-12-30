@@ -65,6 +65,15 @@ const userSchema = new mongoose.Schema(
       enum: ["pending", "authorized", "paused", "cancelled", null],
       default: null,
     },
+    // 🆘 Acceso de Emergencia (24hs extra cada mes)
+    emergencyAccessExpires: {
+      type: Date,
+      default: null,
+    },
+    emergencyAccessLastUsedAt: {
+      type: Date,
+      default: null,
+    },
     // ✉️ Email Verification
     isEmailVerified: {
       type: Boolean,
@@ -113,7 +122,7 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
 userSchema.methods.calculateTrialDaysRemaining = function () {
   if (!this.membershipStartDate) return "0";
 
-  const trialDurationDays = 30;
+  const trialDurationDays = 15;
   // Fecha de inicio + 90 días
   const trialEndDate = new Date(this.membershipStartDate);
   trialEndDate.setDate(trialEndDate.getDate() + trialDurationDays);
