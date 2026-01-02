@@ -22,7 +22,7 @@ if (!GOOGLE_CLIENT_ID || !GOOGLE_CLIENT_SECRET_BACKUP || !GOOGLE_REFRESH_TOKEN_B
 }
 
 const oauth2Client = new google.auth.OAuth2(
-  GOOGLE_CLIENT_ID_BACKUP,
+  GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET_BACKUP,
   'https://developers.google.com/oauthplayground' // Redirect URI usado
 );
