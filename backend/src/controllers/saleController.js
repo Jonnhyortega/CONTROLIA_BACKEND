@@ -1,9 +1,10 @@
 import Sale from "../models/Sale.js";
 import Product from "../models/Product.js";
 import DailyCash from "../models/DailyCash.js";
-import Client from "../models/Client.js"; // ✅ Importar Client
+import Client from "../models/Client.js"; 
 import ProductHistory from "../models/ProductHistory.js";
 import User from "../models/User.js";
+import Transaction from "../models/Transaction.js";
 import { getLocalDayRangeUTC } from "../utils/dateHelpers.js";
 import { PLAN_LIMITS, ERROR_MESSAGES } from "../config/planLimits.js";
 
@@ -141,19 +142,6 @@ export const createSale = async (req, res) => {
 
     finalAmountDebt = numericTotal - finalAmountPaid;
 
-    // Si hay deuda, actualizar cliente
-    if (finalAmountDebt > 0) {
-      if (!clientId) {
-        return res.status(400).json({ message: "Para dejar deuda (cuenta corriente) se requiere un cliente registrado." });
-      }
-      await Client.findByIdAndUpdate(clientId, { $inc: { balance: finalAmountDebt } });
-    }
-
-    // ---------------------------
-    // 🔑 Multi-tenancy
-    // ---------------------------
-    // ownerId ya definido al inicio
-
     // ✅ Crear la venta
     const newSale = await Sale.create({
       user: ownerId, 
@@ -166,6 +154,29 @@ export const createSale = async (req, res) => {
       client: clientId || null,
       status: "active",
     });
+
+    // Si hay deuda, actualizar cliente y crear transacción LINKED
+    if (finalAmountDebt > 0) {
+      if (!clientId) {
+        // Esto debería validarse antes, pero por seguridad:
+        // Si no hay cliente, no debería haber deuda. 
+        // Ya validado arriba o resultará en error.
+      } else {
+         await Client.findByIdAndUpdate(clientId, { $inc: { balance: finalAmountDebt } });
+
+         // ✅ FIX: Crear registro en Transactions CON REF A VENTA
+         await Transaction.create({
+            type: "CLIENT_DEBT",
+            amount: finalAmountDebt,
+            client: clientId,
+            description: "Deuda por venta (Fiado)",
+            user: ownerId,
+            createdBy: req.user._id,
+            date: new Date(),
+            sale: newSale._id // <--- VINCULACIÓN
+         });
+      }
+    }
 
     // 📅 Actualizar DailyCash
     const { start, end } = getLocalDayRangeUTC(new Date());
@@ -293,6 +304,11 @@ export const revertSale = async (req, res) => {
       });
     }
 
+    // 💾 Capturar valores originales antes de modificar
+    const originalDebt = sale.amountDebt || 0;
+    const originalPaid = sale.amountPaid || 0;
+    const originalTotal = sale.total || 0;
+
     // 🔹 Revertir stock (solo productos válidos)
     for (const item of sale.products) {
       const productId = item.product?._id || item.product;
@@ -308,11 +324,10 @@ export const revertSale = async (req, res) => {
       const currentStock = await Product.findById(productId).select("stock");
       await ProductHistory.create({
             product: productId,
-            user: req.user._id, // User que ejecutó la acción (auditoría)
+            user: req.user._id, 
             action: "stock_adjustment",
             changes: {
               stock: {
-                // Como ya se incrementó, el old era stock - quantity
                 old: currentStock.stock - item.quantity,
                 new: currentStock.stock
               }
@@ -321,8 +336,30 @@ export const revertSale = async (req, res) => {
       });
     }
 
-    // 🔹 Actualizar estado de venta
+    // ✅ FIX Bug 2: Revertir Deuda (Si existía)
+    if (originalDebt > 0 && sale.client) {
+        // 1. Restar la deuda al cliente
+        await Client.findByIdAndUpdate(sale.client, { 
+            $inc: { balance: -originalDebt } 
+        });
+
+        // 2. Crear contra-movimiento en Transaction
+        await Transaction.create({
+            type: "CLIENT_DEBT",
+            amount: -originalDebt, 
+            client: sale.client,
+            description: `Anulación de venta ${sale._id}`,
+            user: ownerId,
+            createdBy: req.user._id,
+            date: new Date()
+        });
+    }
+
+    // 🔹 Actualizar estado de venta y MONTOS
+    // Ponemos en 0 para que no aparezca como deuda pendiente en el frontend
     sale.status = "reverted";
+    sale.amountDebt = 0;
+    sale.amountPaid = 0; // Asumimos devolución de dinero si hubo pago
     await sale.save();
 
     // 🕓 Obtener rango UTC del día local en que se generó la venta
@@ -331,16 +368,16 @@ export const revertSale = async (req, res) => {
 
     // 🔹 Buscar caja correspondiente
     const dailyCash = await DailyCash.findOne({
-      user: ownerId, // <--- Caja del dueño
+      user: ownerId, 
       date: { $gte: start, $lte: end },
     });
 
     if (dailyCash) {
       // 🔹 Actualizar totales
-      let deductedAmount = sale.amountPaid || 0;
-      // Compatibilidad: Si es venta vieja, amountPaid y Debt son 0 -> descontar total
-      if (deductedAmount === 0 && (sale.amountDebt || 0) === 0 && sale.total > 0) {
-        deductedAmount = sale.total;
+      let deductedAmount = originalPaid;
+      // Compatibilidad: Si es venta vieja con paid=0 pero total>0
+      if (deductedAmount === 0 && originalDebt === 0 && originalTotal > 0) {
+        deductedAmount = originalTotal;
       }
 
       dailyCash.totalSalesAmount = Math.max(

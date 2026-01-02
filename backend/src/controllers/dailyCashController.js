@@ -161,7 +161,16 @@ export const closeDailyCash = async (req, res) => {
 
     // 🧮 Calcular totales (usando la lista combinada)
     if (extraExpenses.length > 0) {
-      dailyCash.extraExpenses.push(...extraExpenses);
+      // 🛡️ FILTRO ANTI-DUPLICADOS:
+      // Ignoramos los que tienen isTransaction: true o parecen pagos automáticos por su descripción
+      const safeExtraExpenses = extraExpenses.filter(e => {
+          if (e.isTransaction) return false;
+          if (e.description && e.description.startsWith("Pago a Proveedor:")) return false;
+          return true;
+      });
+      if (safeExtraExpenses.length > 0) {
+          dailyCash.extraExpenses.push(...safeExtraExpenses);
+      }
     }
     if (supplierPayments.length > 0) {
       dailyCash.supplierPayments.push(...supplierPayments);
@@ -375,7 +384,15 @@ export const closeDailyCashById = async (req, res) => {
 
     // 🔄 CORRECCIÓN: Fusionar gastos en lugar de reemplazar
     if (extraExpenses.length > 0) {
-      dailyCash.extraExpenses.push(...extraExpenses);
+      // 🛡️ FILTRO ANTI-DUPLICADOS
+      const safeExtraExpenses = extraExpenses.filter(e => {
+          if (e.isTransaction) return false;
+          if (e.description && e.description.startsWith("Pago a Proveedor:")) return false;
+          return true;
+      });
+      if (safeExtraExpenses.length > 0) {
+        dailyCash.extraExpenses.push(...safeExtraExpenses);
+      }
     }
     
     if (supplierPayments.length > 0) {
@@ -417,15 +434,24 @@ export const closeDailyCashById = async (req, res) => {
 export const updateDailyCashByDate = async (req, res) => {
   try {
     const { date } = req.params;
-    const { status, description, extraExpenses, supplierPayments, overwrite } = req.body;
+    let { status, description, extraExpenses, supplierPayments, overwrite } = req.body;
     
+    // RESTAURADO: Obtener ownerId y validar fecha (se borraron accidentalmente)
     const ownerId = req.user.createdBy || req.user._id;
 
     if (!date) {
       return res.status(400).json({ message: "Fecha o ID requerida." });
     }
 
-    // 1. Construir query de actualización (usar $push para arrays, $set para campos planos)
+    // 🐛 FIX: El frontend envía overwrite=true en la URL (req.query), no en el body.
+    if (overwrite === undefined && req.query.overwrite === "true") {
+        overwrite = true;
+    }
+
+    // 1. Construir query de actualización
+    // console.log("📝 [UPDATE DEBUG] Body:", JSON.stringify(req.body, null, 2));
+    // console.log("📝 [UPDATE DEBUG] Final Overwrite:", overwrite);
+
     const updateQuery = {};
 
     // Campos a setear
@@ -440,13 +466,29 @@ export const updateDailyCashByDate = async (req, res) => {
 
     // LOGIC: Si overwrite es true, usamos $set para los arrays. Si no, usamos $push.
     if (overwrite) {
-        if (extraExpenses) setFields.extraExpenses = extraExpenses;
+        if (extraExpenses) {
+           // 🛡️ FILTRO ANTI-DUPLICADOS: Solo guardar gastos manuales reales
+           // Filtrar por flag OR por descripción (para mayor seguridad si el flag se pierde)
+           setFields.extraExpenses = extraExpenses.filter(e => {
+               if (e.isTransaction) return false;
+               if (e.description && e.description.startsWith("Pago a Proveedor:")) return false;
+               return true;
+           });
+        }
         if (supplierPayments) setFields.supplierPayments = supplierPayments;
     } else {
         if (extraExpenses && extraExpenses.length > 0) {
-          pushFields.extraExpenses = {
-            $each: Array.isArray(extraExpenses) ? extraExpenses : [extraExpenses],
-          };
+          // 🛡️ FILTRO ANTI-DUPLICADOS
+          const manualExpenses = extraExpenses.filter(e => {
+             if (e.isTransaction) return false;
+             if (e.description && e.description.startsWith("Pago a Proveedor:")) return false;
+             return true;
+          });
+          if (manualExpenses.length > 0) {
+            pushFields.extraExpenses = {
+              $each: Array.isArray(manualExpenses) ? manualExpenses : [manualExpenses],
+            };
+          }
         }
         if (supplierPayments && supplierPayments.length > 0) {
           pushFields.supplierPayments = {

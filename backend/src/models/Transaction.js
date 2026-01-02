@@ -40,6 +40,10 @@ const transactionSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId, 
       ref: "User", // Multi-tenancy: The admin owner of the data
       required: true 
+    },
+    sale: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Sale"
     }
   },
   { timestamps: true }
