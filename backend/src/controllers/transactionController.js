@@ -251,6 +251,89 @@ export const deleteTransaction = async (req, res) => {
       // Borrar DEUDA -> BAJA la deuda (anulamos el fiado)
       await Client.findByIdAndUpdate(transaction.client, { $inc: { balance: -transaction.amount } });
 
+      // 🔄 FIX: Si borramos la deuda, revertir stock y BORRAR la venta
+      try {
+          const Sale = (await import("../models/Sale.js")).default;
+          // Añadidos los modelos de producto para devolver stock
+          const Product = (await import("../models/Product.js")).default;
+          const ProductHistory = (await import("../models/ProductHistory.js")).default;
+          const DailyCashModel = (await import("../models/DailyCash.js")).default;
+
+          let saleToUpdate;
+
+          if (transaction.sale) {
+              saleToUpdate = await Sale.findById(transaction.sale);
+          } else {
+              // Heurística para transacciones viejas
+              saleToUpdate = await Sale.findOne({ 
+                  client: transaction.client, 
+                  amountDebt: transaction.amount,
+                  user: ownerId 
+              }).sort({ createdAt: -1 }); 
+          }
+
+          if (saleToUpdate) {
+              // 1. Revertir Stock
+              console.log(`♻️ Devolviendo stock para venta eliminada ${saleToUpdate._id}`);
+              for (const item of saleToUpdate.products) {
+                  const productId = item.product?._id || item.product;
+                  if (!productId) continue;
+
+                  // Devolver stock
+                  await Product.findByIdAndUpdate(productId, { $inc: { stock: item.quantity } });
+
+                  // Registrar historial
+                   const currentStock = await Product.findById(productId).select("stock");
+                   await ProductHistory.create({
+                        product: productId,
+                        user: req.user._id, 
+                        action: "stock_adjustment",
+                        changes: {
+                          stock: {
+                            old: currentStock.stock - item.quantity,
+                            new: currentStock.stock
+                          }
+                        },
+                        description: `Venta ELIMINADA por borrado de deuda (${saleToUpdate._id})` 
+                  });
+              }
+
+              // 2. Limpiar de DailyCash (Si existía)
+              // (Aunque si era deuda 100%, quizás no sumó al totalSalesAmount, pero sí al array sales)
+              const saleDate = new Date(saleToUpdate.createdAt); 
+              // Helper de fecha UTC copiado o importado
+              
+              // Simplificación: usaremos la logica de fecha de la venta
+              // NOTA: Para no duplicar codigo de fecha compleja, intentamos limpiar por ID de venta en cualquier caja del usuario
+              // (Es costoso buscar en todas, pero seguro es la del día)
+              
+              // Mejor: Buscar caja con esa venta
+              const dailyCash = await DailyCashModel.findOne({ sales: saleToUpdate._id });
+              if (dailyCash) {
+                  dailyCash.sales = dailyCash.sales.filter(s => s.toString() !== saleToUpdate._id.toString());
+                  // Si hubo pago parcial, lo restamos? El usuario borra la DEUDA.
+                  // Si la venta era MIXTA (parte pago, parte deuda), borrar la deuda NO debería borrar todo el pago?
+                  // El usuario dijo "borrar la venta entera". Asumimos que sí.
+                   
+                  let deductedAmount = saleToUpdate.amountPaid || 0;
+                  // Si era venta vieja sin amountPaid, usaba total
+                  if (deductedAmount === 0 && (saleToUpdate.amountDebt || 0) === 0 && saleToUpdate.total > 0) {
+                      deductedAmount = saleToUpdate.total;
+                  }
+
+                  dailyCash.totalSalesAmount = Math.max(0, (dailyCash.totalSalesAmount || 0) - deductedAmount);
+                  dailyCash.totalOperations = Math.max(0, (dailyCash.totalOperations || 1) - 1);
+                  await dailyCash.save();
+              }
+
+              // 3. Borrar la venta físicamente
+              await saleToUpdate.deleteOne();
+              console.log(`🗑️ Venta ${saleToUpdate._id} eliminada permanentemente.`);
+          }
+      } catch (saleErr) {
+          console.error("Error updating sale on debt deletion:", saleErr);
+      }
+
     } else if (transaction.type === "SUPPLIER_DEBT" && transaction.supplier) {
       // Borrar DEUDA -> BAJA la deuda (anulamos el pedido)
       await Supplier.findByIdAndUpdate(transaction.supplier, { $inc: { debt: -transaction.amount } });
