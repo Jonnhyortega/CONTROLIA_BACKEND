@@ -10,7 +10,7 @@ export const PLAN_LIMITS = {
     products: 100,
     suppliers: 5,
     users: 1, // Solo el dueño
-    monthlySales: 300
+    monthlySales: 500
   },
   gestion: {
     products: 5000,
